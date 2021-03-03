@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "bbyqoolg",
+    "password": "Fwgn7-yNEAgwS2zlp0_dB_knDgLiTQwO",
+    "database": "bbyqoolg",
+    "host": "drona.db.elephantsql.com",
+    "dialect": "postgres"
+  }
+}

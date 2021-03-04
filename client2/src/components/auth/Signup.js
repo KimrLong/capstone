@@ -26,9 +26,6 @@ const Signup = () => {
       console.log('pushing to another page');
       history.push('/feature');
     }))
-
-
-
   }
 
   return (

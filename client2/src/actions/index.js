@@ -1,6 +1,30 @@
 import actionTypes from './actionTypes';
 import axios from 'axios';
 
+export const createPost = (formData => {
+    console.log(formData);
+
+    return async dispatch=>{
+        
+        try{
+            let response = await axios.post('http://localhost:3001/forum', formData) //formdata will put on header
+
+            console.log(response.data.token);//token
+
+            //dispatch action to reducer 
+
+            dispatch({type: "ADD_POST", data: response.data.token});
+
+            localStorage.setItem('token', response.data.token);
+
+        }
+        catch(e){
+            console.log('error');
+            console.log(e);
+        }
+    }
+})
+
 export const signUp = (formData, cb) => {
     
     console.log(formData);

@@ -1,17 +1,30 @@
+import Navbar from './components/layout/Navbar'
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Home from './pages/Home'
+import Account from './pages/Account'
+import Chat from './pages/Chat'
+import Support from './pages/Support'
+import TicketInfo from './pages/TicketInfo'
 
 import React from 'react';
-
-const App = (props) => {
+const App = () => {
   return (
-    
-    <div style={{height: "100vh"}} className="d-flex flex-column justify-content-center align-items-center">
-     <h1 className="text-white">Client Side Authentication with JWTs</h1>
-     <br/>
-     <h3 className="text-warning">Learning about JWTs for React Authentication</h3>
+    <>
 
-     <h5 className="text-info">This is an unprotected page.  Any user should be able to see this page, regardless of their login status.</h5>
-    </div>
-   
+    <Router>
+      <Navbar />
+        <Switch />
+          <Route path='/' exact component={Home}/>
+          <Route path='/account' component={Account}/>
+          <Route path='/tickets' component={TicketInfo}/>
+          <Route path='/Chat' component={Chat}/>
+          <Route path='/Support' component={Support}/>
+    </Router>
+
+
+
+
+    </>
   )
 }
 

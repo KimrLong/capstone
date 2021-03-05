@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {GlobalStyles} from'./global-styles'
 import App from './App';
 import Welcome from './components/Welcome';
 import Feature from './components/Feature'; //protect
@@ -31,21 +32,27 @@ let store = createStore(reducer, {},
 //Must pass redux instance to provider via "store" prop.
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-    <Router>
-      <BaseLayout>
-          <Switch>
-            <Route exact path='/' component={App}/>
-            <Route path='/welcome' component={Welcome}/>
-            <Route path='/signup' component={Signup}/>
-            <Route path='/feature' component={requireAuth(Feature)}/>
-            <Route path='/signout' component={Signout}/>
-            <Route path='/signin' component={Signin}/>
-          </Switch>
-      </BaseLayout>
-      </Router>
-      </Provider>
-  </React.StrictMode>,
+  <>
+      {/* <GlobalStyles/> */}
+      <React.StrictMode>
+      <Provider store={store}>
+      <Router>
+        <BaseLayout>
+        
+            <Switch>
+              
+              <Route exact path='/' component={App}/>
+              <Route path='/welcome' component={Welcome}/>
+              <Route path='/signup' component={Signup}/>
+              <Route path='/feature' component={requireAuth(Feature)}/>
+              <Route path='/signout' component={Signout}/>
+              <Route path='/signin' component={Signin}/>
+            </Switch>
+            
+        </BaseLayout>
+        </Router>
+        </Provider>
+  </React.StrictMode>
+  </>,
   document.getElementById('root')
 );

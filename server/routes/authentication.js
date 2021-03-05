@@ -81,4 +81,33 @@ router.post("/signup", async (req, res) => {
   //send back a token
 });
 
+router.post("/forum", async (req, res) => {
+
+  console.log('forum');
+
+  // let email = @@@
+  let post = req.body.post;
+
+  try {
+    let forumPost = await db.forum_posts.create({post: post})
+
+    return res.json(forumPost);
+
+  } catch (error) {
+    return res.status(423).send({error: `Can't access database`});
+  }
+})
+
+router.get("/forum", async (req, res) => {
+
+  try {
+    let totalPosts = await db.forum_posts.findAll();
+    
+    return res.json(totalPosts);
+
+  } catch (error) {
+    return res.status(423).send({error: `Can't access database`});
+  }
+})
+
 module.exports = router;

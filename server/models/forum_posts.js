@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.forum_posts.belongsTo(models.user,{foreignKey: 'email'})
+      // models.forum_posts.belongsTo(models.user,{foreignKey: 'email'})
     }
   };
   forum_posts.init({

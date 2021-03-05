@@ -1,56 +1,52 @@
 import actionTypes from './actionTypes';
 import axios from 'axios';
 
-export const createPost = (formData => {
-    console.log(formData);
+export const setEmailState = (email) => {
+    return {
+        type: "ADD_EMAIL",
+        data: email
+    }
+}
 
+export const groupPosts = (posts) => {
+    return {
+        type: "GROUP_POSTS",
+        data: posts,
+    }
+}
+
+export const createPost = (formData) => {
+    console.log(formData);
     return async dispatch=>{
-        
         try{
             let response = await axios.post('http://localhost:3001/forum', formData) //formdata will put on header
-
-            console.log(response.data.token);//token
-
             //dispatch action to reducer 
-
             dispatch({type: "ADD_POST", data: response.data.token});
-
-            localStorage.setItem('token', response.data.token);
-
         }
         catch(e){
             console.log('error');
             console.log(e);
         }
     }
-})
+}
 
 export const signUp = (formData, cb) => {
-    
     console.log(formData);
     //take username and passpword
     //call our server api 
     //wait for an authenticated token 
     //call reducer to store token
 
-    //formData => {email, password}
-    
+    //formData => {email, password}  
     return async dispatch=>{
-        
         try{
             let response = await axios.post('http://localhost:3001/signup', formData) //formdata will put on header
-
             console.log(response.data.token);//token
-
             //dispatch action to reducer 
-
             dispatch({type: "AUTH_USER", data: response.data.token});
-
             localStorage.setItem('token', response.data.token);
-
             console.log(cb);
             cb();
-
         }
         catch(e){
             console.log('error');
@@ -60,42 +56,31 @@ export const signUp = (formData, cb) => {
 }
 
 //logging into application
-
 export const signin = (formData, cb) => {
-    
     return async dispatch =>{
-
         try{
             let response = await axios.post('http://localhost:3001/signin', formData);
-
             dispatch({type: "AUTH_USER", data: response.data.token});
-
             console.log('signin', response.data.token);
             localStorage.setItem('token', response.data.token);
-
             cb();
         }
         catch(e){
-
+            console.log('error');
+            console.log(e);
         }
     }
 }
 
 //logout
-
 export const signout = (cb) => {
-
     return dispatch=> {
         localStorage.removeItem('token');
         dispatch({
             type: "AUTH_USER",
             data: ''
         })
-
         console.log('signing out');
-
         cb();
     }
-      
-    
 }

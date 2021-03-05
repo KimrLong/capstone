@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import Account from './pages/Account';
 import Chat from './pages/Chat';
-import Chart from './components/Chart';
+import Chart from './components/ChartComponents/Chart';
 import Support from './pages/Support';
 import TicketInfo from './pages/TicketInfo';
 

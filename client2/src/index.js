@@ -6,9 +6,10 @@ import Feature from './components/Feature'; //protect
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
 import Signup from './components/auth/Signup';
-import Chart from './components/Chart';
+import Chart from './components/ChartComponents/Chart';
 import BaseLayout from './components/layout/BaseLayout';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import  styled  from  'styled-components';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';
 import reduxThunk from 'redux-thunk';

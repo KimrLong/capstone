@@ -7,12 +7,8 @@ import Feature from './components/Feature'; //protect
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
 import Signup from './components/auth/Signup';
-
-import Chart from './components/ChartComponents/Chart';
-
 import Forum from './components/Forum';
-
-
+// import Chart from './components/Chart';
 import BaseLayout from './components/layout/BaseLayout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  styled  from  'styled-components';
@@ -28,14 +24,36 @@ import {
   Route, Switch
 } from 'react-router-dom'
 
+const saveToLocalStorage = (reduxGlobalState) => {
+  // serialization = converting js object to a string
+  try{    
+    const serializeState = JSON.stringify(reduxGlobalState);
+    localStorage.setItem('state', serializeState);
+  }
+  catch(e){
+    console.log(e);
+  }}
+  const loadFromLocalStorage = (params) => {
+  const serializeState = localStorage.getItem('state');  
+  if(serializeState === null){
+    return undefined;
+  }
+  else{
+    return JSON.parse(serializeState);  //returns JS object reprsenting local storage
+  }
+}
+
+const persistedState = loadFromLocalStorage();// initializing redux store
 
 // initializing redux store
 // requires a reducer. Second argument is for redux dev-tools extension.
-let store = createStore(reducer, {},  
+let store = createStore(reducer, persistedState,  
   compose(
     applyMiddleware(reduxThunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
-
+    store.subscribe(()=>{  saveToLocalStorage(store.getState());
+  })
+  
 //provider hooks react to redux.  
 //Must pass redux instance to provider via "store" prop.
 
@@ -48,7 +66,7 @@ ReactDOM.render(
             <Route exact path='/' component={App}/>
             <Route path='/welcome' component={Welcome}/>
             <Route path='/signup' component={Signup}/>
-            <Route path='/chart' component={Chart}/>
+            {/* <Route path='/chart' component={Chart}/> */}
             <Route path='/feature' component={requireAuth(Feature)}/>
             <Route path='/signout' component={Signout}/>
             <Route path='/signin' component={Signin}/>

@@ -6,6 +6,7 @@ import Feature from './components/Feature'; //protect
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
 import Signup from './components/auth/Signup';
+import Chart from './components/Chart';
 import BaseLayout from './components/layout/BaseLayout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';
@@ -14,6 +15,7 @@ import reduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducer from './reducers/index';
 import requireAuth from './requireAuth';
+
 import {
   BrowserRouter as Router,
   Route, Switch
@@ -39,6 +41,7 @@ ReactDOM.render(
             <Route exact path='/' component={App}/>
             <Route path='/welcome' component={Welcome}/>
             <Route path='/signup' component={Signup}/>
+            <Route path='/chart' component={Chart}/>
             <Route path='/feature' component={requireAuth(Feature)}/>
             <Route path='/signout' component={Signout}/>
             <Route path='/signin' component={Signin}/>

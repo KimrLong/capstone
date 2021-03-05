@@ -4,34 +4,41 @@ import  * as AiIcons from 'react-icons/ai'
 import  * as IoIcons from 'react-icons/io'
 import  * as RiIcons from 'react-icons/ri'
 import  * as BsIcons from 'react-icons/bs'
+import  * as FiIcons from 'react-icons/fi'
 
 export const SidebarData = [
     {
-        title:"Home",
+        title:"  Home",
         path:"/",
         icon:<AiIcons.AiFillHome />,
         class: 'nav-text'
     },
     {
-        title:"My account",
+        title:"  My Account",
         path:"/account",
         icon:<RiIcons.RiAccountCircleFill />,
         class: 'nav-text'
     },
     {
-        title:"Current Tickets",
+        title:" Cart",
+        path:"/cart",
+        icon:<FiIcons.FiShoppingCart/>,
+        class: 'nav-text'
+    },
+    {
+        title:"  Purchase Tickets",
         path:"/tickets",
         icon:<RiIcons.RiTicket2Fill/>,
         class: 'nav-text'
     },
     {
-        title:"Chat",
+        title:"  Chat",
         path:"/chat",
         icon:<BsIcons.BsFillChatDotsFill />,
         class: 'nav-text'
     },
     {
-        title:"Contact Support",
+        title:"  Contact Support",
         path:"/support",
         icon:<IoIcons.IoMdHelpCircle />,
         class: 'nav-text'

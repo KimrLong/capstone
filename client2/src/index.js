@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {GlobalStyles} from'./global-styles'
 import App from './App';
 import Welcome from './components/Welcome';
 import Feature from './components/Feature'; //protect

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import { Group, Text } from "./react-konva";
 import Seat from "./Seat";
 
@@ -19,7 +19,7 @@ export default ({
       {Object.keys(data.seats_by_rows).map((rowKey, rowIndex) => {
         const row = data.seats_by_rows[rowKey];
         return (
-          <React.Fragment key={rowKey}>
+          <Fragment key={rowKey}>
             {row.map((seat, seatIndex) => {
               return (
                 <Seat
@@ -41,7 +41,7 @@ export default ({
               fontSize={SEAT_SIZE}
               key={"label-left" + rowKey}
             />
-          </React.Fragment>
+          </Fragment>
         );
       })}
       {data.seats_by_rows[1].map((_, seatIndex) => {

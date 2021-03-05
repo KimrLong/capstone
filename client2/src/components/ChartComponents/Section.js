@@ -1,4 +1,4 @@
-import React from "react";
+import {useRef, useEffect} from "react";
 import { Rect, Group, Text } from "./react-konva";
 import SubSection from "./SubSection";
 
@@ -18,8 +18,8 @@ export default ({
   onDeselectSeat,
   selectedSeatsIds
 }) => {
-  const containerRef = React.useRef();
-  React.useEffect(() => {
+  const containerRef = useRef();
+  useEffect(() => {
     containerRef.current.cache();
     containerRef.current.getLayer().batchDraw();
   });
@@ -30,9 +30,9 @@ export default ({
       <Rect
         width={width}
         height={height}
-        fill="white"
+        fill="blue"
         strokeWidth={1}
-        stroke="lightgrey"
+        stroke="purple"
         cornerRadius={5}
       />
       {section.subsections.map(subsection => {

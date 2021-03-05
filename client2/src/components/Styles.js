@@ -28,3 +28,8 @@ export const Paper = styled.div`
   
 `;
 
+export  const  Container  =  styled.div`
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: 0  auto;`

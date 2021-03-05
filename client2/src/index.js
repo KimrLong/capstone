@@ -10,6 +10,7 @@ import Forum from './components/Forum';
 // import Chart from './components/Chart';
 import BaseLayout from './components/layout/BaseLayout';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import  styled  from  'styled-components';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';
 import reduxThunk from 'redux-thunk';

@@ -20,13 +20,21 @@ export const createPost = (formData) => {
     return async dispatch=>{
         try{
             let response = await axios.post('http://localhost:3001/forum', formData) //formdata will put on header
+            
             //dispatch action to reducer 
-            dispatch({type: "ADD_POST", data: response.data.token});
+            // dispatch({type: "ADD_POST", data: formData.email});
         }
         catch(e){
             console.log('error');
             console.log(e);
         }
+    }
+}
+
+export const deletePost = (post) => {
+    return {
+        type: "DELETE_POST",
+        data: post
     }
 }
 

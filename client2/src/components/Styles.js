@@ -30,6 +30,14 @@ export const Paper = styled.div`
 
 export  const  Container  =  styled.div`
   justify-content: center;
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 100vw;
+  max-height: 100vh;
   margin: 0  auto;`
+
+  export const Form = styled.form`
+
+
+
+
+
+`

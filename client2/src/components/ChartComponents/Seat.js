@@ -4,7 +4,7 @@ import { SEAT_SIZE } from "./layout";
 
 function getColor(isBooked, isSelected) {
   if (isSelected) {
-    return "red";
+    return "#cdd422";
   } else if (isBooked) {
     return "lightgrey";
   } else {

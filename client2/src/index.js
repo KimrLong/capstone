@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import {GlobalStyles} from'./global-styles'
 import App from './App';
 import Welcome from './components/Welcome';
-import Feature from './components/Feature'; //protect
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
 import Signup from './components/auth/Signup';
+import UserProfile from './components/auth/UserProfile';
 import Forum from './components/Forum';
 // import Chart from './components/Chart';
 import BaseLayout from './components/layout/BaseLayout';
@@ -67,10 +67,10 @@ ReactDOM.render(
             <Route path='/welcome' component={Welcome}/>
             <Route path='/signup' component={Signup}/>
             {/* <Route path='/chart' component={Chart}/> */}
-            <Route path='/feature' component={requireAuth(Feature)}/>
             <Route path='/signout' component={Signout}/>
             <Route path='/signin' component={Signin}/>
             <Route path='/forum' component={requireAuth(Forum)}/>
+            <Route path='/userprofile' component={requireAuth(UserProfile)}/>
           </Switch>
       </BaseLayout>
       </Router>

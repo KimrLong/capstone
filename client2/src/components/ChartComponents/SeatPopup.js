@@ -1,4 +1,4 @@
-import React from "react";
+import {useRef, useEffect} from "react";
 
 const isClickedInside = (e, element) => {
   let node = e.target;
@@ -12,9 +12,9 @@ const isClickedInside = (e, element) => {
 };
 
 const Popup = ({ position, seatId, onClose }) => {
-  const containerRef = React.useRef(null);
+  const containerRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const onClick = e => {
       if (!isClickedInside(e, containerRef.current)) {
         onClose();
@@ -29,12 +29,13 @@ const Popup = ({ position, seatId, onClose }) => {
     <div
       ref={containerRef}
       style={{
+        
         position: "absolute",
-        top: position.y + 20 + "px",
-        left: position.x + 20 + "px",
+        top: position.y + 40 + "px",
+        left: position.x + 40 + "px",
         padding: "10px",
         borderRadius: "3px",
-        boxShadow: "0 0 5px grey",
+        boxShadow: "0 0 5px black",
         zIndex: 10,
         backgroundColor: "white"
       }}

@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Welcome from './components/Welcome';
-import Signin from './components/auth/Signin';
-import Signout from './components/auth/Signout';
 import Signup from './components/auth/Signup';
 import UserProfile from './components/auth/UserProfile';
 import Forum from './components/Forum';
 import Chart from './components/ChartComponents/Chart';
 import BaseLayout from './components/layout/BaseLayout';
+import Account from './pages/Account';
+import Chat from './pages/Chat';
+import SignupForm from './pages/SignupForm';
+import Support from './pages/Support';
+import Cart from './pages/Cart';
+import Events from './pages/Events';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -49,7 +52,7 @@ const persistedState = loadFromLocalStorage();// initializing redux store
 // requires a reducer. Second argument is for redux dev-tools extension.
 let store = createStore(reducer, persistedState,  
   compose(
-    applyMiddleware(reduxThunk),
+  applyMiddleware(reduxThunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
     store.subscribe(()=>{  saveToLocalStorage(store.getState());
   })
@@ -58,25 +61,27 @@ let store = createStore(reducer, persistedState,
 //Must pass redux instance to provider via "store" prop.
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
+<>
+      <React.StrictMode>
+      <Provider store={store}>
       <Router>
-        <BaseLayout>
-          <NavBar/>
-          <Switch>
-            <Route exact path='/' component={App}/>
-            <Route path='/welcome' component={Welcome}/>
-            <Route path='/signup' component={Signup}/>
-            <Route path='/chart' component={Chart}/>
-            <Route path='/signout' component={Signout}/>
-            <Route path='/signin' component={Signin}/>
-            <Route path='/forum' component={requireAuth(Forum)}/>
-            <Route path='/userprofile' component={requireAuth(UserProfile)}/>
-          </Switch>
-        </BaseLayout>
+        <Navbar/>
+            <Switch>
+              <Route exact path='/' component={App}/>
+              <Route path="/account" component={Account}/>
+              <Route path='/events' component={Events}/>
+              <Route path='/Chat' component={Chat}/>
+              <Route path='/cart' component={Cart}/>
+              <Route path='/Support' component={Support}/>
+              <Route path='/form' component={SignupForm}/>
+              <Route path='/forum' component={requireAuth(Forum)}/>
+              <Route path='/userprofile' component={requireAuth(UserProfile)}/>
+
+            </Switch>
+        </Router>
+        </Provider>
         <Footer/>
-      </Router>
-    </Provider>
-  </React.StrictMode>,
+  </React.StrictMode>
+  </>,
   document.getElementById('root')
 );

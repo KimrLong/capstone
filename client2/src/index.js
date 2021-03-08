@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Signup from './components/auth/Signup';
+import UserProfile from './components/auth/UserProfile';
+import Forum from './components/Forum';
+import Chart from './components/ChartComponents/Chart';
+import BaseLayout from './components/layout/BaseLayout';
 import Account from './pages/Account';
 import Chat from './pages/Chat';
 import SignupForm from './pages/SignupForm';
 import Support from './pages/Support';
 import Cart from './pages/Cart';
 import Events from './pages/Events';
-import Navbar from './components/layout/Navbar'
-import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -16,11 +19,13 @@ import reduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducer from './reducers/index';
 import requireAuth from './requireAuth';
+import NavBar from './components/layout/Navbar';
+import Footer from './components/Footer';
+
 import {
   BrowserRouter as Router,
   Route, Switch
 } from 'react-router-dom'
-
 
 const saveToLocalStorage = (reduxGlobalState) => {
   // serialization = converting js object to a string
@@ -46,9 +51,8 @@ const persistedState = loadFromLocalStorage();// initializing redux store
 // initializing redux store
 // requires a reducer. Second argument is for redux dev-tools extension.
 let store = createStore(reducer, persistedState,  
-
-  compose
-    (applyMiddleware(reduxThunk),
+  compose(
+  applyMiddleware(reduxThunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
     store.subscribe(()=>{  saveToLocalStorage(store.getState());
   })
@@ -57,7 +61,6 @@ let store = createStore(reducer, persistedState,
 //Must pass redux instance to provider via "store" prop.
 
 ReactDOM.render(
-
 <>
       <React.StrictMode>
       <Provider store={store}>
@@ -71,6 +74,9 @@ ReactDOM.render(
               <Route path='/cart' component={Cart}/>
               <Route path='/Support' component={Support}/>
               <Route path='/form' component={SignupForm}/>
+              <Route path='/forum' component={requireAuth(Forum)}/>
+              <Route path='/userprofile' component={requireAuth(UserProfile)}/>
+
             </Switch>
         </Router>
         </Provider>

@@ -8,10 +8,7 @@ import Signout from './components/auth/Signout';
 import Signup from './components/auth/Signup';
 import UserProfile from './components/auth/UserProfile';
 import Forum from './components/Forum';
-import Chart from './components/ChartComponents/Chart';
 import BaseLayout from './components/layout/BaseLayout';
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';

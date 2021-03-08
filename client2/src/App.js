@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Account from './pages/Account';
 import Chat from './pages/Chat';
 import Support from './pages/Support';
-import TicketInfo from './pages/TicketInfo';
+import Events from './pages/Events';
 import Footer from './components/Footer';
 
 

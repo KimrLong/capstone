@@ -21,6 +21,7 @@ import {
   Route, Switch
 } from 'react-router-dom'
 
+
 const saveToLocalStorage = (reduxGlobalState) => {
   // serialization = converting js object to a string
   try{    
@@ -45,8 +46,9 @@ const persistedState = loadFromLocalStorage();// initializing redux store
 // initializing redux store
 // requires a reducer. Second argument is for redux dev-tools extension.
 let store = createStore(reducer, persistedState,  
-  compose(
-    applyMiddleware(reduxThunk),
+
+  compose
+    (applyMiddleware(reduxThunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
     store.subscribe(()=>{  saveToLocalStorage(store.getState());
   })
@@ -55,6 +57,7 @@ let store = createStore(reducer, persistedState,
 //Must pass redux instance to provider via "store" prop.
 
 ReactDOM.render(
+
 <>
       <React.StrictMode>
       <Provider store={store}>

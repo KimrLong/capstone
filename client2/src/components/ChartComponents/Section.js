@@ -30,9 +30,9 @@ export default ({
       <Rect
         width={width}
         height={height}
-        fill="blue"
+        fill="white"
         strokeWidth={1}
-        stroke="purple"
+        stroke="black"
         cornerRadius={5}
       />
       {section.subsections.map(subsection => {

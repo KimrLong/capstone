@@ -23,11 +23,11 @@ const Mainstage = props => {
   const [scale, setScale] = useState(1);
   const [scaleToFit, setScaleToFit] = useState(1);
   const [size, setSize] = useState({
-    width: 1000,
-    height: 1000,
-    virtualWidth: 1000
+    width: 500,
+    height: 500,
+    virtualWidth: 500
   });
-  const [virtualWidth, setVirtualWidth] = useState(1000);
+  const [virtualWidth, setVirtualWidth] = useState(500);
 
   const [selectedSeatsIds, setSelectedSeatsIds] = useState([]);
 
@@ -105,9 +105,10 @@ const Mainstage = props => {
     <div
       style={{
         position: "relative",
-        backgroundColor: "pink",
-        width: "100vw",
-        height: "100vh"
+        backgroundColor: "#354152",
+        border: "1px solid yellow",
+        width: "40vw",
+        height: "40vh"
       }}
       ref={containerRef}
     >

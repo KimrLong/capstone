@@ -57,20 +57,31 @@ router.post("/signup", async (req, res) => {
       let user = await db.user.create({email: email, password: password});
       let jwtToken = token(user); //token returns a jwt
       return res.json({token: jwtToken}); //passing a jwt to client
-
+      
     } else {
-      //send back an error
       return res.status(422).send({error: 'Email already exists'});
     }
+  } catch (error) {
+      return res.status(423).send({error: `Can't access database`});
+  }
+});
+
+router.post("/userprofile", async (req, res) => {
+  // console.log(req.body);
+
+  //models- store in database
+  try {
+    let record = await db.user.update({profile_pic: req.body.pictureUrl, about: req.body.about}, {
+      where: { 
+        email: req.body.email,
+      }
+    })
+    return res.json(record);
   } catch (error) {
       //send back error, can't access database
       return res.status(423).send({error: `Can't access database`});
   }
-
-  //create jwt token
-
-  //send back a token
-});
+})
 
 router.post("/forum", async (req, res) => {
   console.log('forum');
@@ -100,20 +111,6 @@ router.get("/forum", async (req, res) => {
   }
 })
 
-router.post("/forum", async (req, res) => {
-  console.log('forum');
 
-  // let email = @@@
-  let post = req.body.post;
-  let email = req.body.email;
 
-  try {
-    let forumPost = await db.forum_posts.create({post: post, email: email})
-
-    return res.json(forumPost);
-
-  } catch (error) {
-    return res.status(423).send({error: `Can't access database`});
-  }
-})
 module.exports = router;

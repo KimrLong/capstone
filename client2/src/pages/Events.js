@@ -1,23 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Mainstage from "./Mainstage";
+import Mainstage from "../components/ChartComponents/Mainstage";
 import {Link} from 'react-router-dom';
-import "./styles.css";
-import {Container} from '../Styles';
+import "../components/ChartComponents/styles.css";
+import {Container} from '../components/Styles';
 import {Row, Col} from 'react-bootstrap';
 // import {Paper} from '../Styles';
-import Payment from '../PaymentComponents/Payment';
+import Payment from '../components/PaymentComponents/Payment';
 
 
 
 
 
 
-function App() {
+function Events() {
   return (
     <Container>
       <Row>
-        <Col>This is a space holder
+        <Col>This is a space holder!!!
         </Col>
         <Col>
 
@@ -42,6 +42,6 @@ function App() {
 }
 
 
-export default App;
+export default Events;
 
 //chart is displayed from THIS folder

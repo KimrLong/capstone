@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 
 
 import React from 'react';
+
 const App = () => {
   return (
     <div className="page-container">

@@ -28,25 +28,31 @@ const Header = () => {
                     <Link className="nav-link" to="/signup">Register</Link>
                 </li>
 
-                <li className="nav-item">
-                    <Link className="nav-link" to="/chart">Seating Chart</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/signin">Login</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/forum">Forum</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/userprofile">Profile</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/signout">Logout</Link>
-                </li>
-        
-            </ul>
-        </div>
-    </nav>
+
+            <li className="nav-item">
+                <Link className="nav-link" to="/chart">Seating Chart</Link>
+            </li>
+            <li className="nav-item">
+                <Link className="nav-link" to="/signin">Login</Link>
+            </li>
+            <li className="nav-item">
+                <Link className="nav-link" to="/forum">Forum</Link>
+            </li>
+            <li className="nav-item">
+
+                <Link className="nav-link" to="/payment">Payment</Link>
+
+                <Link className="nav-link" to="/userprofile">Profile</Link>
+
+            </li>
+            <li className="nav-item">
+                <Link className="nav-link" to="/signout">Logout</Link>
+            </li>
+       
+        </ul>
+    </div>
+</nav>
+
     </>
   )
 }

@@ -27,6 +27,7 @@ const Mainstage = props => {
     height: 500,
     virtualWidth: 500
   });
+
   const [virtualWidth, setVirtualWidth] = useState(500);
 
   const [selectedSeatsIds, setSelectedSeatsIds] = useState([]);

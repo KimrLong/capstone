@@ -1,4 +1,4 @@
-// import Navbar from './components/layout/Navbar'
+import Navbar from './components/layout/Navbar'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import Account from './pages/Account';
@@ -14,6 +14,7 @@ const App = () => {
     <div className="page-container">
       <div className="content-wrap">
         <Router>
+          <Navbar/>
           <Switch >
             <Route path='/' exact component={Home}/>
             <Route path='/account' component={Account}/>

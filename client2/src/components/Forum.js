@@ -46,7 +46,7 @@ const Forum = () => {
         <>
         <form onSubmit={handleSubmit} className="form">
             <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
-            <button type="submit">Submit123</button>
+            <button type="submit">Submit</button>
         </form>
         {postArray.map((thePosts) => {
             return (

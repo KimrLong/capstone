@@ -19,6 +19,7 @@ import {Provider} from 'react-redux';
 import reducer from './reducers/index';
 import requireAuth from './requireAuth';
 
+
 import {
   BrowserRouter as Router,
   Route, Switch
@@ -47,7 +48,7 @@ const persistedState = loadFromLocalStorage();// initializing redux store
 
 // initializing redux store
 // requires a reducer. Second argument is for redux dev-tools extension.
-let store = createStore(reducer, persistedState,  
+let store = createStore(reducer, persistedState,
   compose(
     applyMiddleware(reduxThunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));

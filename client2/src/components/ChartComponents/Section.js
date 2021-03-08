@@ -32,7 +32,7 @@ export default ({
         height={height}
         fill="white"
         strokeWidth={1}
-        stroke="purple"
+        stroke="black"
         cornerRadius={5}
       />
       {section.subsections.map(subsection => {

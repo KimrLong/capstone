@@ -31,8 +31,8 @@ const Popup = ({ position, seatId, onClose }) => {
       style={{
         
         position: "absolute",
-        top: position.y + 20 + "px",
-        left: position.x + 20 + "px",
+        top: position.y + 40 + "px",
+        left: position.x + 40 + "px",
         padding: "10px",
         borderRadius: "3px",
         boxShadow: "0 0 5px black",

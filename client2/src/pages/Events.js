@@ -17,7 +17,7 @@ function Events() {
   return (
     <Container>
       <Row>
-        <Col>This is a space holder
+        <Col>This is a space holder!!!
         </Col>
         <Col>
 

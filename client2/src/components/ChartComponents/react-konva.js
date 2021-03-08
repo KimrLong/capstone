@@ -1,13 +1,13 @@
-// import "konva/lib/shapes/Rect";
-// import "konva/lib/shapes/Circle";
-// import "konva/lib/shapes/Text";
+import "konva/lib/shapes/Rect";
+import "konva/lib/shapes/Circle";
+import "konva/lib/shapes/Text";
 
-// // load minimal version of 'react-konva`
-// export {
-//   Stage,
-//   Layer,
-//   Group,
-//   Rect,
-//   Circle,
-//   Text
-// } from "react-konva/lib/ReactKonvaCore";
+// load minimal version of 'react-konva`
+export {
+    Stage,
+    Layer,
+    Group,
+    Rect,
+    Circle,
+    Text
+} from "react-konva/lib/ReactKonvaCore";

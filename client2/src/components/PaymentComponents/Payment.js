@@ -19,11 +19,11 @@ const onSubmit = values => {
 			
 			axios.post('https://jsonplaceholder.typicode.com/posts', values )
 			.then(response => {
-			  alert("Payment Successful")
-			})
-			.catch(error => {
-			  alert("Payment Failed")
-			})
+				alert("Payment Successful")
+				})
+				.catch(error => {
+				alert("Payment Failed")
+				})
 		};
 
 const validate = values => {

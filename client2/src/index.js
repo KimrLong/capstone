@@ -1,6 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+
+
+import Welcome from './components/Welcome';
+import Signin from './components/auth/Signin';
+import Signout from './components/auth/Signout';
+import Signup from './components/auth/Signup';
+import UserProfile from './components/auth/UserProfile';
+import Forum from './components/Forum';
+import BaseLayout from './components/layout/BaseLayout';
+
 import Account from './pages/Account';
 import Chat from './pages/Chat';
 import SignupForm from './pages/SignupForm';
@@ -9,6 +19,7 @@ import Cart from './pages/Cart';
 import Events from './pages/Events';
 import Navbar from './components/layout/Navbar'
 import Footer from './components/Footer';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';

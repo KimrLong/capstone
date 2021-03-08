@@ -87,9 +87,10 @@ router.post("/forum", async (req, res) => {
 
   // let email = @@@
   let post = req.body.post;
+  let email = req.body.email;
 
   try {
-    let forumPost = await db.forum_posts.create({post: post})
+    let forumPost = await db.forum_posts.create({post: post, email: email})
 
     return res.json(forumPost);
 

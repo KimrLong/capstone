@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import reducerTemplate from "./reducer";
+import reducerTemplate from "./authReducer";
 //import { formReducer } from "redux-form";
 
 export default combineReducers({

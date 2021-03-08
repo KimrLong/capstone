@@ -20,6 +20,15 @@ const reducerTemplate = (state = initialState, action) => {
             return {
                 ...state,
                 forumPost: action.data
+                // email: action.data.email,
+            }
+        case 'DELETE_POST':
+            let filteredPosts = state.auth.allPosts.filter(p => {
+                return p.id != action.data.id
+            })
+            return {
+                ...state,
+                todos: filteredPosts,
             }
         case "GROUP_POSTS":
             return {

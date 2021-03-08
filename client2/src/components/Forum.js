@@ -19,7 +19,6 @@ const Forum = () => {
             email: email,
             post: post,
         }))
-        
     }
 
     useEffect(() => {
@@ -33,18 +32,29 @@ const Forum = () => {
         fetchPosts();
     }, [])
 
+    useEffect(() => {
+        const updatePosts = async() => {
+            const url = `http://localhost:3001/forum`
+            const response = await fetch(url)
+            const data = await response.json()
+            dispatch(groupPosts(data));
+        }
+        updatePosts();
+    }, [viewPosts])
+
     return (
         <>
         <form onSubmit={handleSubmit} className="form">
-            <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="enter your post here..."/>
+            <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
             <button type="submit">Submit</button>
         </form>
-        {viewPosts.map((thePosts) => {
+        {postArray.map((thePosts) => {
             return (
-                <div>                
-                    {thePosts.id}
-                    {thePosts.post}
-                </div>
+                <ul>      
+                    <li>
+                        {thePosts.email}: {thePosts.post}
+                    </li>          
+                </ul>
             )
         })}
         </>

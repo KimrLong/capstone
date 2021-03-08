@@ -17,6 +17,10 @@ function Navbar (){
                 <Link to="#" className='menu-bars'> 
                     <FaIcons.FaBars onClick={showSidebar}/>
                 </Link>
+                <div className="navText">
+                    <Link className="nav-text-right" style={{color:"#fff",paddingRight:"4px"}} to="/form">Log in     </Link> or   
+                    <Link style={{color:"#fff",paddingLeft:"4px"}} to="/form">    Sign up today</Link>
+                </div>
             </div>
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar}> 

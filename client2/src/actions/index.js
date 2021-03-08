@@ -1,6 +1,36 @@
 import actionTypes from './actionTypes';
 import axios from 'axios';
 
+export const setProfilePic = (formData) => {
+    console.log(formData);
+    return async dispatch=>{
+        try{
+            let response = await axios.post('http://localhost:3001/userprofile', formData) //formdata will put on header
+            
+        }
+        catch(e){
+            console.log('error');
+            console.log(e);
+        }
+    }
+}
+
+export const setProfileInfo = (formData) => {
+    console.log(formData);
+    return async dispatch=>{
+        try{
+            let response = await axios.post('http://localhost:3001/userprofile', formData) //formdata will put on header
+            
+
+        }
+        catch(e){
+            console.log('error');
+            console.log(e);
+        }
+    }
+}
+
+
 export const setEmailState = (email) => {
     return {
         type: "ADD_EMAIL",

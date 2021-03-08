@@ -19,12 +19,9 @@ let requireAuth = passport.authenticate('jwt', {session: false});
  * This function return a jwt
  */
 const token = (user) => {
-    
     let timestamp = new Date().getTime();  //current time
-
     return jwt.encode({sub: user.id, iat: timestamp}, config.secret)
 }
-
 
 router.get("/", requireAuth, (req, res) => {
   res.send("hello world");
@@ -37,7 +34,6 @@ router.post("/signin", requireSignin, (req, res) => {
   //validate user
 
   //send token
-  
   res.json({token: token(req.user)})
 });
 
@@ -56,33 +52,38 @@ router.post("/signup", async (req, res) => {
   //models- store in database
   try {
     let records = await db.user.findAll({ where: { email: email } });
-
     if (records.length === 0) {
       //add a new record
-
       let user = await db.user.create({email: email, password: password});
-
       let jwtToken = token(user); //token returns a jwt
-
       return res.json({token: jwtToken}); //passing a jwt to client
-
+      
     } else {
-      //send back an error
-
       return res.status(422).send({error: 'Email already exists'});
     }
+  } catch (error) {
+      return res.status(423).send({error: `Can't access database`});
+  }
+});
+
+router.post("/userprofile", async (req, res) => {
+  // console.log(req.body);
+
+  //models- store in database
+  try {
+    let record = await db.user.update({profile_pic: req.body.pictureUrl, about: req.body.about}, {
+      where: { 
+        email: req.body.email,
+      }
+    })
+    return res.json(record);
   } catch (error) {
       //send back error, can't access database
       return res.status(423).send({error: `Can't access database`});
   }
-
-  //create jwt token
-
-  //send back a token
-});
+})
 
 router.post("/forum", async (req, res) => {
-
   console.log('forum');
 
   // let email = @@@
@@ -100,7 +101,6 @@ router.post("/forum", async (req, res) => {
 })
 
 router.get("/forum", async (req, res) => {
-
   try {
     let totalPosts = await db.forum_posts.findAll();
     
@@ -110,5 +110,7 @@ router.get("/forum", async (req, res) => {
     return res.status(423).send({error: `Can't access database`});
   }
 })
+
+
 
 module.exports = router;

@@ -4,10 +4,11 @@ import "konva/lib/shapes/Text";
 
 // load minimal version of 'react-konva`
 export {
-    Stage,
-    Layer,
-    Group,
-    Rect,
-    Circle,
-    Text
+  Stage,
+  Layer,
+  Group,
+  Rect,
+  Circle,
+  Text
+
 } from "react-konva/lib/ReactKonvaCore";

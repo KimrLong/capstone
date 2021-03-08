@@ -16,17 +16,16 @@ import Chat from './pages/Chat';
 import SignupForm from './pages/SignupForm';
 import Support from './pages/Support';
 import Cart from './pages/Cart';
-import Events from './pages/Events';
 import Navbar from './components/layout/Navbar'
 import Footer from './components/Footer';
-
+import Events from './pages/Events';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';
 import reduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducer from './reducers/index';
-import requireAuth from './requireAuth';
+// import requireAuth from './requireAuth';
 import {
   BrowserRouter as Router,
   Route, Switch

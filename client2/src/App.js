@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import './App.css';
 import React from 'react';
+
 const App = () => {
   return (
     <div className="page-container">

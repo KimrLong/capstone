@@ -2,17 +2,15 @@
 
 * {
     box-sizing: border-box;
-
     font-family: 'Playfair Display', serif;
 }
 
-.home, .account, .tickets, .chat, .support{
+.home, .account, .tickets, .chat, .support, .cart, .signup{
     display:flex;
     height:90vh;
     align-items:center;
     justify-content: center;
     font-size: 3rem;
-
 }
 
 

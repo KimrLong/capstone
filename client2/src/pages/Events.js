@@ -8,11 +8,6 @@ import {Row, Col} from 'react-bootstrap';
 // import {Paper} from '../Styles';
 import Payment from '../components/PaymentComponents/Payment';
 
-
-
-
-
-
 function Events() {
   return (
     <Container>
@@ -45,3 +40,4 @@ function Events() {
 export default Events;
 
 //chart is displayed from THIS folder
+

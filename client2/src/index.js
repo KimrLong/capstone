@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
-import Welcome from './components/Welcome';
-import Signin from './components/auth/Signin';
-import Signout from './components/auth/Signout';
-import Signup from './components/auth/Signup';
-import UserProfile from './components/auth/UserProfile';
-import Forum from './components/Forum';
-import Chart from './components/ChartComponents/Chart';
-import BaseLayout from './components/layout/BaseLayout';
-
-
+import Account from './pages/Account';
+import Chat from './pages/Chat';
+import SignupForm from './pages/SignupForm';
+import Support from './pages/Support';
+import Cart from './pages/Cart';
+import Events from './pages/Events';
+import Navbar from './components/layout/Navbar'
+import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -22,15 +19,8 @@ import requireAuth from './requireAuth';
 import {
   BrowserRouter as Router,
   Route, Switch
-} from 'react-router-dom';
-import Account from './pages/Account';
-import Chat from './pages/Chat';
-import SignupForm from './pages/SignupForm';
-import Support from './pages/Support';
-import Cart from './pages/Cart';
-import Events from './pages/Events';
-import Navbar from './components/layout/Navbar'
-import Footer from './components/Footer';
+} from 'react-router-dom'
+
 
 const saveToLocalStorage = (reduxGlobalState) => {
   // serialization = converting js object to a string
@@ -56,18 +46,19 @@ const persistedState = loadFromLocalStorage();// initializing redux store
 // initializing redux store
 // requires a reducer. Second argument is for redux dev-tools extension.
 let store = createStore(reducer, persistedState,  
+
   compose
     (applyMiddleware(reduxThunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
-
     store.subscribe(()=>{  saveToLocalStorage(store.getState());
   })
   
 //provider hooks react to redux.  
 //Must pass redux instance to provider via "store" prop.
+
 ReactDOM.render(
 
-  <>
+<>
       <React.StrictMode>
       <Provider store={store}>
       <Router>
@@ -86,7 +77,5 @@ ReactDOM.render(
         <Footer/>
   </React.StrictMode>
   </>,
-
-
   document.getElementById('root')
 );

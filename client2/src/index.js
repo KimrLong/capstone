@@ -15,10 +15,9 @@ import {
 import Account from './pages/Account';
 import Chat from './pages/Chat';
 import SignupForm from './pages/SignupForm';
-import Chart from './components/ChartComponents/Chart';
 import Support from './pages/Support';
 import Cart from './pages/Cart';
-import TicketInfo from './pages/TicketInfo';
+import Events from './pages/Events';
 import Navbar from './components/layout/Navbar'
 import Footer from './components/Footer';
 
@@ -64,8 +63,7 @@ ReactDOM.render(
             <Switch>
               <Route exact path='/' component={App}/>
               <Route path="/account" component={Account}/>
-              <Route path='/tickets' component={TicketInfo}/>
-              <Route path='/chart' component={Chart}/>
+              <Route path='/events' component={Events}/>
               <Route path='/Chat' component={Chat}/>
               <Route path='/cart' component={Cart}/>
               <Route path='/Support' component={Support}/>

@@ -5,8 +5,10 @@ import {Link} from 'react-router-dom';
 import "./styles.css";
 import {Container} from '../Styles';
 import {Row, Col} from 'react-bootstrap';
-import {Paper} from '../Styles';
+// import {Paper} from '../Styles';
 import Payment from '../PaymentComponents/Payment';
+
+
 
 
 
@@ -17,7 +19,8 @@ function App() {
       <Row>
         <Col>This is a space holder
         </Col>
-        <Col><h1>Calender!</h1>
+        <Col>
+
         </Col>
         <Col>  
           <Payment></Payment>
@@ -38,8 +41,6 @@ function App() {
   );
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
 
 export default App;
 

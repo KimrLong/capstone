@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 
 
-const useFormHook = validate =>{
+const useFormHook = (callback,validate) =>{
     const[values, setValues] = useState({
         username:'',
         email:'',
@@ -25,6 +25,13 @@ const useFormHook = validate =>{
         setErrors(validate(values))
         setIsSubmitted(true);
     }
+
+    useEffect(() => {
+        if(Object.keys(errors).length === 0 && isSubmitted){
+            callback()
+        }
+    },[errors]
+    )
 
     return {handleChange, values, handleSubmit, errors}
 }

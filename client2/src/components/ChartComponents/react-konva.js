@@ -10,4 +10,5 @@ export {
   Rect,
   Circle,
   Text
+
 } from "react-konva/lib/ReactKonvaCore";

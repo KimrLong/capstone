@@ -5,6 +5,8 @@ const initialState = {
     forumPost: "",
     allPosts: [],
     email: "",
+    profilePic: "",
+    about: "",
 }
 console.log(initialState);
 
@@ -39,6 +41,16 @@ const reducerTemplate = (state = initialState, action) => {
             return {
                 ...state,
                 email: action.data
+            }
+        case "ADD_PIC":
+            return {
+                ...state,
+                profilePic: action.data
+            }
+        case "ADD_ABOUT":
+            return {
+                ...state,
+                about: action.data
             }
         default:
             return state;

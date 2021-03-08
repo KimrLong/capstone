@@ -2,12 +2,12 @@ import { useRef, useState, useCallback, useEffect} from "react";
 import { Stage, Layer } from "./react-konva";
 import Section from "./Section";
 import SeatPopup from "./SeatPopup";
-
 import * as layout from "./layout";
 
 const useFetch = url => {
   const [data, setData] = useState(null);
   useEffect(() => {
+    console.log(url)
     fetch(url)
       .then(res => res.json())
       .then(data => setData(data));

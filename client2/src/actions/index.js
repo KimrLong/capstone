@@ -1,6 +1,32 @@
 import actionTypes from './actionTypes';
 import axios from 'axios';
 
+export const setProfilePic = (formData) => {
+    return async dispatch=>{
+        try{
+            let response = await axios.post('http://localhost:3001/userprofile', formData) //formdata will put on header
+            dispatch({type: "ADD_PIC", data: formData.pictureUrl})
+        }
+        catch(e){
+            console.log('error');
+            console.log(e);
+        }
+    }
+}
+
+export const setProfileInfo = (formData) => {
+    return async dispatch=>{
+        try{
+            let response = await axios.post('http://localhost:3001/userprofile', formData) //formdata will put on header
+            dispatch({type: "ADD_ABOUT", data: formData.about})
+        }
+        catch(e){
+            console.log('error');
+            console.log(e);
+        }
+    }
+}
+
 export const setEmailState = (email) => {
     return {
         type: "ADD_EMAIL",
@@ -20,7 +46,6 @@ export const createPost = (formData) => {
     return async dispatch=>{
         try{
             let response = await axios.post('http://localhost:3001/forum', formData) //formdata will put on header
-            
             //dispatch action to reducer 
             // dispatch({type: "ADD_POST", data: formData.email});
         }

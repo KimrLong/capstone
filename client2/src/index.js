@@ -1,14 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Welcome from './components/Welcome';
-import Signin from './components/auth/Signin';
-import Signout from './components/auth/Signout';
-import Signup from './components/auth/Signup';
 import UserProfile from './components/auth/UserProfile';
 import Forum from './components/Forum';
-import Chart from './components/ChartComponents/Chart';
-import BaseLayout from './components/layout/BaseLayout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -16,8 +10,14 @@ import reduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducer from './reducers/index';
 import requireAuth from './requireAuth';
-import NavBar from './components/layout/Navbar';
+import Navbar from './components/layout/Navbar';
 import Footer from './components/Footer';
+import Account from './pages/Account'
+import Event from './pages/Events'
+import Chat from './pages/Chat'
+import Cart from './pages/Cart'
+import Support from './pages/Support'
+import SignupForm from './pages/SignupForm'
 import {
   BrowserRouter as Router,
   Route, Switch
@@ -65,7 +65,7 @@ ReactDOM.render(
             <Switch>
               <Route exact path='/' component={App}/>
               <Route path="/account" component={Account}/>
-              <Route path='/events' component={Events}/>
+              <Route path='/event' component={Event}/>
               <Route path='/Chat' component={Chat}/>
               <Route path='/cart' component={Cart}/>
               <Route path='/Support' component={Support}/>

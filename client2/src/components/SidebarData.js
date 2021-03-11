@@ -38,6 +38,12 @@ export const SidebarData = [
         class: 'nav-text'
     },
     {
+        title:"  Sign Out",
+        path:"/signout",
+        icon:<BsIcons.BsFillChatDotsFill />,
+        class: 'nav-text'
+    },
+    {
         title:"  Contact Support",
         path:"/support",
         icon:<IoIcons.IoMdHelpCircle />,

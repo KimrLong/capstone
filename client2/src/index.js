@@ -67,21 +67,19 @@ ReactDOM.render(
       <Provider store={store}>
       <Router>
         <Navbar/>
-        <Header/>
+        {/* <Header/> */}
             <Switch>
               <Route exact path='/' component={App}/>
-              <Route path="/account" component={Account}/>
+              <Route path="/account" component={requireAuth(Account)}/>
               <Route path='/events' component={Event}/>
-              <Route path='/Chat' component={Chat}/>
-              <Route path='/cart' component={Cart}/>
+              <Route path='/Chat' component={requireAuth(Chat)}/>
+              <Route path='/cart' component={requireAuth(Cart)}/>
               <Route path='/Support' component={Support}/>
 
               <Route path='/signin' component={Signin}/>
               <Route path='/signout' component={Signout}/>
 
               <Route path='/form' component={SignupForm}/>
-              <Route path='/forum' component={requireAuth(Forum)}/>
-              <Route path='/userprofile' component={requireAuth(UserProfile)}/>
 
             </Switch>
         </Router>

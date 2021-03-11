@@ -27,7 +27,7 @@ export const SidebarData = [
     },
     {
         title:"  Events",
-        path:"/event",
+        path:"/events",
         icon:<RiIcons.RiTicket2Fill/>,
         class: 'nav-text'
     },

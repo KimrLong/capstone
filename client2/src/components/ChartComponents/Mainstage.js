@@ -81,19 +81,19 @@ const Mainstage = props => {
 
   let lastSectionPosition = 0;
 
-  // const handleHover = useCallback((seat, pos) => {
-  //   setPopup({
-  //     seat: seat,
-  //     position: pos
-  //   });
-  // }, []);
+  const handleHover = useCallback((seat, pos) => {
+    setPopup({
+      seat: seat,
+      position: pos
+    });
+  }, []);
 
   const handleSelect = useCallback(
       seatId =>{
       const newIds = selectedSeatsIds.concat([seatId]);
       setSelectedSeatsIds(newIds);
       console.log(newIds);
-      dispatch(seatPicker(selectedSeatsIds))
+      dispatch(seatPicker(newIds))
     },
     [selectedSeatsIds],
 
@@ -105,7 +105,7 @@ const Mainstage = props => {
       const ids = selectedSeatsIds.slice();
       ids.splice(ids.indexOf(seatId), 1);
       setSelectedSeatsIds(ids);
-      dispatch(seatPicker(selectedSeatsIds))
+      dispatch(seatPicker(ids))
     },
     [selectedSeatsIds]
   );

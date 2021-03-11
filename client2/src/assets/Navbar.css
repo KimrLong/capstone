@@ -1,9 +1,12 @@
-.navbar{
+/* .navbar{
+    position: absolute;
     background-color: #060b26;
     height: 80px;
     display:flex;
     justify-content: start;
     align-items: center;
+    top:0;
+    width: 100%;
 }
 
 .menu-bars{
@@ -37,6 +40,8 @@
     padding: 8px 0px 8x 16px;
     list-style:none;
     height:60px;
+    font-size: 30px;
+    margin-bottom: 65px;
 }
 
 .nav-tex a {
@@ -67,4 +72,25 @@
     justify-content: start;
     align-items:center;
 }
+ */
+
+    .navStyle{
+            background-color: #f9fafc;
+            height:80px;
+            font-size:27px;
+    }
+
+    .menuStyle{
+        background: #f9fafc;
+        color:rgb(17, 36, 119)
+    }
+
+    .itemStyle{
+        height:65px;
+        color:rgb(17, 36, 119)
+    }
+
+    .iconStyle{
+        color:rgb(250, 195, 94);
+    }
 

@@ -12,9 +12,9 @@
         box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
         position: relative;
         border-radius: 10px;
-        height: 400px;
+        /* height: 400px;  */
         display: grid; 
-        /* grid-template-columns: 1fr 1fr; */
+        grid-template-columns: 1fr 1fr;
         padding-right: 150px;
     }
     
@@ -29,26 +29,31 @@
     }
     
     .form-content-left {
-        background: linear-gradient(
+        /* background: linear-gradient(
         90deg,
         rgb(39, 176, 255) 0%,
         rgb(0, 232, 236) 100%
         );
         border-radius: 10px 0 0 10px;
-        position: relative;
+        position: relative;  */
+        /* background: linear-gradient(to bottom, rgba(21, 85, 110, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%)   */
+        /* try adding the url at the end of this like url('./img/Woman-kayaking-on-river.jpg' */
+
     }
     
     .form-img {
-        width: 80%;
+        /* width: 80%;
         height: 80%;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 50%; */
+        left: 50%; 
+        margin-left: 125px;
+        /* transform: translate(-50%, -50%); */
+        box-shadow: -10px 20px 20px rgb(3, 8, 44);
+
     }
     
     .form-img-2 {
-        width: 60%;
         height: 60%;
         position: absolute;
         top: 50%;
@@ -57,22 +62,33 @@
     }
     
     .form-success {
+        position: absolute;
         text-align: center;
+        font-size: 24px;
+        margin-top: 40px;
+        color: #fff;
+        left: 120px;
+    }
+    .form-success2 {
+        text-align:center;
+        align-items: baseline;
         font-size: 24px;
         margin-top: 80px;
         color: #fff;
     }
     
     .form-content-right {
+        position: relative;
+        height: 600px;
         border-radius: 0 10px 10px 0;
         box-shadow:0 0 100px orange;
         position: relative;
-        background: linear-gradient(90deg, #060b26 0%, #060b26 100%);
         font-size: 35px;
+        margin: 30px;
     }
     
-    .form {
-        position: absolute;
+    /* .form {
+        position: relative;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -83,7 +99,11 @@
         justify-content: center;
         align-items: center;
     }
-    
+     */
+
+
+            
+        
     .form h1 {
         font-size: 1rem;
         text-align: start;
@@ -107,7 +127,8 @@
         display: inline-block;
         font-size: 0.8rem;
         margin-bottom: 6px;
-        color: #fff;
+        color:black;
+        margin: 10px;
     }
     
     .form-input {
@@ -116,10 +137,13 @@
         outline: none;
         border-radius: 2px;
         height: 40px;
-        width: 100%;
+        background-color: rgb(212, 212, 212);
         border: none;
+        color: black;
+        width:450px;
     }
-    
+
+
     .form-input::placeholder {
         color: #595959;
         font-size: 12px;

@@ -6,6 +6,7 @@ import SeatPopup from "./SeatPopup";
 import * as layout from "./layout";
 import {seatPicker} from '../../actions/SeatAction';
 
+
 const useFetch = url => {
   const [data, setData] = useState(null);
   useEffect(() => {
@@ -122,9 +123,7 @@ const Mainstage = props => {
     <div
       style={{
         position: "relative",
-        backgroundColor: "#354152",
-        border: "1px solid yellow",
-        width: "40vw",
+        width: "60vw",
         height: "40vh"
       }}
       ref={containerRef}
@@ -133,7 +132,7 @@ const Mainstage = props => {
         ref={stageRef}
         width={size.width}
         height={size.height}
-        draggable
+        
         dragBoundFunc={pos => {
           pos.x = Math.min(
             size.width / 2,
@@ -142,8 +141,8 @@ const Mainstage = props => {
           pos.y = Math.min(size.height / 2, Math.max(pos.y, -size.height / 2));
           return pos;
         }}
-        onDblTap={toggleScale}
-        onDblClick={toggleScale}
+        // onDblTap={toggleScale}
+        // onDblClick={toggleScale}
         scaleX={scale}
         scaleY={scale}
       >

@@ -7,13 +7,13 @@ const useFormHook = (callback,validate) =>{
         email:'',
         password:'',
         password2:'',
-    })
+    });
 
-    const [errors, setErrors] = useState({})
-    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [errors, setErrors] = useState({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleChange = e =>{
-        const {name, value} = e.target
+        const {name, value} = e.target;
         setValues({
             ...values,
             [name]:value 
@@ -28,11 +28,11 @@ const useFormHook = (callback,validate) =>{
 
     useEffect(() => {
         if(Object.keys(errors).length === 0 && isSubmitted){
-            callback()
+            callback();
         }
     },[errors]
     )
 
     return {handleChange, values, handleSubmit, errors}
-}
+};
 export default useFormHook;

@@ -3,7 +3,7 @@ import useFormHook from '../../useFormHook'
 import validate from '../../validateInfo'
 import '../../assets/Form.css'
 
-const SignupForm = (submitForm) => {
+const SignupForm = ({submitForm}) => {
     const {handleChange, values, handleSubmit, errors} = useFormHook(
         submitForm, 
         validate
@@ -16,7 +16,6 @@ const SignupForm = (submitForm) => {
                     <label htmlFor="username"
                     className="form-label">
                         Username
-                        </label>
                         <input 
                         id="username"
                         type="text" 
@@ -26,6 +25,7 @@ const SignupForm = (submitForm) => {
                         value={values.username}
                         onChange={handleChange}
                         />
+                        </label>
                     {errors.username && <p>{errors.username}</p>}
                 </div>
                 <div className="form-inputs">
@@ -69,7 +69,7 @@ const SignupForm = (submitForm) => {
                         type="password" 
                         name="password2" 
                         className="form-input"
-                        placeholder="Enter your password2"
+                        placeholder="Confirm your password"
                         value={values.password2}
                         onChange={handleChange}
                         />

@@ -5,6 +5,8 @@ import Section from "./Section";
 import SeatPopup from "./SeatPopup";
 import * as layout from "./layout";
 import {seatPicker} from '../../actions/SeatAction';
+import {updatePrice} from '../../actions/priceAction';
+
 
 
 const useFetch = url => {
@@ -13,11 +15,15 @@ const useFetch = url => {
     console.log(url)
     fetch(url)
       .then(res => res.json())
-      .then(data => setData(data));
+
+      .then(data => {console.log(data)
+        setData(data)});
+
   }, [url]);
   return data;
 };
 //refer to async await
+//check console for price.. and 
 
 
 const Mainstage = props => {
@@ -37,11 +43,15 @@ const Mainstage = props => {
 
   const [selectedSeatsIds, setSelectedSeatsIds] = useState([]);
 
-  const [popup, setPopup] = useState({ seat: null });
+  const [popup, setPopup] = useState({});
 
   const dispatch = useDispatch();
 
   const seatStuff = useSelector(state => state.selectedSeats.seatIds);
+
+  const [totalPrice, setTotalPrice] = useState(0);
+
+
 
 
 
@@ -82,27 +92,30 @@ const Mainstage = props => {
 
   let lastSectionPosition = 0;
 
-  const handleHover = useCallback((seat, pos) => {
+  const handleHover = useCallback((seat, price, pos) => {
     setPopup({
       seat: seat,
+      price: price,
       position: pos
+      
     });
   }, []);
 
   const handleSelect = useCallback(
-      seatId =>{
+      (seatId, price) =>{
       const newIds = selectedSeatsIds.concat([seatId]);
       setSelectedSeatsIds(newIds);
-      console.log(newIds);
+      dispatch(updatePrice(price));
+      console.log(price);
       dispatch(seatPicker(newIds))
     },
     [selectedSeatsIds],
-
-    console.log(seatStuff)
+//set action and pass in price
+    
   );
 
   const handleDeselect = useCallback(
-    seatId => {
+    (seatId, price) => {
       const ids = selectedSeatsIds.slice();
       ids.splice(ids.indexOf(seatId), 1);
       setSelectedSeatsIds(ids);
@@ -163,7 +176,7 @@ const Mainstage = props => {
                 key={index}
                 section={section}
                 selectedSeatsIds={selectedSeatsIds}
-                // onHoverSeat={handleHover}
+                onHoverSeat={handleHover}
                 onSelectSeat={handleSelect}
                 onDeselectSeat={handleDeselect}
               />
@@ -176,8 +189,9 @@ const Mainstage = props => {
         <SeatPopup
           position={popup.position}
           seatId={popup.seat}
+          seatPrice={popup.price}
           onClose={() => {
-            setPopup({ seat: null });
+            setPopup({ seat: null, price: null });
           }}
         />
       )}

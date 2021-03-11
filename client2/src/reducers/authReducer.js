@@ -7,6 +7,7 @@ const initialState = {
     email: "",
     profilePic: "",
     about: "",
+    total: 0
 }
 
 const reducerTemplate = (state = initialState, action) => {
@@ -66,6 +67,11 @@ const reducerTemplate = (state = initialState, action) => {
                 ...state,
                 about: action.data
             }
+
+        case "UPDATE_TOTAL": return{
+            ...state,
+            total: state.total + action.data
+        }
         default:
             return state;
     } 

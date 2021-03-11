@@ -7,6 +7,7 @@ import './App.css';
 // import Support from './pages/Support';
 // import Events from './pages/Events';
 // import Footer from './components/Footer';
+import Home from './pages/Home';
 
 
 

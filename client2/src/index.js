@@ -3,11 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import UserProfile from './components/auth/UserProfile';
-import Forum from './components/Forum';
-
 import Header from './components/layout/Header';
-import UserProfile from './components/auth/UserProfile';
-import Forum from './components/auth/Forum';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';

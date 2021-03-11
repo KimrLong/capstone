@@ -1,11 +1,13 @@
 import { MAKE_PAYMENT } from '../actions/PaymentType';
 
+
 const initialState = {
 	cardNo: '',
 	name: '',
 	date: '',
 	code: '',
-	amount: ''
+	amount: 0,
+	total: 0
 }
 
 const PaymentReducer = (state = initialState, action) => {
@@ -16,9 +18,14 @@ const PaymentReducer = (state = initialState, action) => {
 			name: action.payload.name,
 			date: action.payload.date,
 			code: action.payload.code,
-			amount: action.payload.amount
+			amount: action.payload.amount,
+
 			
 		}
+		case "UPDATE_TOTAL": return{
+            ...state,
+            total: state.total + action.data
+        }
 		
 		default: return state
 	}

@@ -24,7 +24,7 @@ const Seat = props => {
       strokeWidth={1}
       onMouseEnter={e => {
         e.target._clearCache();
-        props.onHover(props.data.name, e.target.getAbsolutePosition());
+        props.onHover(props.data.name, props.data.price, e.target.getAbsolutePosition());
         const container = e.target.getStage().container();
         if (isBooked) {
           container.style.cursor = "not-allowed";
@@ -44,7 +44,7 @@ const Seat = props => {
         if (props.isSelected) {
           props.onDeselect(props.data.name);
         } else {
-          props.onSelect(props.data.name);
+          props.onSelect(props.data.name, props.data.price);
         }
       }}
       onTap={e => {

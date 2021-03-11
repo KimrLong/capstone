@@ -12,7 +12,7 @@ const initialValues = {
 			name: '',
 			date: '',
 			code: '',
-			amount: ''
+			amount: 0
 		};
 		
 const onSubmit = values => {
@@ -147,7 +147,7 @@ function Payment(props) {
 						name='amount'
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
-						value={formik.values.amount}
+						value={props.total}
 					/>
 					{formik.touched.amount && formik.errors.amount ? <div id='error'>{formik.errors.amount}</div> : null}
 				</div>
@@ -170,7 +170,8 @@ const mapStateToProps = state => {
 		name: state.name,
 		date: state.date,
 		code: state.code,
-		amount: state.amount
+		amount: state.amount,
+		total: state.total
 	}
 }
 

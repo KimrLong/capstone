@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {useDispatch} from 'react-redux';
-import {useSelector} from 'react-redux';    
+import {useDispatch, useSelector} from 'react-redux';
 import {setProfilePic, setProfileInfo} from '../../actions/index';
 
 const UserProfile = () => {
@@ -10,7 +9,24 @@ const UserProfile = () => {
     const email = useSelector(state => state.auth.email);
     const pic = useSelector(state => state.auth.profilePic);
     const aboutStuff = useSelector(state => state.auth.about);
+    const viewPosts = useSelector(state => state.auth.allPosts);
+    const postArray = Object.values(viewPosts);
     const dispatch = useDispatch();
+
+    // dispatch(setProfilePic({email, pic}));
+    // dispatch(setProfileInfo({email, aboutStuff}));
+
+
+    // useEffect(() => {
+    //     const fetchPicAbout = async() => {
+    //         const url = `http://localhost:3001/userprofile`
+    //         const response = await fetch(url)
+    //         const data = await response.json()
+    //         console.log(data);
+    //         // dispatch(setProfilePic(data));
+    //     }
+    //     fetchPicAbout();
+    // }, [])
 
     const handleSubmit1 = (e) => {
         e.preventDefault();
@@ -24,31 +40,69 @@ const UserProfile = () => {
         dispatch(setProfileInfo({email, about}));
     }
 
+    // useEffect(() => {
+    //     const updatePosts = async() => {
+    //         const url = `http://localhost:3001/forum`
+    //         const response = await fetch(url)
+    //         const data = await response.json()
+    //         dispatch(groupPosts(data));
+    //     }
+    //     updatePosts();
+    // }, [viewPosts])
+
     return (
         <>
-        
-        <img src={pic} alt="" width="300px" height="300px" /> <br/>
-        <br/>
-        <br/>
+        <div className="userprofile">
+            <img src={pic} alt="" width="300px" height="300px" /> 
+            
+            <br/>
+            <br/>
+            <br/>
 
-        <form onSubmit={handleSubmit1} className="form">
-            <input type="profilePic" onChange={(e)=>setPictureUrl(e.target.value)} value={pictureUrl} placeholder="Enter your picture here..."/>
-            <button type="submit">Submit</button>
+            <form onSubmit={handleSubmit1} 
+            // className="form"
+            >
+                <input type="profilePic" onChange={(e)=>setPictureUrl(e.target.value)} value={pictureUrl} placeholder="Enter your picture here..."/>
+                <br/>
+                <button type="submit">Submit</button>
+
+                <br/>
+
+                <div>
+                    {pic}
+                </div>
+            </form>
+
+            <br/>
+
+            <form onSubmit={handleSubmit2} 
+            // className="form"
+            >
+                <input type="aboutInfo" onChange={(e)=>setAbout(e.target.value)} value={about} placeholder="Tell us about you..."/>
+                <br/>
+                <button type="submit">Submit</button>
+
+                <br/>
+                <div>
+                    
+                    {aboutStuff}
+                </div>
+            </form>
+
+            <br/> 
 
             <div>
-                {pic}
+            {/* {postArray.findAll(( { where: {email : email}}) => {
+                return (
+                    <ul>      
+                        <li>
+                            {email}: {viewPosts}
+                        </li>          
+                    </ul>
+                )
+            })} */}
             </div>
-        </form>
-
-        <form onSubmit={handleSubmit2} className="form">
-            <input type="aboutInfo" onChange={(e)=>setAbout(e.target.value)} value={about} placeholder="Tell us about you..."/>
-            <button type="submit">Submit</button>
-
-            <div>
-                {aboutStuff}
-            </div>
-        </form>
-
+        </div>
         </>
     )
 }

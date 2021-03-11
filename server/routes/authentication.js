@@ -41,7 +41,6 @@ router.post("/signin", requireSignin, (req, res) => {
  * registering a new user in our database and send back a jwt
  */
 router.post("/signup", async (req, res) => {
-
   console.log('signup');
   //body-parse to scrape info
   //email, password
@@ -66,7 +65,8 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-router.post("/userprofile", async (req, res) => {
+router.post("/userprofile/updatepic", async (req, res) => {
+  console.log('userprofileupdatepic');
   // console.log(req.body);
 
   //models- store in database
@@ -79,14 +79,50 @@ router.post("/userprofile", async (req, res) => {
     return res.json(record);
   } catch (error) {
       //send back error, can't access database
-      return res.status(423).send({error: `Can't access database`});
+      return res.status(423).send({error: `Can't access database1`});
+  }
+})
+
+router.post("/userprofile", async (req, res) => {
+  console.log('userprofile');
+  // console.log("reqbody", req.body.email);
+
+  //models- store in database
+  try {
+    let record = await db.user.findAll( {
+      where: { 
+        email: req.body.email,
+      }
+    })
+    // console.log(record);
+    return res.json(record);
+  } catch (error) {
+      //send back error, can't access database
+      return res.status(423).send({error: `Can't access database1`});
+  }
+})
+
+router.get("/userprofile/updatepic", async (req, res) => {
+  console.log('userprofileGET');
+  // console.log(req.body.email);
+
+  try {
+    let records = await db.user.findAll(
+      {
+      where: { 
+        email: req.body.email,
+      } 
+    });
+    return res.json(records);
+
+  } catch (error) {
+    return res.status(423).send({error: `Can't access database2`});
   }
 })
 
 router.post("/forum", async (req, res) => {
   console.log('forum');
 
-  // let email = @@@
   let post = req.body.post;
   let email = req.body.email;
 
@@ -110,7 +146,5 @@ router.get("/forum", async (req, res) => {
     return res.status(423).send({error: `Can't access database`});
   }
 })
-
-
 
 module.exports = router;

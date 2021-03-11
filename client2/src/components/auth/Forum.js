@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from "react";
-import {useDispatch} from 'react-redux';
-import {createPost} from '../actions/index';
-import {useSelector} from 'react-redux';    
-import {groupPosts} from '../actions/index';
+import {useDispatch, useSelector} from 'react-redux';
+import {createPost} from '../../actions/index';
+import {groupPosts} from '../../actions/index';
 
 const Forum = () => {
 
@@ -11,15 +10,34 @@ const Forum = () => {
     const email = useSelector(state => state.auth.email);
     const viewPosts = useSelector(state => state.auth.allPosts);
     const postArray = Object.values(viewPosts);
+    const [submit, setSubmit] = useState(false);
+
+    // const updatePosts = async() => {
+    //     const url = `http://localhost:3001/forum`
+    //     const response = await fetch(url)
+    //     const data = await response.json()
+    //     dispatch(groupPosts(data));
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    
         dispatch(createPost({
             email: email,
             post: post,
         }))
+        setSubmit(!submit);
+        // updatePosts();
     }
+
+    useEffect(() => {
+        const updatePosts = async() => {
+            const url = `http://localhost:3001/forum`
+            const response = await fetch(url)
+            const data = await response.json()
+            dispatch(groupPosts(data));
+        }
+        updatePosts();
+    }, [submit])
 
     useEffect(() => {
         const fetchPosts = async() => {
@@ -32,15 +50,6 @@ const Forum = () => {
         fetchPosts();
     }, [])
 
-    useEffect(() => {
-        const updatePosts = async() => {
-            const url = `http://localhost:3001/forum`
-            const response = await fetch(url)
-            const data = await response.json()
-            dispatch(groupPosts(data));
-        }
-        updatePosts();
-    }, [viewPosts])
 
     return (
         <>

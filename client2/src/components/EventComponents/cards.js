@@ -82,15 +82,15 @@ function Media(props) {
   );
 }
 
-Media.propTypes = {
-  loading: PropTypes.bool,
-};
+// Media.propTypes = {
+//   loading: PropTypes.bool,
+// };
 
-export default function Facebook() {
-  return (
-    <div>
-      <Media loading />
-      <Media />
-    </div>
-  );
-}
+// export default function Facebook() {
+//   return (
+//     <div>
+//       <Media loading />
+//       <Media />
+//     </div>
+//   );
+// }

@@ -5,7 +5,7 @@
     font-family: 'Playfair Display', serif;
 }
 
-.home, .account, .events, .chat, .support, .cart, .signup{
+.home, .account, .events, .chat, .support, .cart, .signup, .signout, .userprofile, .forum{
     display:flex;
     height:90vh;
     align-items:center;

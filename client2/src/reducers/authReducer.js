@@ -8,11 +8,25 @@ const initialState = {
     profilePic: "",
     about: "",
 }
-console.log(initialState);
 
 const reducerTemplate = (state = initialState, action) => {
-
+    // console.log(action.data);
     switch(action.type){
+        case "CLEAR_USER":
+            return {
+                authenticated: "",
+                forumPost: "",
+                allPosts: [],
+                email: "",
+                profilePic: "",
+                about: "",
+            }
+        case "GET_PROFILE":
+            return {
+                ...state,
+                about: action.data.about,
+                profilePic: action.data.profile_pic,
+            }
         case "AUTH_USER":
             return {
                 ...state,
@@ -21,8 +35,8 @@ const reducerTemplate = (state = initialState, action) => {
         case "ADD_POST":
             return {
                 ...state,
-                forumPost: action.data
-                // email: action.data.email,
+                forumPost: action.data.post,
+                email: action.data.email,
             }
         case 'DELETE_POST':
             let filteredPosts = state.auth.allPosts.filter(p => {
@@ -35,7 +49,7 @@ const reducerTemplate = (state = initialState, action) => {
         case "GROUP_POSTS":
             return {
                 ...state,
-                allPosts: action.data
+                allPosts: action.data,
             }
         case "ADD_EMAIL":
             return {

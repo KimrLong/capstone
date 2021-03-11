@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+
 import UserProfile from './components/auth/UserProfile';
 import Forum from './components/Forum';
+
+import Header from './components/layout/Header';
+import UserProfile from './components/auth/UserProfile';
+import Forum from './components/auth/Forum';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -19,6 +25,12 @@ import Chat from './pages/Chat'
 import Cart from './pages/Cart'
 import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
+
+
+import Signin from './components/auth/Signin';
+import Signout from './components/auth/Signout';
+
+
 import {
   BrowserRouter as Router,
   Route, Switch
@@ -63,14 +75,20 @@ ReactDOM.render(
       <Provider store={store}>
       <Router>
         <Navbar/>
+        <Header/>
             <Switch>
               <Route exact path='/' component={App}/>
               <Route path="/account" component={Account}/>
-              <Route path='/event' component={Event}/>
+              <Route path='/events' component={Event}/>
+
               <Route path='/Chat' component={Chat}/>
               <Route path='/cart' component={Cart}/>
               <Route path='/holder' component={Holder}/>
               <Route path='/Support' component={Support}/>
+
+              <Route path='/signin' component={Signin}/>
+              <Route path='/signout' component={Signout}/>
+
               <Route path='/form' component={SignupForm}/>
               <Route path='/forum' component={requireAuth(Forum)}/>
               <Route path='/userprofile' component={requireAuth(UserProfile)}/>
@@ -78,7 +96,7 @@ ReactDOM.render(
             </Switch>
         </Router>
         </Provider>
-        <Footer/>
+        {/* <Footer/> */}
   </React.StrictMode>
   </>,
   document.getElementById('root')

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Link } from 'react-router-dom';
 import {useDispatch} from 'react-redux';
-import {signin, setEmailState} from '../../actions/index';
+import {signin, setEmailState, getProfile} from '../../actions/index';
 import {useHistory} from 'react-router-dom'
 
 const Signin = () => {
@@ -12,20 +12,32 @@ const Signin = () => {
   const history = useHistory();
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    dispatch(setEmailState(email));
+    await dispatch(setEmailState(email));
+    dispatch(getProfile({email: email}))
 
     dispatch(signin({
       email: email,
       password: password
     }, ()=>{
       console.log('pushing to another page');
-      history.push('/forum');
+      history.push('/userprofile');
     }))
 
   }
+  
+//   useEffect(() => {
+//     const fetchPosts = async() => {
+//         const url = `http://localhost:3001/forum`
+//         const response = await fetch(url)
+//         const data = await response.json()
+//         // console.log(data);
+//         dispatch(groupPosts(data));
+//     }
+//     fetchPosts();
+// }, [])
 
   return( 
   <div className="mt-5">

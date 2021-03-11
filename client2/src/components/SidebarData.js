@@ -27,7 +27,7 @@ export const SidebarData = [
     },
     {
         title:"  Events",
-        path:"/events",
+        path:"/event",
         icon:<RiIcons.RiTicket2Fill/>,
         class: 'nav-text'
     },
@@ -46,6 +46,12 @@ export const SidebarData = [
     {
         title:"  Contact Support",
         path:"/support",
+        icon:<IoIcons.IoMdHelpCircle />,
+        class: 'nav-text'
+    },
+    {
+        title:"  Holder",
+        path:"/holder",
         icon:<IoIcons.IoMdHelpCircle />,
         class: 'nav-text'
     }

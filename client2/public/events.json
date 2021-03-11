@@ -1,0 +1,64 @@
+{
+    "event":[{
+        "name":"Soleil Dance Theatre",
+        "category": "Dance",
+        "Date":"03/15/2021",
+        "picture":"isssues_aj.jpg"
+    },{
+        "name":"Curtain Call Ballet",
+        "category":"Dance",
+        "Date":"03/17/2021",
+        "picture":"issues_skyler.jpg"
+    },{
+        "name":"Ballet International",
+        "category":"Dance",
+        "Date":"03/20/2021",
+        "picture": "issues_josh.jpeg"
+    },{
+        "name":"The Engineers",
+        "category":"Music",
+        "Date":"03/14/2021",
+        "picture": "issues_josh.jpeg"
+    },{
+        "name":"The Pythons",
+        "category":"Music",
+        "Date":"03/16/2021",
+        "picture": "dataImages/adedotun-adegborioye-ovZOUI3nGZg-unsplash.jpg"
+    },{
+        "name":"Java Jive Five",
+        "category":"Music",
+        "Date":"03/19/2021",
+        "picture": "issues_josh.jpeg"
+    },{
+        "name":"Just Pete",
+        "category":"Comedy",
+        "Date":"03/22/2021",
+        "picture": "issues_josh.jpeg"
+    },{
+        "name":"Touring Comedians",
+        "category":"Comedy",
+        "Date":"03/17/2021",
+        "picture": "issues_josh.jpeg"
+    },{
+        "name":"Open Mic Night",
+        "category":"Comedy",
+        "Date":"03/15/2021",
+        "picture": "issues_josh.jpeg"
+    },{
+        "name":"Becoming a Sofware Engineer",
+        "category":"Lecture",
+        "Date":"03/20/2021",
+        "picture": "issues_josh.jpeg"
+    },{
+        "name":"Ted Talk",
+        "category":"Lecture",
+        "Date":"03/22/2021",
+        "picture": "issues_josh.jpeg"
+    },{
+        "name":"Future of Coding",
+        "category":"Lecture",
+        "Date":"03/23/2021",
+        "picture": "issues_josh.jpeg"
+    }
+]
+    }

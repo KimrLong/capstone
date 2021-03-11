@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './Payment.css';
 import { Link } from 'react-router-dom';
@@ -6,6 +5,7 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import { connect } from 'react-redux';
 import { makePayment } from '../../actions/PaymentAction';
+import {Row, Col} from 'react-bootstrap';
 
 const initialValues = {
 			cardNo: '',
@@ -16,7 +16,6 @@ const initialValues = {
 		};
 		
 const onSubmit = values => {
-			
 			axios.post('https://jsonplaceholder.typicode.com/posts', values )
 			.then(response => {
 				alert("Payment Successful")
@@ -81,10 +80,6 @@ function Payment(props) {
 	
   return (
     <div className='Payment'>
-		<Link to='/'>
-			<button className='Payment__btn--one'>Back to Home</button>
-		</Link>
-
 		<div className='Payment__form'>
 			<form onSubmit={formik.handleSubmit}>
 				<div className='Payment__form--input'>
@@ -94,25 +89,27 @@ function Payment(props) {
 						id='cardNo'
 						name='cardNo'
 						maxLength='16'
+						placeholder="16 digit card number"
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
 						value={formik.values.cardNo}
 					/>
 					{formik.touched.cardNo && formik.errors.cardNo ? <div id='error'>{formik.errors.cardNo}</div> : null}
 				</div>
-				<div className='Payment__form--input'>
+				<div className='Payment__form--input '>
 					<label htmlFor='name'>Card holder name</label>
 					<input 
 						type='text'
 						id='name'
 						name='name'
+						placeholder="Name"
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
 						value={formik.values.name}
 					/>
 					{formik.touched.name && formik.errors.name ? <div id='error'>{formik.errors.name}</div> : null}
 				</div>
-				<div className='Payment__form--input'>
+				<div className='Payment__form--input '>
 					<label htmlFor='date'>Expiration date</label>
 					<input
 						type='date'
@@ -157,6 +154,10 @@ function Payment(props) {
 					type='submit'
 					onClick={() => props.makePayment(formik.values.cardNo,formik.values.name,formik.values.date,formik.values.code,formik.values.amount)}
 				>Submit</button>
+						<Link to='/'>
+			<button className='Payment__btn--one'>Back to Home</button>
+		</Link>
+
 			</form>
 		</div>
     </div>

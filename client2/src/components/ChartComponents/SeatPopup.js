@@ -41,7 +41,6 @@ const Popup = ({ position, seatId, onClose }) => {
       }}
     >
       <div>Seat {seatId}</div>
-      <div>Click on the seat to select</div>
     </div>
   );
 };

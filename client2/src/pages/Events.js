@@ -7,32 +7,27 @@ import {Container} from '../components/Styles';
 import {Row, Col} from 'react-bootstrap';
 // import {Paper} from '../Styles';
 import Payment from '../components/PaymentComponents/Payment';
+import '../assets/Events.css'
 
 function Events() {
-  return (
-    <Container>
-      <Row>
-        <Col>This is a space holder!!!
-        </Col>
-        <Col>
+  return (<>
 
+    <Container className="events">
+      <Row className="events-container">
+        <Col>
+        <Payment></Payment>
         </Col>
-        <Col>  
-          <Payment></Payment>
-        </Col>
-      </Row><br/>
-      <Row>
-        <Col></Col>
-        <Col></Col>
         <Col>
         <Mainstage
-            onSelectSeat={seatId => {
-              console.log("selected - " + seatId);
-            }}
+            // onSelectSeat={seatId => {
+            //   console.log("selected - " + seatId);
+            // }}
           />
+          <div> </div>
           </Col>
       </Row>
     </Container>
+    </>
   );
 }
 

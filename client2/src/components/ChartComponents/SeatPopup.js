@@ -41,7 +41,9 @@ const Popup = ({position, seatId, seatPrice, onClose }) => {
       }}
     >
       <div>Seat {seatId}</div>
+
       <div>Price: {seatPrice}</div>
+
     </div>
   );
 };

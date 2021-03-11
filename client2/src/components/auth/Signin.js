@@ -43,7 +43,6 @@ const Signin = () => {
   <div className="mt-5">
     <div className="grid align__item">
       <div className="register">
-        <img height="100px" src="https://avatars.githubusercontent.com/u/67744643?s=200&v=4" alt=""/>
         <h2>Sign In</h2>
         <form onSubmit={handleSubmit}  className="form">
             <div className="form__field">

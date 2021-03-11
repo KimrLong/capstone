@@ -53,7 +53,9 @@ const Forum = () => {
 
     return (
         <>
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleSubmit} 
+        // className="form"
+        >
             <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
             <button type="submit">Submit</button>
         </form>

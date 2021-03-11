@@ -1,0 +1,71 @@
+.firstRow{
+    height:400px;
+    background-image: url(../assets/lightpattern.jpg);
+    background-color: rgb(17, 36, 119);
+    opacity: 0.8;
+}
+.col2-text{
+    display: flex;
+    color:rgb(17, 36, 119);
+    text-align:center;
+    align-items: center;
+    font-size: 35px;
+    
+}
+.smallText{
+    display: flex;
+    color:rgb(17, 36, 119);
+    text-align:center;
+    align-items:baseline;
+    font-size: 20px;
+    
+}
+.secondRow{
+    height:700px;
+    background-color:white;
+}
+.middleText{
+    display: flex;
+    color:rgb(17, 36, 119);
+    text-align:center;
+    align-items:baseline;
+    font-size: 45px;
+    margin-top: 40px;
+}
+.btn{
+    background: rgb(250, 195, 94) !important;
+    margin-top: 200px;
+    margin-left: 120px;
+}
+.btn2{
+    display: flex;
+    background: rgb(250, 195, 94) !important;
+    justify-content:flex-start;
+    align-items: baseline;
+    text-align: center;
+    vertical-align: top;
+
+}
+.changePosition{
+    display: flex;
+    vertical-align: top;
+}
+
+
+.thirdRow{
+    height:600px;
+    background-image: url(../assets/shapes.jpg);;
+}
+
+.lastText{
+    display: flex;
+    color:rgb(17, 36, 119);
+    text-align:center;
+    align-items:baseline;
+    font-size: 35px;
+    margin-top: 40px;
+}
+.fourthRow{
+    height:200px;
+    background: white;
+}

@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
 import UserProfile from './components/auth/UserProfile';
+
 import Header from './components/layout/Header';
+
+
+import Forum from './components/Forum';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';
@@ -16,13 +19,11 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/Footer';
 import Account from './pages/Account'
 import Holder from './pages/Holder';
-import Event from './pages/Events'
+import Events from './pages/Events'
 import Chat from './pages/Chat'
 import Cart from './pages/Cart'
 import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
-
-
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
 
@@ -75,18 +76,13 @@ ReactDOM.render(
             <Switch>
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
-              <Route path='/events' component={Event}/>
-
-
+              <Route path='/events' component={Events}/>
               <Route path='/Chat' component={Chat}/>
               <Route path='/cart' component={Cart}/>
               <Route path='/holder' component={Holder}/>
-
               <Route path='/Support' component={Support}/>
-
               <Route path='/signin' component={Signin}/>
               <Route path='/signout' component={Signout}/>
-
               <Route path='/form' component={SignupForm}/>
 
             </Switch>

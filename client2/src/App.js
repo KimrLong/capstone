@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
 
+
 // import Navbar from './components/layout/Navbar'
 // import Account from './pages/Account';
 // import Chat from './pages/Chat';
@@ -8,6 +9,9 @@ import './App.css';
 // import Events from './pages/Events';
 // import Footer from './components/Footer';
 import Home from './pages/Home';
+
+
+
 
 
 

@@ -20,6 +20,7 @@ const Navbar =()=> {
     const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
 
     return (
+
     <Nav variant="pills" className="navStyle" activeKey="1"  onSelect={handleSelect}>
         <Nav.Item className="ml">
             <Nav.Link className="iconStyle"><Link className="iconStyle" to="/"> <GiIcons.GiDirectorChair className="iconStyle" style={{marginRight:"15px"}}></GiIcons.GiDirectorChair>Biggest Small Venue</Link ></Nav.Link>
@@ -47,6 +48,39 @@ const Navbar =()=> {
         </Nav.Item>
     </Nav>
     );
+        <>
+        <IconContext.Provider value={{color:'#fff'}}>
+            <div className="navbar">
+                <Link to="#" className='menu-bars'> 
+                    <FaIcons.FaBars onClick={showSidebar}/>
+                </Link>
+                <div className="navText">
+                    <Link className="nav-text-right" style={{color:"#fff",paddingRight:"4px"}} to="/signin">Sign in     </Link> or   
+                    <Link style={{color:"#fff",paddingLeft:"4px"}} to="/form">    Sign up today</Link>
+                </div>
+            </div>
+            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+                <ul className='nav-menu-items' onClick={showSidebar}> 
+                    <li className="navbar-toggle">
+                        <Link to="#" className='menu-bars'>
+                            <AiIcons.AiOutlineClose />
+                        </Link>
+                    </li>
+                    {SidebarData.map((item, index) =>{
+                        return (
+                            <li key={index} className={item.class}>
+                            <Link to={item.path}>
+                                {item.icon}
+                                <span>{item.title}</span>
+                            </Link>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </nav>
+            </IconContext.Provider>
+        </>   
+    )
 }
 
 

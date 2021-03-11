@@ -1,7 +1,7 @@
 import React from "react";
 import {useDispatch} from 'react-redux';
-import {signout} from '../../actions/index';
 import {useHistory} from 'react-router-dom'
+import {signout} from '../../actions/index';
 
 const Signout = () => {
 
@@ -11,7 +11,6 @@ const Signout = () => {
   const logOut = () => {
     
       dispatch(signout(()=>{
-        console.log('pushing to another page');
         history.push('/');
       }));
   }

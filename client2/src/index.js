@@ -13,11 +13,16 @@ import requireAuth from './requireAuth';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/Footer';
 import Account from './pages/Account'
-import Event from './pages/Events'
+import Holder from './pages/Holder';
+import Events from './pages/Events'
 import Chat from './pages/Chat'
 import Cart from './pages/Cart'
 import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
+import Signin from './components/auth/Signin';
+import Signout from './components/auth/Signout';
+
+
 import {
   BrowserRouter as Router,
   Route, Switch
@@ -62,21 +67,23 @@ ReactDOM.render(
       <Provider store={store}>
       <Router>
         <Navbar/>
+        {/* <Header/> */}
             <Switch>
               <Route exact path='/' component={App}/>
-              <Route path="/account" component={Account}/>
-              <Route path='/events' component={Event}/>
+              <Route path="/account" component={requireAuth(Account)}/>
+              <Route path='/events' component={Events}/>
               <Route path='/Chat' component={Chat}/>
               <Route path='/cart' component={Cart}/>
+              <Route path='/holder' component={Holder}/>
               <Route path='/Support' component={Support}/>
+              <Route path='/signin' component={Signin}/>
+              <Route path='/signout' component={Signout}/>
               <Route path='/form' component={SignupForm}/>
-              <Route path='/forum' component={requireAuth(Forum)}/>
-              <Route path='/userprofile' component={requireAuth(UserProfile)}/>
 
             </Switch>
         </Router>
         </Provider>
-        <Footer/>
+        {/* <Footer/> */}
   </React.StrictMode>
   </>,
   document.getElementById('root')

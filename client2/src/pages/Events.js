@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Mainstage from "../components/ChartComponents/Mainstage";
 import {Link} from 'react-router-dom';
-import "../components/ChartComponents/styles.css";
 import {Container} from '../components/Styles';
 import {Row, Col} from 'react-bootstrap';
 // import {Paper} from '../Styles';

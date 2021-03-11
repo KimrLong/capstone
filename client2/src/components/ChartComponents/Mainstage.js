@@ -1,8 +1,10 @@
 import { useRef, useState, useCallback, useEffect} from "react";
+import {useDispatch, useSelector} from 'react-redux';
 import { Stage, Layer } from "./react-konva";
 import Section from "./Section";
 import SeatPopup from "./SeatPopup";
 import * as layout from "./layout";
+import {seatPicker} from '../../actions/SeatAction';
 
 
 const useFetch = url => {
@@ -15,6 +17,8 @@ const useFetch = url => {
   }, [url]);
   return data;
 };
+//refer to async await
+
 
 const Mainstage = props => {
   const jsonData = useFetch("./solo-data.json");
@@ -34,6 +38,13 @@ const Mainstage = props => {
   const [selectedSeatsIds, setSelectedSeatsIds] = useState([]);
 
   const [popup, setPopup] = useState({ seat: null });
+
+  const dispatch = useDispatch();
+
+  const seatStuff = useSelector(state => state.selectedSeats.seatIds);
+
+
+
 
   // calculate available space for drawing
   useEffect(() => {
@@ -79,11 +90,15 @@ const Mainstage = props => {
   }, []);
 
   const handleSelect = useCallback(
-    seatId => {
+      seatId =>{
       const newIds = selectedSeatsIds.concat([seatId]);
       setSelectedSeatsIds(newIds);
+      console.log(newIds);
+      dispatch(seatPicker(newIds))
     },
-    [selectedSeatsIds]
+    [selectedSeatsIds],
+
+    console.log(seatStuff)
   );
 
   const handleDeselect = useCallback(
@@ -91,6 +106,7 @@ const Mainstage = props => {
       const ids = selectedSeatsIds.slice();
       ids.splice(ids.indexOf(seatId), 1);
       setSelectedSeatsIds(ids);
+      dispatch(seatPicker(ids))
     },
     [selectedSeatsIds]
   );
@@ -147,7 +163,7 @@ const Mainstage = props => {
                 key={index}
                 section={section}
                 selectedSeatsIds={selectedSeatsIds}
-                onHoverSeat={handleHover}
+                // onHoverSeat={handleHover}
                 onSelectSeat={handleSelect}
                 onDeselectSeat={handleDeselect}
               />
@@ -170,3 +186,13 @@ const Mainstage = props => {
 };
 
 export default Mainstage;
+
+//useEffect(() => {
+//   const updatePosts = async() => {
+//     const url = `http://localhost:3001/forum`
+//     const response = await fetch(url)
+//     const data = await response.json()
+//     dispatch(groupPosts(data));
+// }
+// updatePosts();
+// }, [viewPosts])

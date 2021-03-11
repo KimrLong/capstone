@@ -5,9 +5,6 @@ import UserProfile from './components/auth/UserProfile';
 
 import Header from './components/layout/Header';
 
-
-import Forum from './components/Forum';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';

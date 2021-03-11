@@ -47,9 +47,9 @@ const Navbar =()=> {
             <Nav.Link style={{marginRight:"8px"}}><Link style={{color:"rgb(17, 36, 119)"}} to="/#">Log In</Link></Nav.Link>
         </Nav.Item>
     </Nav>
-    );
-        <>
-        <IconContext.Provider value={{color:'#fff'}}>
+    
+        
+        /* <IconContext.Provider value={{color:'#fff'}}>
             <div className="navbar">
                 <Link to="#" className='menu-bars'> 
                     <FaIcons.FaBars onClick={showSidebar}/>
@@ -79,9 +79,9 @@ const Navbar =()=> {
                 </ul>
             </nav>
             </IconContext.Provider>
-        </>   
-    )
-}
+        </>    */
+    
+
 
 
         // <>
@@ -122,5 +122,5 @@ const Navbar =()=> {
 //         // </>   
 //     )
 // }
-
+    )};
 export default Navbar

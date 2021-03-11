@@ -18,7 +18,7 @@ function Navbar (){
                     <FaIcons.FaBars onClick={showSidebar}/>
                 </Link>
                 <div className="navText">
-                    <Link className="nav-text-right" style={{color:"#fff",paddingRight:"4px"}} to="/form">Log in     </Link> or   
+                    <Link className="nav-text-right" style={{color:"#fff",paddingRight:"4px"}} to="/signin">Sign in     </Link> or   
                     <Link style={{color:"#fff",paddingLeft:"4px"}} to="/form">    Sign up today</Link>
                 </div>
             </div>

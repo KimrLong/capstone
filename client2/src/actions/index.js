@@ -56,7 +56,7 @@ export const groupPosts = (posts) => {
 }
 
 export const createPost = (formData) => {
-    console.log(formData);
+    // console.log(formData);
     return async dispatch=>{
         try{
             let response = await axios.post('http://localhost:3001/forum', formData) //formdata will put on header

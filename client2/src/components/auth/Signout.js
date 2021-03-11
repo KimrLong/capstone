@@ -2,7 +2,6 @@ import React from "react";
 import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom'
 import {signout} from '../../actions/index';
-import {clearLogin} from '../../actions/index'
 
 const Signout = () => {
 

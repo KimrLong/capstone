@@ -37,18 +37,18 @@ const Forum = () => {
             dispatch(groupPosts(data));
         }
         updatePosts();
-    }, [submit])
+    }, [])
 
     useEffect(() => {
         const fetchPosts = async() => {
             const url = `http://localhost:3001/forum`
             const response = await fetch(url)
             const data = await response.json()
-            console.log(data);
+            // console.log(data);
             dispatch(groupPosts(data));
         }
         fetchPosts();
-    }, [])
+    }, [submit])
 
 
     return (

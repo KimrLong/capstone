@@ -13,6 +13,7 @@ import requireAuth from './requireAuth';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/Footer';
 import Account from './pages/Account'
+import Holder from './pages/Holder';
 import Event from './pages/Events'
 import Chat from './pages/Chat'
 import Cart from './pages/Cart'
@@ -68,6 +69,7 @@ ReactDOM.render(
               <Route path='/event' component={Event}/>
               <Route path='/Chat' component={Chat}/>
               <Route path='/cart' component={Cart}/>
+              <Route path='/holder' component={Holder}/>
               <Route path='/Support' component={Support}/>
               <Route path='/form' component={SignupForm}/>
               <Route path='/forum' component={requireAuth(Forum)}/>

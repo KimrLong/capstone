@@ -137,3 +137,6 @@ export const signout = (cb) => {
         cb();
     }
 }
+
+//clears payment form
+

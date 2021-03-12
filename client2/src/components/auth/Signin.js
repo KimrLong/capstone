@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import { Link } from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {signin, setEmailState, getProfile} from '../../actions/index';
-import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom';
+import {Paper} from '../Styles';
 
 const Signin = () => {
 
@@ -29,6 +30,8 @@ const Signin = () => {
   }
 
   return( 
+
+    <Paper>
   <div className="mt-5">
     <div className="grid align__item">
       <div className="register">
@@ -56,7 +59,10 @@ const Signin = () => {
         <p>Don't have an account? <Link to="/form">Register Here</Link></p>
       </div>
     </div>
-  </div>);
+  </div>
+  </Paper>
+  );
+  
 };
 
 export default Signin;

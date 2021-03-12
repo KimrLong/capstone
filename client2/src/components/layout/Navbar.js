@@ -9,7 +9,7 @@ import  * as GiIcons from 'react-icons/gi'
 import {Link} from 'react-router-dom'
 import {SidebarData} from '../SidebarData'
 import '../../assets/Navbar.css'
-import {IconContext} from 'react-icons'
+import {IconContext} from 'react-icons';
 import {Nav, NavDropdown} from 'react-bootstrap';
 import InOrOut from '../InOrOut';
 
@@ -82,9 +82,12 @@ const Navbar =()=> {
     
 
 
-    )};        
+
+    // )};        
+
+//     )};        
     
-export default Navbar
+
 
         // <>
         // <Container>

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+
 import UserProfile from './components/auth/UserProfile';
 
 import Header from './components/layout/Header';

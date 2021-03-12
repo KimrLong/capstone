@@ -6,14 +6,14 @@ import {Container} from '../components/Styles';
 import {Row, Col} from 'react-bootstrap';
 // import {Paper} from '../Styles';
 import Payment from '../components/PaymentComponents/Payment';
-import Demo from '../components/EventComponents/cards';
+import Card from '../components/EventComponents/cards';
 
 function Holder() {
   return (
     <Container>
       <Row>
         <Col>
-          <Demo/>
+          <Card/>
         </Col>
         <Col>
 

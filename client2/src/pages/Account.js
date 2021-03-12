@@ -61,7 +61,7 @@ const UserProfile = () => {
             <br/>
 
             <form onSubmit={handleSubmit1} 
-            // className="form"
+            className="form"
             >
                 <input type="profilePic" onChange={(e)=>setPictureUrl(e.target.value)} value={pictureUrl} placeholder="Enter your picture here..."/>
                 <br/>

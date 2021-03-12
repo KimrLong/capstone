@@ -11,7 +11,7 @@ const isClickedInside = (e, element) => {
   return false;
 };
 
-const Popup = ({ position, seatId, onClose }) => {
+const Popup = ({position, seatId, seatPrice, onClose }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -41,6 +41,9 @@ const Popup = ({ position, seatId, onClose }) => {
       }}
     >
       <div>Seat {seatId}</div>
+
+      <div>Price: {seatPrice}</div>
+
     </div>
   );
 };

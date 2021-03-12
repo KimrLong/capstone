@@ -53,21 +53,28 @@ const Forum = () => {
 
     return (
         <>
-        <form onSubmit={handleSubmit} 
-        // className="form"
-        >
-            <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
-            <button type="submit">Submit</button>
-        </form>
-        {postArray.map((thePosts) => {
-            return (
-                <ul>      
-                    <li>
-                        {thePosts.email}: {thePosts.post}
-                    </li>          
-                </ul>
-            )
-        })}
+        <div className="row">
+            <div className="col" styles="ml">
+                <form onSubmit={handleSubmit} 
+                // className="form"
+                >
+                    <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div className="col" styles="ml">
+                {postArray.map((thePosts) => {
+                    return (
+                        <ul>      
+                            <li>
+                                {thePosts.email}: {thePosts.post}
+                            </li>          
+                        </ul>
+                    )
+                })}
+            </div>
+        </div>
+
         </>
     )
 }

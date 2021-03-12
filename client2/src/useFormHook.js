@@ -18,6 +18,7 @@ const useFormHook = (callback,validate) =>{
         password2:'',
     });
 
+
     const [errors, setErrors] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 

@@ -83,7 +83,8 @@ const Navbar =()=> {
 
 
     )};        
-
+    
+export default Navbar
 
         // <>
         // <Container>
@@ -123,5 +124,3 @@ const Navbar =()=> {
 //         // </>   
 //     )
 // }
-    )};
-export default Navbar

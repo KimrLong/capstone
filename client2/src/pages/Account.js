@@ -54,38 +54,34 @@ const UserProfile = () => {
     return (
         <>
         <div className="userprofile">
-            <img src={pic} alt="" width="300px" height="300px" /> 
-            {/* <img id="currentPhoto" src={pic} onerror="this.onerror=null; this.src='nopic.jpg'" alt="" width="100" height="120"></img> */}
-            <br/>
-            <br/>
-            <br/>
-
-            <form onSubmit={handleSubmit1} 
-            className="form"
-            >
-                <input type="profilePic" onChange={(e)=>setPictureUrl(e.target.value)} value={pictureUrl} placeholder="Enter your picture here..."/>
-                <br/>
-                <button type="submit">Submit</button>
-
-                <br/>
-
-            </form>
-
-            <br/>
-
-            <form onSubmit={handleSubmit2} 
-            // className="form"
-            >
-                <input type="aboutInfo" onChange={(e)=>setAbout(e.target.value)} value={about} placeholder="Tell us about you..."/>
-                <br/>
-                <button type="submit">Submit</button>
-
-                <br/>
-                <div>
-                    
-                    {aboutStuff}
+            <div className="row">
+                <div className="col">
+                    <form onSubmit={handleSubmit1} className="form">
+                        <input type="profilePic" onChange={(e)=>setPictureUrl(e.target.value)} value={pictureUrl} placeholder="Enter your picture here..."/>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <img src={pic} alt="" width="300px" height="300px" /> 
+                    {/* <img id="currentPhoto" src={pic} onerror="this.onerror=null; this.src='nopic.jpg'" alt="" width="100" height="120"></img> */}
                 </div>
-            </form>
+                <div className="col">
+                    <div className="col">
+                        <form onSubmit={handleSubmit2} className="form">
+                            <input type="aboutInfo" onChange={(e)=>setAbout(e.target.value)} value={about} placeholder="Tell us about you..."/>
+                            <button type="submit">Submit</button>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div>
+                                {aboutStuff}
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
 
             <br/> 
 

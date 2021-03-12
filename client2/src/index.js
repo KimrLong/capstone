@@ -7,7 +7,7 @@ import UserProfile from './components/auth/UserProfile';
 import Header from './components/layout/Header';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import  './assets/styles.scss';
+import  './assets/styles.css';
 import {createStore, applyMiddleware, compose} from 'redux';
 import reduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';

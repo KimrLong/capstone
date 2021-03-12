@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux';
 import  * as AiIcons from 'react-icons/ai'
 import  * as IoIcons from 'react-icons/io'
 import  * as RiIcons from 'react-icons/ri'
@@ -10,11 +11,16 @@ import {SidebarData} from '../SidebarData'
 import '../../assets/Navbar.css'
 import {IconContext} from 'react-icons'
 import {Nav, NavDropdown} from 'react-bootstrap';
+import InOrOut from '../InOrOut';
+
+
 // function Navbar (){
 //     // const [sidebar, setSidebar] = useState(false)
 //     // const showSidebar = () => setSidebar(!sidebar)
 //     return (
 const Navbar =()=> {
+    
+    const authenticated = useSelector(state => state.auth.authenticated);
     const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
     return (
     <Nav variant="pills" className="navStyle" activeKey="1"  onSelect={handleSelect}>
@@ -23,7 +29,7 @@ const Navbar =()=> {
         </Nav.Item>
         <NavDropdown title="Menu" id="nav-dropdown" className="menuStyle">
             <NavDropdown.Item  className="itemStyle"><Link to="/"><AiIcons.AiFillHome style={{margin:"10px"}}/>Home</Link></NavDropdown.Item>
-            <NavDropdown.Item  className="itemStyle"><Link to="/account"><RiIcons.RiAccountCircleFill style={{margin:"10px"}}/>My Account</Link></NavDropdown.Item>
+            {/* <NavDropdown.Item  className="itemStyle"><Link to="/account"><RiIcons.RiAccountCircleFill style={{margin:"10px"}}/>My Account</Link></NavDropdown.Item> */}
             <NavDropdown.Item  className="itemStyle"><Link to="/cart"><FiIcons.FiShoppingCart style={{margin:"10px"}}/>Cart</Link></NavDropdown.Item>
             <NavDropdown.Item  className="itemStyle"><Link to="/events"><RiIcons.RiTicket2Fill style={{margin:"10px"}}/>Events</Link></NavDropdown.Item>
             <NavDropdown.Item  className="itemStyle"><Link to="/chat"><BsIcons.BsFillChatDotsFill style={{margin:"10px"}}/>Chat</Link></NavDropdown.Item>
@@ -37,13 +43,10 @@ const Navbar =()=> {
         <Nav.Item className="mr-auto">
             <Nav.Link ><Link to="/chat"></Link></Nav.Link>
         </Nav.Item>
-        <Nav.Item>
-            <Nav.Link ><Link style={{color:"rgb(17, 36, 119)"}} to="/form">Sign up</Link></Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-            <Nav.Link style={{marginRight:"8px"}}><Link style={{color:"rgb(17, 36, 119)"}} to="/#">Log In</Link></Nav.Link>
-        </Nav.Item>
+        <InOrOut props={authenticated}/>
+
     </Nav>
+
         /* <IconContext.Provider value={{color:'#fff'}}>
             <div className="navbar">
                 <Link to="#" className='menu-bars'> 
@@ -75,6 +78,13 @@ const Navbar =()=> {
             </nav>
             </IconContext.Provider>
         </>    */
+
+    
+
+
+    )};        
+
+
         // <>
         // <Container>
         // <Row>

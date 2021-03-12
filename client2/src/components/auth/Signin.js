@@ -27,17 +27,6 @@ const Signin = () => {
     }))
 
   }
-  
-//   useEffect(() => {
-//     const fetchPosts = async() => {
-//         const url = `http://localhost:3001/forum`
-//         const response = await fetch(url)
-//         const data = await response.json()
-//         // console.log(data);
-//         dispatch(groupPosts(data));
-//     }
-//     fetchPosts();
-// }, [])
 
   return( 
   <div className="mt-5">
@@ -64,7 +53,7 @@ const Signin = () => {
             </div>
         </form>
 
-        <p>Don't have an account? <Link to="/signup">Register Here</Link></p>
+        <p>Don't have an account? <Link to="/form">Register Here</Link></p>
       </div>
     </div>
   </div>);

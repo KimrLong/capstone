@@ -13,10 +13,10 @@ const Signin = () => {
   const history = useHistory();
 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
-    await dispatch(setEmailState(email));
+    dispatch(setEmailState(email));
     dispatch(getProfile({email: email}))
 
     dispatch(signin({

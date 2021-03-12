@@ -40,11 +40,12 @@ router.post("/signin", requireSignin, (req, res) => {
 /**
  * registering a new user in our database and send back a jwt
  */
-router.post("/signup", async (req, res) => {
-  console.log('signup');
+router.post("/form", async (req, res) => {
+  console.log('form');
   //body-parse to scrape info
   //email, password
   let email = req.body.email;
+  let username = req.body.username;
   //encrypt: bcrypt
   let password = bcrypt.hashSync(req.body.password, 8);
 
@@ -53,7 +54,7 @@ router.post("/signup", async (req, res) => {
     let records = await db.user.findAll({ where: { email: email } });
     if (records.length === 0) {
       //add a new record
-      let user = await db.user.create({email: email, password: password});
+      let user = await db.user.create({email: email, password: password, username: username});
       let jwtToken = token(user); //token returns a jwt
       return res.json({token: jwtToken}); //passing a jwt to client
       

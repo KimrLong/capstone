@@ -10,6 +10,7 @@ const UserProfile = () => {
     const pic = useSelector(state => state.auth.profilePic);
     const aboutStuff = useSelector(state => state.auth.about);
     const viewPosts = useSelector(state => state.auth.allPosts);
+    const username = useSelector(state => state.auth.username);
     const postArray = Object.values(viewPosts);
     const dispatch = useDispatch();
 
@@ -54,7 +55,7 @@ const UserProfile = () => {
         <>
         <div className="userprofile">
             <img src={pic} alt="" width="300px" height="300px" /> 
-            
+            {/* <img id="currentPhoto" src={pic} onerror="this.onerror=null; this.src='nopic.jpg'" alt="" width="100" height="120"></img> */}
             <br/>
             <br/>
             <br/>
@@ -68,9 +69,6 @@ const UserProfile = () => {
 
                 <br/>
 
-                <div>
-                    {pic}
-                </div>
             </form>
 
             <br/>
@@ -101,6 +99,9 @@ const UserProfile = () => {
                     </ul>
                 )
             })} */}
+            </div>
+            <div>
+                {username}
             </div>
         </div>
         </>

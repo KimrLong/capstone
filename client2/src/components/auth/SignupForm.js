@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from "react";
 import useFormHook from '../../useFormHook'
 import validate from '../../validateInfo'
 import '../../assets/Form.css'
+
 
 const SignupForm = ({submitForm}) => {
     const {handleChange, values, handleSubmit, errors} = useFormHook(
@@ -79,9 +80,9 @@ const SignupForm = ({submitForm}) => {
                 <button className="form-input-btn"
                 type="submit" >
                     Sign up
-                </button>
+                </button> <br/>
                 <span className="form-input-login">
-                    Already have an account? Login< a href="#">here</a>
+                    Already have an account?< a href="/signin"> Login Here</a>
                 </span>
                 </form>
         </div>

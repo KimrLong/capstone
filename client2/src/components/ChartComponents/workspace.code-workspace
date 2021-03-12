@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../.."
+		},
+		{
+			"path": "../../../../../../../DigitalCrafts/NodeBandPage"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "DCRepos"
+	}
+}

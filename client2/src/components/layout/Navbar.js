@@ -10,17 +10,13 @@ import {SidebarData} from '../SidebarData'
 import '../../assets/Navbar.css'
 import {IconContext} from 'react-icons'
 import {Nav, NavDropdown} from 'react-bootstrap';
-
 // function Navbar (){
 //     // const [sidebar, setSidebar] = useState(false)
-
 //     // const showSidebar = () => setSidebar(!sidebar)
 //     return (
 const Navbar =()=> {
     const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
-
     return (
-
     <Nav variant="pills" className="navStyle" activeKey="1"  onSelect={handleSelect}>
         <Nav.Item className="ml">
             <Nav.Link className="iconStyle"><Link className="iconStyle" to="/"> <GiIcons.GiDirectorChair className="iconStyle" style={{marginRight:"15px"}}></GiIcons.GiDirectorChair>Biggest Small Venue</Link ></Nav.Link>
@@ -31,6 +27,7 @@ const Navbar =()=> {
             <NavDropdown.Item  className="itemStyle"><Link to="/cart"><FiIcons.FiShoppingCart style={{margin:"10px"}}/>Cart</Link></NavDropdown.Item>
             <NavDropdown.Item  className="itemStyle"><Link to="/events"><RiIcons.RiTicket2Fill style={{margin:"10px"}}/>Events</Link></NavDropdown.Item>
             <NavDropdown.Item  className="itemStyle"><Link to="/chat"><BsIcons.BsFillChatDotsFill style={{margin:"10px"}}/>Chat</Link></NavDropdown.Item>
+            <NavDropdown.Item  className="itemStyle"><Link to="/holder"><BsIcons.BsFillChatDotsFill style={{margin:"10px"}}/>Holder</Link></NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item ><Link to="/support"><IoIcons.IoMdHelpCircle style={{margin:"10px"}}/>Contact Support</Link></NavDropdown.Item>
         </NavDropdown>
@@ -47,9 +44,7 @@ const Navbar =()=> {
             <Nav.Link style={{marginRight:"8px"}}><Link style={{color:"rgb(17, 36, 119)"}} to="/#">Log In</Link></Nav.Link>
         </Nav.Item>
     </Nav>
-    );
-        <>
-        <IconContext.Provider value={{color:'#fff'}}>
+        /* <IconContext.Provider value={{color:'#fff'}}>
             <div className="navbar">
                 <Link to="#" className='menu-bars'> 
                     <FaIcons.FaBars onClick={showSidebar}/>
@@ -79,11 +74,7 @@ const Navbar =()=> {
                 </ul>
             </nav>
             </IconContext.Provider>
-        </>   
-    )
-}
-
-
+        </>    */
         // <>
         // <Container>
         // <Row>
@@ -122,5 +113,5 @@ const Navbar =()=> {
 //         // </>   
 //     )
 // }
-
+    )};
 export default Navbar

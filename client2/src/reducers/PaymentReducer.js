@@ -26,6 +26,11 @@ const PaymentReducer = (state = initialState, action) => {
             ...state,
             total: state.total + action.data
         }
+
+		case "CLEAR_PRICE": return {
+			...state,
+			total: 0
+		}
 		
 		default: return state
 	}

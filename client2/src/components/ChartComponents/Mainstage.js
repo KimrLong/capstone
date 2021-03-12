@@ -5,7 +5,8 @@ import Section from "./Section";
 import SeatPopup from "./SeatPopup";
 import * as layout from "./layout";
 import {seatPicker} from '../../actions/SeatAction';
-import {updatePrice} from '../../actions/priceAction';
+import {updatePrice, clearPrice} from '../../actions/priceAction';
+
 
 
 
@@ -34,12 +35,12 @@ const Mainstage = props => {
   const [scale, setScale] = useState(1);
   const [scaleToFit, setScaleToFit] = useState(1);
   const [size, setSize] = useState({
-    width: 500,
-    height: 500,
-    virtualWidth: 500
+    width: 50,
+    height: 50,
+    virtualWidth: 50
   });
 
-  const [virtualWidth, setVirtualWidth] = useState(500);
+  const [virtualWidth, setVirtualWidth] = useState(50);
 
   const [selectedSeatsIds, setSelectedSeatsIds] = useState([]);
 
@@ -80,6 +81,15 @@ const Mainstage = props => {
     setScaleToFit(scaleToFit);
     setVirtualWidth(clientRect.width);
   }, [jsonData, size]);
+
+
+  useEffect(() => {
+    return ()=>{
+      console.log('ok')
+      dispatch(clearPrice())
+    }
+
+  }, []);
 
   // togle scale on double clicks or taps
   const toggleScale = useCallback(() => {
@@ -136,8 +146,8 @@ const Mainstage = props => {
     <div
       style={{
         position: "relative",
-        width: "60vw",
-        height: "40vh"
+        width: "55vw",
+        height: "75vh"
       }}
       ref={containerRef}
     >
@@ -148,10 +158,10 @@ const Mainstage = props => {
         
         dragBoundFunc={pos => {
           pos.x = Math.min(
-            size.width / 2,
-            Math.max(pos.x, -virtualWidth * scale + size.width / 2)
+            size.width / 1,
+            Math.max(pos.x, -virtualWidth * scale + size.width / 1)
           );
-          pos.y = Math.min(size.height / 2, Math.max(pos.y, -size.height / 2));
+          pos.y = Math.min(size.height / 2, Math.max(pos.y, -size.height / 1));
           return pos;
         }}
         // onDblTap={toggleScale}

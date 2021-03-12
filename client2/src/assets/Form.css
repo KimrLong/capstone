@@ -6,7 +6,8 @@
 }
 .navText {
         margin-left: auto;
-}    .form-container {
+}
+.form-container {
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     border-radius: 10px;
@@ -14,7 +15,8 @@
     display: grid; 
     grid-template-columns: 1fr 1fr;
     padding-right: 150px;
-}    .close-btn {
+}
+.close-btn {
     position: absolute;
     top: 2%;
     right: 3%;
@@ -22,7 +24,8 @@
     z-index: 1;
     color: #fff;
     cursor: pointer;
-}    .form-content-left {
+}
+.form-content-left {
     /* background: linear-gradient(
     90deg,
     rgb(39, 176, 255) 0%,
@@ -31,7 +34,9 @@
     border-radius: 10px 0 0 10px;
     position: relative;  */
     /* background: linear-gradient(to bottom, rgba(21, 85, 110, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%)   */
-    /* try adding the url at the end of this like url('./img/Woman-kayaking-on-river.jpg' */    }    .form-img {
+    /* try adding the url at the end of this like url('./img/Woman-kayaking-on-river.jpg' */
+}
+.form-img {
     /* width: 80%;
     height: 80%;
     position: absolute;
@@ -39,13 +44,16 @@
     left: 50%; 
     margin-left: 125px;
     /* transform: translate(-50%, -50%); */
-    box-shadow: -10px 20px 20px rgb(3, 8, 44);    }    .form-img-2 {
+    box-shadow: -10px 20px 20px rgb(3, 8, 44);
+}
+.form-img-2 {
     height: 60%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}    .form-success {
+}
+.form-success {
     position: absolute;
     text-align: center;
     font-size: 24px;
@@ -59,7 +67,8 @@
     font-size: 24px;
     margin-top: 80px;
     color: #fff;
-}    .form-content-right {
+}
+.form-content-right {
     position: relative;
     height: 600px;
     border-radius: 0 10px 10px 0;
@@ -67,7 +76,8 @@
     position: relative;
     font-size: 35px;
     margin: 30px;
-}    /* .form {
+}
+/* .form {
     position: relative;
     top: 50%;
     left: 50%;
@@ -79,26 +89,31 @@
     justify-content: center;
     align-items: center;
 }
- */    .form h1 {
+ */
+.form h1 {
     font-size: 1rem;
     text-align: start;
     width: 80%;
     margin-bottom: 1rem;
     color: #fff;
-}    .form-inputs {
+}
+.form-inputs {
     margin-bottom: 0.5rem;
     width: 80%;
-}    .form-inputs p {
+}
+.form-inputs p {
     font-size: 0.8rem;
     margin-top: 0.5rem;
-    color: #f00e0e;
-}    .form-label {
+    color: #F00E0E;
+}
+.form-label {
     display: inline-block;
     font-size: 0.8rem;
     margin-bottom: 6px;
     color:black;
     margin: 10px;
-}    .form-input {
+}
+.form-input {
     display: block;
     padding-left: 10px;
     outline: none;
@@ -107,11 +122,13 @@
     background-color: rgb(212, 212, 212);
     border: none;
     color: black;
-    width:450px;
-}    .form-input::placeholder {
+    width:325px;
+}
+.form-input::placeholder {
     color: #595959;
     font-size: 12px;
-}    .form-input-btn {
+}
+.form-input-btn {
     width: 80%;
     height: 50px;
     margin-top: 10px;
@@ -125,7 +142,8 @@
     border: none;
     color: #fff;
     font-size: 1rem;
-}    .form-input-btn:hover {
+}
+.form-input-btn:hover {
     cursor: pointer;
     background: linear-gradient(
     90deg,
@@ -133,14 +151,16 @@
     rgb(12, 99, 250) 100%
     );
     transition: all 0.4s ease-out;
-}    .form-input-login {
+}
+.form-input-login {
     font-size: 0.8rem;
     margin-top: 10px;
     color: #fff;
     width: 80%;
     text-align: center;
-}    .form-input-login a {
+}
+.form-input-login a {
     text-decoration: none;
-    color: #27cdff;
+    color: #27CDFF;
     font-weight: 600;
 }

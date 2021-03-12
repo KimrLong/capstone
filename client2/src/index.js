@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import UserProfile from './components/auth/UserProfile';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import  './assets/styles.scss';
+import  './assets/styles.css';
 import {createStore, applyMiddleware, compose} from 'redux';
 import reduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';

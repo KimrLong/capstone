@@ -12,22 +12,16 @@ function Holder() {
   return (
     <Container>
       <Row>
+        <Col></Col>
         <Col>
-          <Card/>
+          <h1>Culture Club Events</h1>
         </Col>
-        <Col>
-
-        </Col>
-        <Col>  
-
-        </Col>
+        <Col></Col>
       </Row><br/>
       <Row>
-        <Col></Col>
-        <Col></Col>
-        <Col>
 
-          </Col>
+        <Col><Card/></Col>
+
       </Row>
     </Container>
   );

@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import { Link } from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {signin, setEmailState, getProfile} from '../../actions/index';
-import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom';
+import {Paper} from '../Styles';
 
 const Signin = () => {
 
@@ -12,10 +13,10 @@ const Signin = () => {
   const history = useHistory();
 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
-    await dispatch(setEmailState(email));
+    dispatch(setEmailState(email));
     dispatch(getProfile({email: email}))
 
     dispatch(signin({
@@ -27,19 +28,10 @@ const Signin = () => {
     }))
 
   }
-  
-//   useEffect(() => {
-//     const fetchPosts = async() => {
-//         const url = `http://localhost:3001/forum`
-//         const response = await fetch(url)
-//         const data = await response.json()
-//         // console.log(data);
-//         dispatch(groupPosts(data));
-//     }
-//     fetchPosts();
-// }, [])
 
   return( 
+
+    <Paper>
   <div className="mt-5">
     <div className="grid align__item">
       <div className="register">
@@ -64,10 +56,13 @@ const Signin = () => {
             </div>
         </form>
 
-        <p>Don't have an account? <Link to="/signup">Register Here</Link></p>
+        <p>Don't have an account? <Link to="/form">Register Here</Link></p>
       </div>
     </div>
-  </div>);
+  </div>
+  </Paper>
+  );
+  
 };
 
 export default Signin;

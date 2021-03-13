@@ -18,7 +18,7 @@ export const getProfile = (email) => {
     return async dispatch => {
         try {
             let response = await axios.post('http://localhost:3001/userprofile', email)
-            console.log(response.data);
+            // console.log(response.data);
             dispatch({type: "GET_PROFILE", data: response.data[0]})
         }
         catch(e){
@@ -38,6 +38,13 @@ export const setProfileInfo = (formData) => {
             console.log('error');
             console.log(e);
         }
+    }
+}
+
+export const setUsernameState = (username) => {
+    return {
+        type: "ADD_USERNAME",
+        data: username
     }
 }
 
@@ -87,7 +94,7 @@ export const signUp = (formData, cb) => {
     //formData => {email, password}  
     return async dispatch=>{
         try{
-            let response = await axios.post('http://localhost:3001/signup', formData) //formdata will put on header
+            let response = await axios.post('http://localhost:3001/form', formData) //formdata will put on header
             console.log(response.data.token);//token
             //dispatch action to reducer 
             dispatch({type: "AUTH_USER", data: response.data.token});
@@ -130,3 +137,6 @@ export const signout = (cb) => {
         cb();
     }
 }
+
+//clears payment form
+

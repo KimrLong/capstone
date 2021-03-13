@@ -6,3 +6,16 @@ export const updatePrice  = (price) => {
     }
 
 };
+
+
+
+export const clearPrice  = () => {
+    console.log('im in clear price')
+    return {
+        type: "CLEAR_PRICE",
+        
+    }
+
+};
+
+//clears the price

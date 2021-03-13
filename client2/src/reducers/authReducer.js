@@ -7,7 +7,9 @@ const initialState = {
     email: "",
     profilePic: "",
     about: "",
+    username: "",
     total: 0
+
 }
 
 const reducerTemplate = (state = initialState, action) => {
@@ -21,6 +23,7 @@ const reducerTemplate = (state = initialState, action) => {
                 email: "",
                 profilePic: "",
                 about: "",
+                username: "",
             }
         case "GET_PROFILE":
             return {
@@ -32,6 +35,11 @@ const reducerTemplate = (state = initialState, action) => {
             return {
                 ...state,
                 authenticated: action.data //the jwt
+            }
+        case "ADD_USERNAME":
+            return {
+                ...state,
+                username: action.data
             }
         case "ADD_POST":
             return {
@@ -72,6 +80,13 @@ const reducerTemplate = (state = initialState, action) => {
             ...state,
             total: state.total + action.data
         }
+
+
+		case "CLEAR_PRICE": return {
+			...state,
+			total: 0
+		}
+        
         default:
             return state;
     } 

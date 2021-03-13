@@ -46,7 +46,9 @@ const Navbar =()=> {
         <InOrOut props={authenticated}/>
 
     </Nav>
+ )};
 
+ export default Navbar;
         /* <IconContext.Provider value={{color:'#fff'}}>
             <div className="navbar">
                 <Link to="#" className='menu-bars'> 
@@ -124,6 +126,5 @@ const Navbar =()=> {
         //     </IconContext.Provider>
         //     </Row>
         //     </Container>
-//         // </>   
-//     )
-// }
+//         // </>  
+   

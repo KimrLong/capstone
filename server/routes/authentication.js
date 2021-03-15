@@ -120,13 +120,13 @@ router.get("/account/updatepic", async (req, res) => {
   }
 })
 
-router.post("/chattest", async (req, res) => {
+router.post("/chat", async (req, res) => {
 
   let post = req.body.post;
   let email = req.body.email;
-  let id = req.body.id;
+
   try {
-    let forumPost = await db.forum_posts.create({unique_id: id, post: post, email: email})
+    let forumPost = await db.forum_posts.create({post: post, email: email})
 
     return res.json(forumPost);
 
@@ -135,7 +135,7 @@ router.post("/chattest", async (req, res) => {
   }
 })
 
-router.get("/chattest", async (req, res) => {
+router.get("/chat", async (req, res) => {
   try {
     let totalPosts = await db.forum_posts.findAll();
     
@@ -146,15 +146,35 @@ router.get("/chattest", async (req, res) => {
   }
 })
 
-router.post("/chattest/group", async (req, res) => {
+router.post("/chat/group/delete", async (req, res) => {
+  console.log('chatgroup');
+
+  let id = req.body.id
+console.log(req.body);
+  try {
+    let deletePost = await db.forum_posts.destroy({
+      where: {
+        id: id,
+      }
+    })
+
+    let forumPosts = await db.forum_posts.findAll();
+
+    return res.json(forumPosts);
+
+  } catch (error) {
+    return res.status(423).send({error: `Can't access database2`});
+  }
+})
+
+router.post("/chat/group", async (req, res) => {
   console.log('chatgroup');
 
   let post = req.body.post;
   let email = req.body.email;
-  let id = req.body.id;
 
   try {
-    let forumPost = await db.forum_posts.findAll({id: id, post: post, email: email})
+    let forumPost = await db.forum_posts.findAll()
 
     return res.json(forumPost);
 
@@ -163,7 +183,7 @@ router.post("/chattest/group", async (req, res) => {
   }
 })
 
-router.get("/chattest/group", async (req, res) => {
+router.get("/chat/group", async (req, res) => {
   try {
     let totalPosts = await db.forum_posts.findAll();
     

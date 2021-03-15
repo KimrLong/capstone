@@ -57,7 +57,6 @@ router.post("/form", async (req, res) => {
       let user = await db.user.create({email: email, password: password, username: username});
       let jwtToken = token(user); //token returns a jwt
       return res.json({token: jwtToken}); //passing a jwt to client
-      
     } else {
       return res.status(422).send({error: 'Email already exists'});
     }
@@ -66,7 +65,7 @@ router.post("/form", async (req, res) => {
   }
 });
 
-router.post("/userprofile/updatepic", async (req, res) => {
+router.post("/account/updatepic", async (req, res) => {
   console.log('userprofileupdatepic');
   // console.log(req.body);
 
@@ -84,8 +83,8 @@ router.post("/userprofile/updatepic", async (req, res) => {
   }
 })
 
-router.post("/userprofile", async (req, res) => {
-  console.log('userprofile');
+router.post("/account", async (req, res) => {
+  console.log('account');
   // console.log("reqbody", req.body.email);
 
   //models- store in database
@@ -103,7 +102,7 @@ router.post("/userprofile", async (req, res) => {
   }
 })
 
-router.get("/userprofile/updatepic", async (req, res) => {
+router.get("/account/updatepic", async (req, res) => {
   console.log('userprofileGET');
   // console.log(req.body.email);
 
@@ -121,8 +120,7 @@ router.get("/userprofile/updatepic", async (req, res) => {
   }
 })
 
-router.post("/forum", async (req, res) => {
-  console.log('forum');
+router.post("/chat", async (req, res) => {
 
   let post = req.body.post;
   let email = req.body.email;
@@ -137,7 +135,55 @@ router.post("/forum", async (req, res) => {
   }
 })
 
-router.get("/forum", async (req, res) => {
+router.get("/chat", async (req, res) => {
+  try {
+    let totalPosts = await db.forum_posts.findAll();
+    
+    return res.json(totalPosts);
+
+  } catch (error) {
+    return res.status(423).send({error: `Can't access database`});
+  }
+})
+
+router.post("/chat/group/delete", async (req, res) => {
+  console.log('chatgroup');
+
+  let id = req.body.id
+console.log(req.body);
+  try {
+    let deletePost = await db.forum_posts.destroy({
+      where: {
+        id: id,
+      }
+    })
+
+    let forumPosts = await db.forum_posts.findAll();
+
+    return res.json(forumPosts);
+
+  } catch (error) {
+    return res.status(423).send({error: `Can't access database2`});
+  }
+})
+
+router.post("/chat/group", async (req, res) => {
+  console.log('chatgroup');
+
+  let post = req.body.post;
+  let email = req.body.email;
+
+  try {
+    let forumPost = await db.forum_posts.findAll()
+
+    return res.json(forumPost);
+
+  } catch (error) {
+    return res.status(423).send({error: `Can't access database2`});
+  }
+})
+
+router.get("/chat/group", async (req, res) => {
   try {
     let totalPosts = await db.forum_posts.findAll();
     

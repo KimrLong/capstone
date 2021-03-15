@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import {setProfilePic, setProfileInfo} from '../actions/index';
+import {Row, Col, Container} from 'react-bootstrap';
+import  '../assets/Home.css'
 
 const UserProfile = () => {
 
@@ -53,10 +55,11 @@ const UserProfile = () => {
 
     return (
         <>
-        <div className="userprofile">
-            <div className="row">
-                <div className="col">
-                    <form onSubmit={handleSubmit1} className="form">
+
+<Container fluid>
+        <Row className="firstRow userprofile">
+            <Col >
+            <form onSubmit={handleSubmit1} className="form">
                         <input type="profilePic" onChange={(e)=>setPictureUrl(e.target.value)} value={pictureUrl} placeholder="Enter your picture here..."/>
                         <button type="submit">Submit</button>
                     </form>
@@ -65,10 +68,10 @@ const UserProfile = () => {
                     <br/>
                     <img src={pic} alt="" width="300px" height="300px" /> 
                     {/* <img id="currentPhoto" src={pic} onerror="this.onerror=null; this.src='nopic.jpg'" alt="" width="100" height="120"></img> */}
-                </div>
-                <div className="col">
-                    <div className="col">
-                        <form onSubmit={handleSubmit2} className="form">
+
+                </Col>
+                <Col>
+                <form onSubmit={handleSubmit2} className="form">
                             <input type="aboutInfo" onChange={(e)=>setAbout(e.target.value)} value={about} placeholder="Tell us about you..."/>
                             <button type="submit">Submit</button>
                             <br/>
@@ -78,6 +81,18 @@ const UserProfile = () => {
                                 {aboutStuff}
                             </div>
                         </form>
+                
+                </Col>
+            </Row>
+        </Container>
+        <div className="userprofile">
+            <div className="row">
+                <div className="col">
+
+                </div>
+                <div className="col">
+                    <div className="col">
+
 
                     </div>
                 </div>

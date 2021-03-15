@@ -4,7 +4,7 @@ import axios from 'axios';
 export const setProfilePic = (formData) => {
     return async dispatch=>{
         try{
-            let response = await axios.post('http://localhost:3001/userprofile/updatepic', formData) //formdata will put on header
+            let response = await axios.post('http://localhost:3001/account/updatepic', formData) //formdata will put on header
             dispatch({type: "ADD_PIC", data: formData.pictureUrl})
         }
         catch(e){
@@ -17,7 +17,7 @@ export const setProfilePic = (formData) => {
 export const getProfile = (email) => {
     return async dispatch => {
         try {
-            let response = await axios.post('http://localhost:3001/userprofile', email)
+            let response = await axios.post('http://localhost:3001/account', email)
             // console.log(response.data);
             dispatch({type: "GET_PROFILE", data: response.data[0]})
         }
@@ -31,7 +31,7 @@ export const getProfile = (email) => {
 export const setProfileInfo = (formData) => {
     return async dispatch=>{
         try{
-            let response = await axios.post('http://localhost:3001/userprofile', formData) //formdata will put on header
+            let response = await axios.post('http://localhost:3001/account/updatepic', formData) //formdata will put on header
             dispatch({type: "ADD_ABOUT", data: formData.about})
         }
         catch(e){
@@ -55,18 +55,26 @@ export const setEmailState = (email) => {
     }
 }
 
-export const groupPosts = (posts) => {
-    return {
-        type: "GROUP_POSTS",
-        data: posts,
+export const groupPosts = (formData) => {
+    return async dispatch=>{
+        try{
+            let response = await axios.post('http://localhost:3001/chat/group', formData) //formdata will put on header
+            dispatch({type: "GROUP_POSTS", data: response.data});
+            //dispatch action to reducer 
+            console.log(response.data);
+        }
+        catch(e){
+            console.log('error');
+            console.log(e);
+        }
     }
 }
 
 export const createPost = (formData) => {
-    // console.log(formData);
+    console.log(formData);
     return async dispatch=>{
         try{
-            let response = await axios.post('http://localhost:3001/forum', formData) //formdata will put on header
+            let response = await axios.post('http://localhost:3001/chat', formData) //formdata will put on header
             //dispatch action to reducer 
             dispatch({type: "ADD_POST", data: formData});
         }
@@ -78,9 +86,16 @@ export const createPost = (formData) => {
 }
 
 export const deletePost = (post) => {
-    return {
-        type: "DELETE_POST",
-        data: post
+    return async dispatch=>{
+        try{
+            let response = await axios.post('http://localhost:3001/chat/group/delete', post) //formdata will put on header
+            //dispatch action to reducer 
+            dispatch({type: "GROUP_POSTS", data: response.data});
+        }
+        catch(e){
+            console.log('error');
+            console.log(e);
+        }
     }
 }
 

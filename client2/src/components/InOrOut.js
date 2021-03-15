@@ -13,7 +13,7 @@ const InOrOut = props => {
                 <Nav.Link ><Link style={{color:"rgb(17, 36, 119)"}} to="/form">Sign up</Link></Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link style={{marginRight:"8px"}}><Link style={{color:"rgb(17, 36, 119)"}} to="/signin">Log In</Link></Nav.Link>
+                <Nav.Link style={{marginRight:"25px"}}><Link style={{color:"rgb(17, 36, 119)"}} to="/signin">Log In</Link></Nav.Link>
             </Nav.Item>
             </>
         )

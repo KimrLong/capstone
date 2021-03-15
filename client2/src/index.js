@@ -20,6 +20,7 @@ import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
+import Purchase from './pages/Purchase';
 
 
 
@@ -73,6 +74,7 @@ ReactDOM.render(
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
               <Route path="/otheraccount" component={OtherAccount}/>
+              <Route path="/purchase" component={(Purchase)}/>
               <Route path='/chat' component={requireAuth(Chat)}/>
               <Route path='/cart' component={requireAuth(Cart)}/>
 

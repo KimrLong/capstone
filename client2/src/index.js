@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Header from './components/layout/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.css';
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -21,6 +20,7 @@ import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
+import Purchase from './pages/Purchase';
 
 
 

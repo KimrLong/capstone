@@ -11,23 +11,18 @@ import {Provider} from 'react-redux';
 import reducer from './reducers/index';
 import requireAuth from './requireAuth';
 import Navbar from './components/layout/Navbar';
+import BaseLayout from './components/layout/BaseLayout'
 import Footer from './components/Footer';
 import Account from './pages/Account'
-<<<<<<< HEAD
-=======
-
-import Holder from './pages/Holder';
->>>>>>> f66feeb0ddec351335bd544624fa3c0df0feea4c
 import Events from './pages/Events'
 import Chat from './pages/postComponents/PostManagement'
-
 import Purchase from './pages/Purchase'
-
 import Cart from './pages/Cart'
 import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
+
 
 
 import {
@@ -73,31 +68,26 @@ ReactDOM.render(
       <React.StrictMode>
       <Provider store={store}>
       <Router>
-        <Navbar/>
+        {/* <Navbar/> */}
         {/* <Header/> */}
+        <BaseLayout>
             <Switch>
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
-              <Route path='/purchase' component={Purchase}/>
-              {/* <Route path='/Chat' component={requireAuth(Chat)}/> */}
-              <Route path='/events' component={Events}/>
-
+              <Route path="/purchase" component={(Purchase)}/>
               <Route path='/chat' component={requireAuth(Chat)}/>
-
               <Route path='/cart' component={requireAuth(Cart)}/>
-<<<<<<< HEAD
 
-=======
               <Route path='/events' component={Events}/>
->>>>>>> f66feeb0ddec351335bd544624fa3c0df0feea4c
               <Route path='/Support' component={Support}/>
               <Route path='/signin' component={Signin}/>
               <Route path='/signout' component={Signout}/>
               <Route path='/form' component={SignupForm}/>
             </Switch>
+            </BaseLayout>
         </Router>
+        {/* <Footer/> */}
         </Provider>
-        <Footer/>
   </React.StrictMode>
   </>,
   document.getElementById('root')

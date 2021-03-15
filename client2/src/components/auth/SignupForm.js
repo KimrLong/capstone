@@ -1,9 +1,11 @@
 import React, {useState} from "react";
+
 import useFormHook from '../../useFormHook'
 import validate from '../../validateInfo'
 import '../../assets/Form.css'
 import {Paper, Container} from '../Styles'
 import Footer from '../Footer'
+
 
 
 const SignupForm = ({submitForm}) => {

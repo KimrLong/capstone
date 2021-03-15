@@ -34,7 +34,7 @@ const Cards = () => {
         
         {card.category}
       </Card.Text>
-      <Link to="/events"><button className="cardbtn">Buy Tickets</button></Link>
+      <Link to="/purchase"><button className="cardbtn">Buy Tickets</button></Link>
       </Card.Body>
       </Card>
     

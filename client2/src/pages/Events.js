@@ -7,6 +7,13 @@ import {Row, Col} from 'react-bootstrap';
 // import {Paper} from '../Styles';
 import Payment from '../components/PaymentComponents/Payment';
 import Card from '../components/EventComponents/cards';
+
+
+function Events() {
+  return (
+    <Container>
+      <Row>
+
 // import  '../assets/Home.css'
 import Footer from '../components/Footer'
 
@@ -14,6 +21,7 @@ function Events() {
   return (
     <Container fluid>
       <Row className="firstRow">
+
         <Col></Col>
         <Col>
           <h1>Culture Club Events</h1>
@@ -21,7 +29,11 @@ function Events() {
         <Col></Col>
       </Row><br/>
       <Row>
+
+
         <Col><Card/></Col>
+
+
       </Row>
       <Footer/>
     </Container>

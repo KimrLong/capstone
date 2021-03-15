@@ -74,8 +74,7 @@ ReactDOM.render(
             <Switch>
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
-              <Route path='/purchase' component={Purchase}/>
-              <Route path='/events' component={Events}/>
+              <Route path="/purchase" component={(Purchase)}/>
               <Route path='/chat' component={requireAuth(Chat)}/>
               <Route path='/cart' component={requireAuth(Cart)}/>
               <Route path='/events' component={Events}/>

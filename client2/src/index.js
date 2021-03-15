@@ -19,6 +19,7 @@ import Account from './pages/Account'
 import Holder from './pages/Holder';
 import Events from './pages/Events'
 import Chat from './pages/Chat'
+import ChatTest from './pages/postComponents/PostManagement'
 import Cart from './pages/Cart'
 import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
@@ -75,7 +76,10 @@ ReactDOM.render(
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
               <Route path='/events' component={Events}/>
-              <Route path='/Chat' component={requireAuth(Chat)}/>
+              <Route path='/chat' component={requireAuth(Chat)}/>
+
+              <Route path='/chattest' component={requireAuth(ChatTest)}/>
+
               <Route path='/cart' component={requireAuth(Cart)}/>
               <Route path='/holder' component={Holder}/>
               <Route path='/Support' component={Support}/>

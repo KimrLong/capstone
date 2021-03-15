@@ -15,7 +15,6 @@ const AddProject = (props) => {
         const url = `http://localhost:3001/chat/group`
         const response = await fetch(url)
         const data = await response.json()
-        // const dataArray = Object.values(data);
         setPosts(data);
       }
       updatePosts();
@@ -27,26 +26,21 @@ const AddProject = (props) => {
     // console.log(posts);
 
     //addProject passed from parent.  Expects an object as an argument
-    //with 2 keys: id, title, category
 
     let post = {
-      id: uuidv1(),
+      // id: uuidv1(),
       email: email, 
       post: newPost
     }
 
     props.addPost(post);
+
     dispatch(createPost({
-      id: post.id,
+      // id: post.id,
       email: post.email,
       post: post.post,
     }));
 
-    // console.log(post.id);
-    // console.log(post.email);
-
-    // let newSet = [post, ...posts];
-    // console.log(newSet);
   }
 
   return <>

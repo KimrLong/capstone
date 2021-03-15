@@ -15,11 +15,9 @@ const PostManagement = () => {
             const url = `http://localhost:3001/chat/group`
             const response = await fetch(url)
             const data = await response.json()
-            // const dataArray = Object.values(data);
         
             setPosts(data);
             dispatch(groupPosts(posts));
-            // console.log(data);
 
         }
         updatePosts();
@@ -28,9 +26,8 @@ const PostManagement = () => {
     // console.log(posts);
 
     const handleAddPost = async (newPost) => {
-        // setPostObject(newPost);
         console.log(newPost);
-        // dispatch(createPost(newPost));
+        
         await setPosts([newPost, ...posts]);
         dispatch(groupPosts(posts));
 

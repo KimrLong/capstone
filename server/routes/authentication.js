@@ -124,9 +124,9 @@ router.post("/chat", async (req, res) => {
 
   let post = req.body.post;
   let email = req.body.email;
-  let id = req.body.id;
+  
   try {
-    let forumPost = await db.forum_posts.create({unique_id: id, post: post, email: email})
+    let forumPost = await db.forum_posts.create({post: post, email: email})
 
     return res.json(forumPost);
 
@@ -151,10 +151,9 @@ router.post("/chat/group", async (req, res) => {
 
   let post = req.body.post;
   let email = req.body.email;
-  let id = req.body.id;
 
   try {
-    let forumPost = await db.forum_posts.findAll({id: id, post: post, email: email})
+    let forumPost = await db.forum_posts.findAll({post: post, email: email})
 
     return res.json(forumPost);
 

@@ -22,12 +22,13 @@ const Navbar =()=> {
         <NavDropdown title="Menu"  className="menuStyle p-sm-25">
             <NavDropdown.Item  className="itemStyle "><Link to="/"><AiIcons.AiFillHome style={{margin:"10px"}}/>Home</Link></NavDropdown.Item>
             {/* <NavDropdown.Item  className="itemStyle"><Link to="/account"><RiIcons.RiAccountCircleFill style={{margin:"10px"}}/>My Account</Link></NavDropdown.Item> */}
-            <NavDropdown.Item  className="itemStyle"><Link to="/cart"><FiIcons.FiShoppingCart style={{margin:"10px"}}/>Cart</Link></NavDropdown.Item>
+            {/* <NavDropdown.Item  className="itemStyle"><Link to="/cart"><FiIcons.FiShoppingCart style={{margin:"10px"}}/>Cart</Link></NavDropdown.Item> */}
             <NavDropdown.Item  className="itemStyle"><Link to="/events"><RiIcons.RiTicket2Fill style={{margin:"10px"}}/>Events</Link></NavDropdown.Item>
             <NavDropdown.Item  className="itemStyle"><Link to="/chat"><BsIcons.BsFillChatDotsFill style={{margin:"10px"}}/>Chat</Link></NavDropdown.Item>
-
+            {/* <NavDropdown.Item  className="itemStyle"><Link to="/holder"><BsIcons.BsFillChatDotsFill style={{margin:"10px"}}/>Holder</Link></NavDropdown.Item> */}
+{/* 
             <NavDropdown.Divider />
-            <NavDropdown.Item ><Link to="/support"><IoIcons.IoMdHelpCircle style={{margin:"10px"}}/>Contact Support</Link></NavDropdown.Item>
+            <NavDropdown.Item ><Link to="/support"><IoIcons.IoMdHelpCircle style={{margin:"10px"}}/>Contact Support</Link></NavDropdown.Item>  */}
         </NavDropdown>
         <Nav.Item className="ml">
             <Nav.Link className="iconStyle "><Link className="iconStyle mr-auto" to="/"> <GiIcons.GiDirectorChair className="iconStyle" style={{marginRight:"15px"}}></GiIcons.GiDirectorChair>Biggest Small Venue</Link ></Nav.Link>

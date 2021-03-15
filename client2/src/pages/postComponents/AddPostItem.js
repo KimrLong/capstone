@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { v4 as uuidv1 } from 'uuid';
 import {useDispatch, useSelector} from 'react-redux';
 import {groupPosts, createPost} from '../../actions/index';
+import '../../assets/Chat.css'
 
 const AddProject = (props) => {
 
@@ -54,7 +55,7 @@ const AddProject = (props) => {
       value={newPost}
       onChange={(e)=>setNewPost(e.target.value)}
     />
-    <button type="submit">Submit</button>
+    <button type="submit" className="btnType">Submit</button>
   </form>
   </>;
 };

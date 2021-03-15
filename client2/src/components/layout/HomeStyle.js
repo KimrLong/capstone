@@ -13,18 +13,12 @@ const HomeStyle = () => {
         <Col className="col2-text"lg="3" md={{span: 3, offset:2}}>A venue that hosts events for you by you.</Col>
         <Col md={{span:2}}><Button className="btn">Upcoming Events</Button> </Col>
         <Col className="middleText" md={{span:2, offset:1}}><img src="rockstar.jpg"  className="img-rounded" height="350px"></img></Col>
-        <div className="smallText">.</div>
-    </Row>
-    <Row className="secondRow">
-        <Col sm="12"md={{span:6, offset:3} }className="middleText">Come see the stage that serves as a launching pad for many artist's careers. The culture club serves as a hub for dance, music, comedy and more. </Col>
-
-        <Col className="col2-text" sm={{span:4}} lg={{span: 3, offset:2}} md={{span: 2, offset:2}}>Tickets for the small venues for the shows that matter to you.</Col>
-        <Col md={{span:2}} ><button className="topButton"> Buy tickets today</button> </Col>
-        <Col className="middlePic" ><img src="rockstar.jpg"  height="350px"></img></Col>
         <div className="smallText"></div>
     </Row>
     <Row className="secondRow">
-        <Col sm="2" md={{span:6, offset:3} }className="middleText">Independent, small venues is where many artist begin their journey in their career. Whether they do music, comedy, or something else all together, their platform in the physical space is just as important as the digital presence they create. Find out how you can see them today.  </Col>
+        <Col sm="2" md={{span:6, offset:3} }className="middleText">The Culture Club serves as a hub for dance, music, comedy, lectures and more. Come check out our famous spot that has launched many careers.  </Col>
+    </Row>
+    <Row className="secondRow">
 
     </Row>
     <Row className="thirdRow">

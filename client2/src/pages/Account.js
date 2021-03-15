@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {setProfilePic, setProfileInfo} from '../actions/index';
 import {Row, Col, Container} from 'react-bootstrap';
 import  '../assets/Home.css'
+import '../assets/Account.css'
 import Posts from './postComponents/Posts';
 import UserSpecificPosts from './postComponents/UserSpecificPosts';
 import {groupPosts, createPost, deletePost} from '../actions/index';
@@ -57,7 +58,7 @@ const UserProfile = () => {
             <Col >
             <form onSubmit={handleSubmit1} className="form">
                         <input type="profilePic" onChange={(e)=>setPictureUrl(e.target.value)} value={pictureUrl} placeholder="Enter your picture here..."/>
-                        <button type="submit">Submit</button>
+                        <button type="submit" className="btnType">Submit</button>
                     </form>
                     <br/>
                     <br/>
@@ -69,7 +70,7 @@ const UserProfile = () => {
                 <Col>
                 <form onSubmit={handleSubmit2} className="form">
                             <input type="aboutInfo" onChange={(e)=>setAbout(e.target.value)} value={about} placeholder="Tell us about you..."/>
-                            <button type="submit">Submit</button>
+                            <button type="submit" className='btnType'>Submit</button>
                             <br/>
                             <br/>
                             <br/>

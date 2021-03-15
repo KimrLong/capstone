@@ -23,7 +23,6 @@ function Events() {
       <Row>
         <Col><Card/></Col>
       </Row>
-      <Footer/>
     </Container>
   );
 }

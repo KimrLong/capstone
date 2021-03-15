@@ -11,9 +11,9 @@ import {Provider} from 'react-redux';
 import reducer from './reducers/index';
 import requireAuth from './requireAuth';
 import Navbar from './components/layout/Navbar';
+import BaseLayout from './components/layout/BaseLayout'
 import Footer from './components/Footer';
 import Account from './pages/Account'
-import Holder from './pages/Holder';
 import Events from './pages/Events'
 import Chat from './pages/postComponents/PostManagement'
 import Purchase from './pages/Purchase'
@@ -22,6 +22,7 @@ import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
+
 
 
 import {
@@ -67,8 +68,9 @@ ReactDOM.render(
       <React.StrictMode>
       <Provider store={store}>
       <Router>
-        <Navbar/>
+        {/* <Navbar/> */}
         {/* <Header/> */}
+        <BaseLayout>
             <Switch>
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
@@ -82,9 +84,10 @@ ReactDOM.render(
               <Route path='/signout' component={Signout}/>
               <Route path='/form' component={SignupForm}/>
             </Switch>
+            </BaseLayout>
         </Router>
+        {/* <Footer/> */}
         </Provider>
-        <Footer/>
   </React.StrictMode>
   </>,
   document.getElementById('root')

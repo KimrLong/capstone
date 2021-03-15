@@ -20,7 +20,7 @@ import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
-import Purchase from './pages/Purchase';
+
 
 
 

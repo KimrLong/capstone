@@ -9,6 +9,7 @@ import {Provider} from 'react-redux';
 import reducer from './reducers/index';
 import requireAuth from './requireAuth';
 import BaseLayout from './components/layout/BaseLayout'
+import Purchase from './pages/Purchase';
 import Account from './pages/Account'
 import OtherAccount from './pages/OtherAccount';
 import Events from './pages/Events'
@@ -18,7 +19,7 @@ import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
-import Purchase from './pages/Purchase';
+
 
 
 

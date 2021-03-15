@@ -5,6 +5,7 @@ import { v4 as uuidv1 } from 'uuid';
 import {useDispatch, useSelector} from 'react-redux';
 import {groupPosts, createPost, deletePost} from '../../actions/index';
 import '../../assets/Chat.css'
+import UserPostsDelete from './UserPostsDelete';
 
 const PostManagement = () => {
 
@@ -54,6 +55,8 @@ const PostManagement = () => {
             
         <div className="row">
             <Posts onDelete={(id)=>handleRemovePost(id)} posts={posts} />
+            {/* <UserPostsDelete onDelete={(id)=>handleRemovePost(id)} posts={posts} /> */}
+
         </div>
     </>
 };

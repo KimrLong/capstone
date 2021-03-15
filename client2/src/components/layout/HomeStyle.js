@@ -12,7 +12,7 @@ const HomeStyle = () => {
 
         <Col className="col2-text"lg="3" md={{span: 3, offset:2}}>A venue that hosts events for you by you.</Col>
         <Col md={{span:2}}><button className="topButton">Upcoming Events</button> </Col>
-        <Col className="middleText" md={{span:2, offset:1}}><img src="rockstar.jpg"  className="img-rounded" height="350px"></img></Col>
+        <Col className="middleText" md={{span:2, offset:1}}><img src="rockstar.jpg"  className="middlePic" height="350px"></img></Col>
         <div className="smallText"></div>
     </Row>
 
@@ -25,7 +25,7 @@ const HomeStyle = () => {
     </Row>
     <Row className="fourthRow">
         <Col className="changePosition" xs="3" md={{span:3,offset:1}}> <button className="bottomButton"> Chat</button> </Col>
-        <Col xs="3" md={{span:3,offset:1}}><button className="bottomButton">Find event</button></Col>
+        <Col xs="3" md={{span:3,offset:1}}><button className="bottomButton" href="/https:goggle.com">Find event</button></Col>
         <Col  xs="3"md={{span:3,offset:1}}><button className="bottomButton">Sign up</button></Col>
     </Row>
     <Row className="lastRow">

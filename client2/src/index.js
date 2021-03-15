@@ -10,6 +10,10 @@ import reducer from './reducers/index';
 import requireAuth from './requireAuth';
 import Navbar from './components/layout/Navbar';
 import BaseLayout from './components/layout/BaseLayout'
+<<<<<<< HEAD
+=======
+import Purchase from './pages/Purchase';
+>>>>>>> 3aacf2bc7a2862e5a2782e47caa1b26a09db49c9
 import Account from './pages/Account'
 import OtherAccount from './pages/OtherAccount';
 import Events from './pages/Events'
@@ -19,7 +23,7 @@ import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
-import Purchase from './pages/Purchase';
+
 
 
 

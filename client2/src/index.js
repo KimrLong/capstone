@@ -10,7 +10,7 @@ import reducer from './reducers/index';
 import requireAuth from './requireAuth';
 import Navbar from './components/layout/Navbar';
 import BaseLayout from './components/layout/BaseLayout'
-import Footer from './components/Footer';
+import Purchase from './pages/Purchase';
 import Account from './pages/Account'
 import OtherAccount from './pages/OtherAccount';
 import Events from './pages/Events'

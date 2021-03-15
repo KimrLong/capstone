@@ -15,7 +15,7 @@ const HomeStyle = () => {
         <div className="smallText"></div>
     </Row>
     <Row className="secondRow">
-        <Col sm="2" md={{span:6, offset:3} }className="middleText">Independent, small venues is where many artist begin their journey in their career. Whether they do music, comedy, or something else all together, their platform in the physical space is just as important as the digital presence they create. Find out how you can see them today.  </Col>
+        <Col sm="2" md={{span:6, offset:3} }className="middleText">The Culture Club serves as a hub for dance, music, comedy, lectures and more. Come check out our famous spot that has launched many careers.  </Col>
     </Row>
     <Row className="thirdRow">
         <Col className="lastText" md={{span:8}}><img src="purpleStage.jpg"></img>  </Col>

@@ -4,21 +4,15 @@ import {useDispatch} from 'react-redux';
 import {signin, setEmailState, getProfile} from '../../actions/index';
 import {useHistory} from 'react-router-dom';
 import {Paper} from '../Styles';
-
 const Signin = () => {
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     dispatch(setEmailState(email));
     dispatch(getProfile({email: email}))
-
     dispatch(signin({
       email: email,
       password: password
@@ -26,11 +20,8 @@ const Signin = () => {
       console.log('pushing to another page');
       history.push('/account');
     }))
-
   }
-
   return( 
-
     <Paper>
   <div className="mt-5">
     <div className="grid align__item">
@@ -43,26 +34,21 @@ const Signin = () => {
                 onChange={(e)=>setEmail(e.target.value)}
               />
             </div>
-
             <div className="form__field">
               <input type="password"
               value={password}
               onChange={(e)=>setPassword(e.target.value)}
               placeholder="••••••••••••" />
             </div>
-
             <div className="form__field">
               <input type="submit" value="Log In" />
             </div>
         </form>
-
         <p>Don't have an account? <Link to="/form">Register Here</Link></p>
       </div>
     </div>
   </div>
   </Paper>
   );
-  
 };
-
 export default Signin;

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Header from './components/layout/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.css';
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -74,7 +73,6 @@ ReactDOM.render(
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
               <Route path="/otheraccount" component={OtherAccount}/>
-              <Route path="/purchase" component={(Purchase)}/>
               <Route path='/chat' component={requireAuth(Chat)}/>
               <Route path='/cart' component={requireAuth(Cart)}/>
 

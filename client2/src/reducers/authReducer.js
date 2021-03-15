@@ -103,4 +103,4 @@ const reducerTemplate = (state = initialState, action) => {
 }
 
 
-export default reducerTemplate
+export default reducerTemplate  ;

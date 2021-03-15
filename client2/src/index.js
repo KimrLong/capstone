@@ -16,7 +16,6 @@ import Account from './pages/Account'
 import OtherAccount from './pages/OtherAccount';
 import Events from './pages/Events'
 import Chat from './pages/postComponents/PostManagement'
-import Purchase from './pages/Purchase'
 import Cart from './pages/Cart'
 import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'

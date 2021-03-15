@@ -4,6 +4,7 @@ import Posts from './Posts';
 import { v4 as uuidv1 } from 'uuid';
 import {useDispatch, useSelector} from 'react-redux';
 import {groupPosts, createPost, deletePost} from '../../actions/index';
+import '../../assets/Chat.css'
 
 const PostManagement = () => {
 
@@ -41,7 +42,8 @@ const PostManagement = () => {
     return <>
         <div className="row mt-5">
             <div className="col-6 offset-3 text-center">
-                <h3>Post Management</h3>
+                <h3 className="greetingText">
+                    Post Management</h3>
             </div>
         </div>
 

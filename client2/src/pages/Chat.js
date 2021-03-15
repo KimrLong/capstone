@@ -12,6 +12,7 @@ import './chat.css';
 import { Divider } from "@material-ui/core";
 
 import {Row, Col, Container, Button} from 'react-bootstrap';
+import '../assets/Chat.css'
 
 
 const Forum = () => {
@@ -65,6 +66,25 @@ const Forum = () => {
 
     return (
         <>
+        <div className="row">
+            <div className="col" styles="ml">
+                <form onSubmit={handleSubmit} 
+                // className="form"
+                >
+                    <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
+                    <button type="submit" className="btnType">Submit</button>
+                </form>
+            </div>
+            <div className="col" styles="ml">
+                {postArray.map((thePosts) => {
+                    return (
+                        <ul>      
+                            <li>
+                                {thePosts.email}: {thePosts.post}
+                            </li>          
+                        </ul>
+                    )
+                })}
         
             <div id="chat-container">
                 <div id="search-container">
@@ -126,12 +146,12 @@ const Forum = () => {
                 </div>
             
             </div>
-        
-        
+        </div>
+        </div>
 
         </>
-    )
-}
+    )}
+
 
 
 export default Forum;

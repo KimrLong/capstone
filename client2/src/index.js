@@ -8,9 +8,7 @@ import reduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducer from './reducers/index';
 import requireAuth from './requireAuth';
-import Navbar from './components/layout/Navbar';
 import BaseLayout from './components/layout/BaseLayout'
-import Footer from './components/Footer';
 import Account from './pages/Account'
 import OtherAccount from './pages/OtherAccount';
 import Events from './pages/Events'
@@ -67,8 +65,6 @@ ReactDOM.render(
       <React.StrictMode>
       <Provider store={store}>
       <Router>
-        {/* <Navbar/> */}
-        {/* <Header/> */}
         <BaseLayout>
             <Switch>
               <Route exact path='/' component={App}/>
@@ -77,7 +73,6 @@ ReactDOM.render(
               <Route path="/purchase" component={(Purchase)}/>
               <Route path='/chat' component={requireAuth(Chat)}/>
               <Route path='/cart' component={requireAuth(Cart)}/>
-
               <Route path='/events' component={Events}/>
               <Route path='/Support' component={Support}/>
               <Route path='/signin' component={Signin}/>
@@ -86,7 +81,6 @@ ReactDOM.render(
             </Switch>
             </BaseLayout>
         </Router>
-        {/* <Footer/> */}
         </Provider>
   </React.StrictMode>
   </>,

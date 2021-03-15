@@ -15,7 +15,7 @@ const Footer = () => {
                     <ul className="list-style">
                         <li><a href="https://matthewrobertsportfolio.netlify.app/">Matthew Roberts</a></li>
                         <li><a href="https://kimrlong.github.io/">Kim Long</a></li>
-                        <li><a href="https://6041b53938eb5156db9dcf5d--netlifyportfolio.netlify.app/">Matthew Chun</a></li>
+                        <li><a href="https://matthewchunportfolio.netlify.app/">Matthew Chun</a></li>
                     </ul>
                 </Col>
                 

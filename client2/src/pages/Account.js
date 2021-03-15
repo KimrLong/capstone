@@ -52,7 +52,9 @@ const UserProfile = () => {
 
     return (
         <>
-
+            <div style={{paddingLeft:"30px"}}>
+                Welcome back {username}
+            </div>
 <Container fluid>
         <Row className="firstRow userprofile">
             <Col >
@@ -99,9 +101,6 @@ const UserProfile = () => {
 
             <div>
 
-            </div>
-            <div>
-                {username}
             </div>
 
             <div>

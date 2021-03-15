@@ -3,9 +3,11 @@ import './Payment.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useFormik } from 'formik';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { makePayment } from '../../actions/PaymentAction';
 import {Row, Col} from 'react-bootstrap';
+import {Paper} from '../Styles';
+import '../../assets/Purchase.css'
 
 const initialValues = {
 			cardNo: '',
@@ -65,6 +67,7 @@ function Payment(props) {
 		onSubmit,
 		validate
 	});
+	const total = useSelector(state => state.payment.total)
 	
 	
 	//importing system date
@@ -79,7 +82,9 @@ function Payment(props) {
 	
 	
   return (
+	  <Paper>
     <div className='Payment'>
+		
 		<div className='Payment__form'>
 			<form onSubmit={formik.handleSubmit}>
 				<div className='Payment__form--input'>
@@ -144,23 +149,24 @@ function Payment(props) {
 						name='amount'
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
-						value={props.total}
+						value={total}
 					/>
 					{formik.touched.amount && formik.errors.amount ? <div id='error'>{formik.errors.amount}</div> : null}
 				</div>
 				
 				<button
-					className='Payment__btn--two'
+					className='Payment__btn--two eventButton'
 					type='submit'
 					onClick={() => props.makePayment(formik.values.cardNo,formik.values.name,formik.values.date,formik.values.code,formik.values.amount)}
 				>Submit</button>
 						<Link to='/'>
-			<button className='Payment__btn--one'>Back to Home</button>
+			<button className='Payment__btn--one eventButton'>Back to Home</button>
 		</Link>
-
+		
 			</form>
 		</div>
     </div>
+	</Paper>
   );
 }
 
@@ -172,7 +178,7 @@ const mapStateToProps = state => {
 		date: state.date,
 		code: state.code,
 		amount: state.amount,
-		total: state.total
+		
 	}
 }
 

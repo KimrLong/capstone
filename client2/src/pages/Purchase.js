@@ -6,31 +6,31 @@ import {Container} from '../components/Styles';
 import {Row, Col} from 'react-bootstrap';
 // import {Paper} from '../Styles';
 import Payment from '../components/PaymentComponents/Payment';
-import Card from '../components/EventComponents/cards';
+import '../assets/Purchase.css'
 
-function Holder() {
-  return (
+function Purchase() {
+  return (<>
     <Container>
-      <Row>
+      <Row className="events-container rowStyle">
         <Col>
-          <Card/>
+        <Payment></Payment>
         </Col>
         <Col>
-
-        </Col>
-        <Col>  
-
-        </Col>
-      </Row><br/>
-      <Row>
-        <Col></Col>
-        <Col></Col>
-        <Col>
-
+        <Mainstage
+            // onSelectSeat={seatId => {
+            //   console.log("selected - " + seatId);
+            // }}
+          />
+        
           </Col>
       </Row>
     </Container>
+    </>
   );
 }
 
-export default Holder;
+
+export default Purchase;
+
+//chart is displayed from THIS folder
+

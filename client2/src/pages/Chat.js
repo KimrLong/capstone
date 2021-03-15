@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import {createPost} from '../actions/index';
 import {groupPosts} from '../actions/index';
+import {Row, Col, Container, Button} from 'react-bootstrap';
 
 const Forum = () => {
 
@@ -53,21 +54,31 @@ const Forum = () => {
 
     return (
         <>
-        <form onSubmit={handleSubmit} 
-        // className="form"
-        >
-            <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
-            <button type="submit">Submit</button>
-        </form>
-        {postArray.map((thePosts) => {
-            return (
-                <ul>      
-                    <li>
-                        {thePosts.email}: {thePosts.post}
-                    </li>          
-                </ul>
-            )
-        })}
+        
+        <Container fluid >
+        <Row className="firstRow">
+            <Col >
+            <form onSubmit={handleSubmit} 
+                // className="form"
+                >
+                    <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
+                    <button type="submit">Submit</button>
+                </form>
+
+                </Col>
+                <Col>
+                {postArray.map((thePosts) => {
+                    return (
+                        <ul>      
+                            <li>
+                                {thePosts.email}: {thePosts.post}
+                            </li>          
+                        </ul>
+                    )
+                })}
+                </Col>
+            </Row>
+        </Container>
         </>
     )
 }

@@ -1,11 +1,9 @@
 
 .bottom{
     height:275px;
-    background: white;
+    background: #F9FaFC;
     bottom:0;
-
-
-
+    position: relative;
 }
 
 

@@ -2,7 +2,13 @@ import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import {createPost, groupPosts} from '../actions/index';
 import ReactDom from 'react-dom';
+import SearchIcon from '@material-ui/icons/Search';
+import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import AttachFileIcon from '@material-ui/icons/AttachFile';
+import DeleteForeverSharpIcon from '@material-ui/icons/DeleteForeverSharp';
 import './chat.css';
+import { Divider } from "@material-ui/core";
 
 
 const Forum = () => {
@@ -55,24 +61,68 @@ const Forum = () => {
 
     return (
         <>
-        <div className="row">
+        
             <div id="chat-container">
                 <div id="search-container">
-                    <input type="text" placeholder="search"/>
+                    <TextField 
+                        id="standard-bare" 
+                        defaultValue="Bare"
+                        margin="normal"
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="start">
+                                    <SearchIcon/>
+                                </InputAdornment>
+                            )
+                        }}
+                    />
                 </div>
-                <div id="conversation-list"></div>
+                <div id="conversation-list">
+                    <div className="conversation active">
+                        <img src="../assets/profilepic.jpg" alt="MattC"/>
+                        <div className="title-text">
+                            Matt C
+                        </div>
+                        <div className="created-date">
+                            Date:Time
+                        </div>
+                        <div className="conversation-message">
+                            This is the conversation message
+                        </div>
+                    </div>
+                </div>
                 <div id="new-message-container">
-                    <a href='#'>+</a>
+                    <a href="#">+</a>
                 </div>
                 <div id="chat-title">
                     <span>chat placeholder!</span>
-                    <img src="" alt=""></img>
+                    <DeleteForeverSharpIcon/>
                 </div>
-                <div id="chat-message-list"></div>
-                <div id="chat-form"></div>
+                <div id="chat-message-list">
+                        <div className="message-row you-message">
+                            <div className="message-content">
+                                <div className= "message-text">message text</div>
+                                <div className="message-time">date:time</div>
+                        </div>
+                    </div>
+                    <div className="message-row other-message">
+                        <div className="message-content"></div>
+                            <img src="../assets/profilepic.jpg" alt="MattC"/>
+                            <div className= "message-text"> 
+                            This is a response to your message.
+                            I hope you are having a great day
+                            </div>
+                            <div className="message-time">date:time</div>
+                        </div>
+                    </div>
+                
+                <div id="chat-form">
+                    <AttachFileIcon/>
+                    <input type="text" placeholder="type a message"/>
+                </div>
             
             </div>
-        </div>
+        
         
 
         </>

@@ -57,7 +57,6 @@ router.post("/form", async (req, res) => {
       let user = await db.user.create({email: email, password: password, username: username});
       let jwtToken = token(user); //token returns a jwt
       return res.json({token: jwtToken}); //passing a jwt to client
-      
     } else {
       return res.status(422).send({error: 'Email already exists'});
     }
@@ -66,7 +65,7 @@ router.post("/form", async (req, res) => {
   }
 });
 
-router.post("/userprofile/updatepic", async (req, res) => {
+router.post("/account/updatepic", async (req, res) => {
   console.log('userprofileupdatepic');
   // console.log(req.body);
 
@@ -84,8 +83,8 @@ router.post("/userprofile/updatepic", async (req, res) => {
   }
 })
 
-router.post("/userprofile", async (req, res) => {
-  console.log('userprofile');
+router.post("/account", async (req, res) => {
+  console.log('account');
   // console.log("reqbody", req.body.email);
 
   //models- store in database
@@ -103,7 +102,7 @@ router.post("/userprofile", async (req, res) => {
   }
 })
 
-router.get("/userprofile/updatepic", async (req, res) => {
+router.get("/account/updatepic", async (req, res) => {
   console.log('userprofileGET');
   // console.log(req.body.email);
 
@@ -121,14 +120,13 @@ router.get("/userprofile/updatepic", async (req, res) => {
   }
 })
 
-router.post("/forum", async (req, res) => {
-  console.log('forum');
+router.post("/chattest", async (req, res) => {
 
   let post = req.body.post;
   let email = req.body.email;
-
+  let id = req.body.id;
   try {
-    let forumPost = await db.forum_posts.create({post: post, email: email})
+    let forumPost = await db.forum_posts.create({unique_id: id, post: post, email: email})
 
     return res.json(forumPost);
 
@@ -137,7 +135,35 @@ router.post("/forum", async (req, res) => {
   }
 })
 
-router.get("/forum", async (req, res) => {
+router.get("/chattest", async (req, res) => {
+  try {
+    let totalPosts = await db.forum_posts.findAll();
+    
+    return res.json(totalPosts);
+
+  } catch (error) {
+    return res.status(423).send({error: `Can't access database`});
+  }
+})
+
+router.post("/chattest/group", async (req, res) => {
+  console.log('chatgroup');
+
+  let post = req.body.post;
+  let email = req.body.email;
+  let id = req.body.id;
+
+  try {
+    let forumPost = await db.forum_posts.findAll({id: id, post: post, email: email})
+
+    return res.json(forumPost);
+
+  } catch (error) {
+    return res.status(423).send({error: `Can't access database2`});
+  }
+})
+
+router.get("/chattest/group", async (req, res) => {
   try {
     let totalPosts = await db.forum_posts.findAll();
     

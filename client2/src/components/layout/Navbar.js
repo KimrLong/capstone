@@ -33,6 +33,7 @@ const Navbar =()=> {
             <NavDropdown.Item  className="itemStyle"><Link to="/cart"><FiIcons.FiShoppingCart style={{margin:"10px"}}/>Cart</Link></NavDropdown.Item>
             <NavDropdown.Item  className="itemStyle"><Link to="/events"><RiIcons.RiTicket2Fill style={{margin:"10px"}}/>Events</Link></NavDropdown.Item>
             <NavDropdown.Item  className="itemStyle"><Link to="/chat"><BsIcons.BsFillChatDotsFill style={{margin:"10px"}}/>Chat</Link></NavDropdown.Item>
+            <NavDropdown.Item  className="itemStyle"><Link to="/chattest"><BsIcons.BsFillChatDotsFill style={{margin:"10px"}}/>Chat Test</Link></NavDropdown.Item>
             <NavDropdown.Item  className="itemStyle"><Link to="/holder"><BsIcons.BsFillChatDotsFill style={{margin:"10px"}}/>Holder</Link></NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item ><Link to="/support"><IoIcons.IoMdHelpCircle style={{margin:"10px"}}/>Contact Support</Link></NavDropdown.Item>
@@ -46,7 +47,9 @@ const Navbar =()=> {
         <InOrOut props={authenticated}/>
 
     </Nav>
+    )}
 
+export default Navbar
         /* <IconContext.Provider value={{color:'#fff'}}>
             <div className="navbar">
                 <Link to="#" className='menu-bars'> 

@@ -3,7 +3,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {setProfilePic, setProfileInfo} from '../actions/index';
 import {Row, Col, Container} from 'react-bootstrap';
 import  '../assets/Home.css'
-import Posts from './postComponents/Posts';
 import UserSpecificPosts from './postComponents/UserSpecificPosts';
 import {groupPosts, createPost, deletePost} from '../actions/index';
 
@@ -97,15 +96,7 @@ const UserProfile = () => {
             <br/> 
 
             <div>
-            {/* {postArray.findAll(( { where: {email : email}}) => {
-                return (
-                    <ul>      
-                        <li>
-                            {email}: {viewPosts}
-                        </li>          
-                    </ul>
-                )
-            })} */}
+
             </div>
             <div>
                 {username}

@@ -12,7 +12,7 @@ const AddProject = (props) => {
 
   useEffect(() => {
     const updatePosts = async() => {
-        const url = `http://localhost:3001/chattest/group`
+        const url = `http://localhost:3001/chat/group`
         const response = await fetch(url)
         const data = await response.json()
         // const dataArray = Object.values(data);

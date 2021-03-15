@@ -59,7 +59,7 @@ export const groupPosts = (formData) => {
     console.log(formData);
     return async dispatch=>{
         try{
-            let response = await axios.post('http://localhost:3001/chattest/group', formData) //formdata will put on header
+            let response = await axios.post('http://localhost:3001/chat/group', formData) //formdata will put on header
             dispatch({type: "GROUP_POSTS", data: formData});
             //dispatch action to reducer 
         }
@@ -74,7 +74,7 @@ export const createPost = (formData) => {
     console.log(formData);
     return async dispatch=>{
         try{
-            let response = await axios.post('http://localhost:3001/chattest', formData) //formdata will put on header
+            let response = await axios.post('http://localhost:3001/chat', formData) //formdata will put on header
             //dispatch action to reducer 
             dispatch({type: "ADD_POST", data: formData});
         }

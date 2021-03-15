@@ -8,12 +8,11 @@ import {groupPosts, createPost} from '../../actions/index';
 const PostManagement = () => {
 
     const [posts, setPosts] = useState([]);  //[{id, category, title}, {}, {}]
-    const [postObject, setPostObject] = useState({});
     const dispatch = useDispatch();
 
     useEffect(() => {
         const updatePosts = async() => {
-            const url = `http://localhost:3001/chattest/group`
+            const url = `http://localhost:3001/chat/group`
             const response = await fetch(url)
             const data = await response.json()
             // const dataArray = Object.values(data);
@@ -50,7 +49,7 @@ const PostManagement = () => {
         })
         console.log(filteredPosts);
         setPosts(filteredPosts);
-        groupPosts(filteredPosts);
+        dispatch(groupPosts(filteredPosts));
 
     }
     return <>

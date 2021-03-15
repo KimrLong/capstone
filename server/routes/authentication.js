@@ -120,7 +120,7 @@ router.get("/account/updatepic", async (req, res) => {
   }
 })
 
-router.post("/chattest", async (req, res) => {
+router.post("/chat", async (req, res) => {
 
   let post = req.body.post;
   let email = req.body.email;
@@ -135,7 +135,7 @@ router.post("/chattest", async (req, res) => {
   }
 })
 
-router.get("/chattest", async (req, res) => {
+router.get("/chat", async (req, res) => {
   try {
     let totalPosts = await db.forum_posts.findAll();
     
@@ -146,7 +146,7 @@ router.get("/chattest", async (req, res) => {
   }
 })
 
-router.post("/chattest/group", async (req, res) => {
+router.post("/chat/group", async (req, res) => {
   console.log('chatgroup');
 
   let post = req.body.post;
@@ -163,7 +163,7 @@ router.post("/chattest/group", async (req, res) => {
   }
 })
 
-router.get("/chattest/group", async (req, res) => {
+router.get("/chat/group", async (req, res) => {
   try {
     let totalPosts = await db.forum_posts.findAll();
     

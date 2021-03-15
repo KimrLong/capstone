@@ -7,7 +7,6 @@ import {Row, Col} from 'react-bootstrap';
 // import {Paper} from '../Styles';
 import Payment from '../components/PaymentComponents/Payment';
 import '../assets/Purchase.css'
-
 function Purchase() {
   return (<>
     <Container>
@@ -21,16 +20,12 @@ function Purchase() {
             //   console.log("selected - " + seatId);
             // }}
           />
-        
           </Col>
       </Row>
     </Container>
     </>
   );
 }
-
-
 export default Purchase;
-
 //chart is displayed from THIS folder
 

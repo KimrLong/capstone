@@ -13,7 +13,7 @@ import requireAuth from './requireAuth';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/Footer';
 import Account from './pages/Account'
-import Holder from './pages/Holder';
+import Purchase from './pages/Purchase';
 import Events from './pages/Events'
 import Chat from './pages/postComponents/PostManagement'
 import Purchase from './pages/Purchase'
@@ -72,8 +72,7 @@ ReactDOM.render(
             <Switch>
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
-              <Route path='/purchase' component={Purchase}/>
-              <Route path='/events' component={Events}/>
+              <Route path="/purchase" component={(Purchase)}/>
               <Route path='/chat' component={requireAuth(Chat)}/>
               <Route path='/cart' component={requireAuth(Cart)}/>
               <Route path='/events' component={Events}/>

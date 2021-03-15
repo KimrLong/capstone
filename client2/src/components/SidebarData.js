@@ -49,10 +49,4 @@ export const SidebarData = [
         icon:<IoIcons.IoMdHelpCircle />,
         class: 'nav-text'
     },
-    {
-        title:"  Holder",
-        path:"/holder",
-        icon:<IoIcons.IoMdHelpCircle />,
-        class: 'nav-text'
-    }
 ]

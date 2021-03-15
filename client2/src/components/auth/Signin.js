@@ -8,19 +8,14 @@ import '../../assets/singin.css'
 import {Row, Col, Container, Button} from 'react-bootstrap';
 
 const Signin = () => {
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     dispatch(setEmailState(email));
     dispatch(getProfile({email: email}))
-
     dispatch(signin({
       email: email,
       password: password
@@ -28,9 +23,7 @@ const Signin = () => {
       console.log('pushing to another page');
       history.push('/account');
     }))
-
   }
-
   return( 
     <Container>
       <Row className="firstRowOnSign">
@@ -53,7 +46,6 @@ const Signin = () => {
               onChange={(e)=>setPassword(e.target.value)}
               placeholder="••••••••••••" />
             </div>
-
             <div className="form__field">
               <input type="submit" value="Log In" />
             </div>
@@ -67,7 +59,5 @@ const Signin = () => {
   </Row>
   </Container>
   );
-  
 };
-
 export default Signin;

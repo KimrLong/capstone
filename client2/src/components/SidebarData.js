@@ -37,6 +37,14 @@ export const SidebarData = [
         icon:<BsIcons.BsFillChatDotsFill />,
         class: 'nav-text'
     },
+
+    {
+        title:"  Chat Test",
+        path:"/chattest",
+        icon:<BsIcons.BsFillChatDotsFill />,
+        class: 'nav-text'
+    },
+
     {
         title:"  Sign Out",
         path:"/signout",

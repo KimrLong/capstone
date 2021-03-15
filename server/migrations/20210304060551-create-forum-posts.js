@@ -18,6 +18,9 @@ module.exports = {
       post: {
         type: Sequelize.STRING
       },
+      unique_id: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

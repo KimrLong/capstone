@@ -41,6 +41,9 @@ const Navbar =()=> {
         <InOrOut props={authenticated}/>
 
     </Nav>
+    )}
+
+export default Navbar
 
         /* <IconContext.Provider value={{color:'#fff'}}>
             <div className="navbar">
@@ -121,6 +124,6 @@ const Navbar =()=> {
         //     </Container>
 //         // </>   
 //     )
-    )}
+    
 
 export default Navbar

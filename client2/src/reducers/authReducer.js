@@ -8,6 +8,7 @@ const initialState = {
     profilePic: "",
     about: "",
     username: "",
+    uniqueId: "",
     total: 0
 
 }
@@ -44,17 +45,11 @@ const reducerTemplate = (state = initialState, action) => {
         case "ADD_POST":
             return {
                 ...state,
+                uniqueId: action.data.id,
                 forumPost: action.data.post,
                 email: action.data.email,
             }
-        case 'DELETE_POST':
-            let filteredPosts = state.auth.allPosts.filter(p => {
-                return p.id != action.data.id
-            })
-            return {
-                ...state,
-                todos: filteredPosts,
-            }
+
         case "GROUP_POSTS":
             return {
                 ...state,

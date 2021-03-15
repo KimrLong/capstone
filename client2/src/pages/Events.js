@@ -6,32 +6,25 @@ import {Container} from '../components/Styles';
 import {Row, Col} from 'react-bootstrap';
 // import {Paper} from '../Styles';
 import Payment from '../components/PaymentComponents/Payment';
-import '../assets/Events.css'
+import Card from '../components/EventComponents/cards';
 
 function Events() {
-  return (<>
-
-    <Container className="events">
-      <Row className="events-container">
+  return (
+    <Container>
+      <Row>
+        <Col></Col>
         <Col>
-        <Payment></Payment>
+          <h1>Culture Club Events</h1>
         </Col>
-        <Col>
-        <Mainstage
-            // onSelectSeat={seatId => {
-            //   console.log("selected - " + seatId);
-            // }}
-          />
-          <div> </div>
-          </Col>
+        <Col></Col>
+      </Row><br/>
+      <Row>
+
+        <Col><Card/></Col>
+
       </Row>
     </Container>
-    </>
   );
 }
 
-
 export default Events;
-
-//chart is displayed from THIS folder
-

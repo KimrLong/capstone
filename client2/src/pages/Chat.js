@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
-import {createPost} from '../actions/index';
-import {groupPosts} from '../actions/index';
+import {createPost, groupPosts} from '../actions/index';
+import ReactDom from 'react-dom';
+import './chat.css';
+
 
 const Forum = () => {
 
@@ -54,29 +56,45 @@ const Forum = () => {
     return (
         <>
         <div className="row">
-            <div className="col" styles="ml">
-                <form onSubmit={handleSubmit} 
-                // className="form"
-                >
-                    <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-            <div className="col" styles="ml">
-                {postArray.map((thePosts) => {
-                    return (
-                        <ul>      
-                            <li>
-                                {thePosts.email}: {thePosts.post}
-                            </li>          
-                        </ul>
-                    )
-                })}
+            <div id="chat-container">
+                <div id="search-container">
+                    <input type="text" placeholder="search"/>
+                </div>
+                <div id="conversation-list"></div>
+                <div id="new-message-container">
+                    <a href='#'>+</a>
+                </div>
+                <div id="chat-title">
+                    <span>chat placeholder!</span>
+                    <img src="" alt=""></img>
+                </div>
+                <div id="chat-message-list"></div>
+                <div id="chat-form"></div>
+            
             </div>
         </div>
+        
 
         </>
     )
 }
 
-export default Forum
+export default Forum;
+
+
+// <form onSubmit={handleSubmit} 
+// // className="form"
+// >
+//     <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
+//     <button type="submit">Submit</button>
+// </form>
+
+// {postArray.map((thePosts) => {
+//     return (
+//         <ul>      
+//             <li>
+//                 {thePosts.email}: {thePosts.post}
+//             </li>          
+//         </ul>
+//     )
+// })}

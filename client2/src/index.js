@@ -75,10 +75,10 @@ ReactDOM.render(
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
               <Route path='/events' component={Events}/>
-              <Route path='/Chat' component={requireAuth(Chat)}/>
+              <Route path='/chat' component={Chat}/>
               <Route path='/cart' component={requireAuth(Cart)}/>
               <Route path='/holder' component={Holder}/>
-              <Route path='/Support' component={Support}/>
+              <Route path='/support' component={Support}/>
               <Route path='/signin' component={Signin}/>
               <Route path='/signout' component={Signout}/>
               <Route path='/form' component={SignupForm}/>

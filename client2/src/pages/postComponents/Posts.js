@@ -6,7 +6,6 @@ const Posts = ({posts, onDelete}) => {
 
   return <ul>
 
-
     {postsArray.map(post =>{
 
       return <PostItem key={post.id} post={post} onDelete={onDelete} />

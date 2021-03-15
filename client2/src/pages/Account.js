@@ -4,6 +4,9 @@ import {setProfilePic, setProfileInfo} from '../actions/index';
 import {Row, Col, Container} from 'react-bootstrap';
 import  '../assets/Home.css'
 import '../assets/Account.css'
+import Posts from './postComponents/Posts';
+import UserSpecificPosts from './postComponents/UserSpecificPosts';
+import {groupPosts, createPost, deletePost} from '../actions/index';
 
 const UserProfile = () => {
 
@@ -12,25 +15,21 @@ const UserProfile = () => {
     const email = useSelector(state => state.auth.email);
     const pic = useSelector(state => state.auth.profilePic);
     const aboutStuff = useSelector(state => state.auth.about);
-    const viewPosts = useSelector(state => state.auth.allPosts);
+    const posts = useSelector(state => state.auth.allPosts);
     const username = useSelector(state => state.auth.username);
-    const postArray = Object.values(viewPosts);
     const dispatch = useDispatch();
 
-    // dispatch(setProfilePic({email, pic}));
-    // dispatch(setProfileInfo({email, aboutStuff}));
-
-
-    // useEffect(() => {
-    //     const fetchPicAbout = async() => {
-    //         const url = `http://localhost:3001/userprofile`
-    //         const response = await fetch(url)
-    //         const data = await response.json()
-    //         console.log(data);
-    //         // dispatch(setProfilePic(data));
-    //     }
-    //     fetchPicAbout();
-    // }, [])
+    useEffect(() => {
+        const updatePosts = async() => {
+            const url = `http://localhost:3001/chat/group`
+            const response = await fetch(url)
+            const data = await response.json()
+        
+            // setPosts(data);
+            dispatch(groupPosts(data));
+        }
+        updatePosts();
+    }, [])  
 
     const handleSubmit1 = (e) => {
         e.preventDefault();
@@ -44,15 +43,12 @@ const UserProfile = () => {
         dispatch(setProfileInfo({email, about}));
     }
 
-    // useEffect(() => {
-    //     const updatePosts = async() => {
-    //         const url = `http://localhost:3001/forum`
-    //         const response = await fetch(url)
-    //         const data = await response.json()
-    //         dispatch(groupPosts(data));
-    //     }
-    //     updatePosts();
-    // }, [viewPosts])
+    const handleRemovePost = (id) => {
+
+        console.log(id);
+        dispatch(deletePost({id: id}));
+
+    }
 
     return (
         <>
@@ -114,6 +110,15 @@ const UserProfile = () => {
             </div>
             <div>
                 {username}
+            </div>
+
+            <div>
+                <div className="col-6 offset-3 text-center">
+                    <h3>Your Posts</h3>
+                </div>
+
+                <UserSpecificPosts onDelete={(id)=>handleRemovePost(id)} posts={posts} />
+                {/* <Posts onDelete={(id)=>handleRemovePost(id)} posts={posts} /> */}
             </div>
         </div>
         </>

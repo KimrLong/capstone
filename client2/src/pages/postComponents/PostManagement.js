@@ -3,11 +3,12 @@ import AddPostItem from './AddPostItem';
 import Posts from './Posts';
 import { v4 as uuidv1 } from 'uuid';
 import {useDispatch, useSelector} from 'react-redux';
-import {groupPosts, createPost} from '../../actions/index';
+import {groupPosts, createPost, deletePost} from '../../actions/index';
 
 const PostManagement = () => {
 
-    const [posts, setPosts] = useState([]);  //[{id, category, title}, {}, {}]
+    const posts = useSelector(state => state.auth.allPosts);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -16,39 +17,27 @@ const PostManagement = () => {
             const response = await fetch(url)
             const data = await response.json()
         
-            setPosts(data);
-            dispatch(groupPosts(posts));
+            // setPosts(data);
+            dispatch(groupPosts(data));
 
         }
         updatePosts();
     }, [])
 
-    // console.log(posts);
-
     const handleAddPost = async (newPost) => {
         console.log(newPost);
-        
-        await setPosts([newPost, ...posts]);
+
         dispatch(groupPosts(posts));
 
     }
 
-    const clearPosts = () => {
-        setPosts([]);
-    }
-
     const handleRemovePost = (id) => {
 
-        let oldPosts = [...posts];
-
-        let filteredPosts = oldPosts.filter(post =>{
-            return id !== post.id
-        })
-        console.log(filteredPosts);
-        setPosts(filteredPosts);
-        dispatch(groupPosts(filteredPosts));
+        console.log(id);
+        dispatch(deletePost({id: id}));
 
     }
+
     return <>
         <div className="row mt-5">
             <div className="col-6 offset-3 text-center">
@@ -64,8 +53,6 @@ const PostManagement = () => {
         <div className="row">
             <Posts onDelete={(id)=>handleRemovePost(id)} posts={posts} />
         </div>
-
-        <button onClick={clearPosts}>clear</button>
     </>
 };
 

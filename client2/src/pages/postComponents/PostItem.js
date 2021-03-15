@@ -5,7 +5,7 @@ const PostItem = (props) => {
 
         <li>
             {props.post.email} - {props.post.post} 
-            <a href="#" onClick={() => props.onDelete(props.post.id)}> [REMOVE] </a>
+            <button onClick={() => props.onDelete(props.post.id)}> [REMOVE] </button>
         </li>
 
     </>;

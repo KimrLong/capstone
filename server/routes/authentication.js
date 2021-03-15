@@ -124,7 +124,7 @@ router.post("/chat", async (req, res) => {
 
   let post = req.body.post;
   let email = req.body.email;
-  
+
   try {
     let forumPost = await db.forum_posts.create({post: post, email: email})
 
@@ -146,6 +146,27 @@ router.get("/chat", async (req, res) => {
   }
 })
 
+router.post("/chat/group/delete", async (req, res) => {
+  console.log('chatgroup');
+
+  let id = req.body.id
+console.log(req.body);
+  try {
+    let deletePost = await db.forum_posts.destroy({
+      where: {
+        id: id,
+      }
+    })
+
+    let forumPosts = await db.forum_posts.findAll();
+
+    return res.json(forumPosts);
+
+  } catch (error) {
+    return res.status(423).send({error: `Can't access database2`});
+  }
+})
+
 router.post("/chat/group", async (req, res) => {
   console.log('chatgroup');
 
@@ -153,7 +174,7 @@ router.post("/chat/group", async (req, res) => {
   let email = req.body.email;
 
   try {
-    let forumPost = await db.forum_posts.findAll({post: post, email: email})
+    let forumPost = await db.forum_posts.findAll()
 
     return res.json(forumPost);
 

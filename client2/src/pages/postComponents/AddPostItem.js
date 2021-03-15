@@ -18,7 +18,7 @@ const AddProject = (props) => {
         setPosts(data);
       }
       updatePosts();
-    }, [posts])
+    }, [])
     
   const handleSubmit = (e) => {
     

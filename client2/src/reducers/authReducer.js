@@ -49,6 +49,12 @@ const reducerTemplate = (state = initialState, action) => {
                 forumPost: action.data.post,
                 email: action.data.email,
             }
+        case "REMOVE_POST":
+            return {
+                ...state,
+                uniqueId: action.data.id,
+
+            }
 
         case "GROUP_POSTS":
             return {

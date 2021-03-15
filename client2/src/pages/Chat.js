@@ -10,8 +10,9 @@ const Forum = () => {
     const dispatch = useDispatch();
     const email = useSelector(state => state.auth.email);
     const viewPosts = useSelector(state => state.auth.allPosts);
-    const [allPosts, setAllPosts] = useState([]);
+    const postArray = Object.values(viewPosts);
     const [submit, setSubmit] = useState(false);
+
     // const updatePosts = async() => {
     //     const url = `http://localhost:3001/forum`
     //     const response = await fetch(url)
@@ -29,13 +30,6 @@ const Forum = () => {
         // updatePosts();
     }
 
-    const handleRemove = (id) => {
-        let oldPosts = [...allPosts];
-        let filteredPosts = oldPosts.filter(post => {
-            return id !== post.id
-        })
-        // viewPosts = filteredPosts
-    }
     useEffect(() => {
         const updatePosts = async() => {
             const url = `http://localhost:3001/forum`
@@ -58,36 +52,34 @@ const Forum = () => {
     }, [submit])
 }
 
-//     return (
-//         <>
-        
-//         <Container fluid >
-//         <Row className="firstRow">
-//             <Col >
-//             <form onSubmit={handleSubmit} 
-//                 // className="form"
-//                 // >
-//                     <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
-//                     <button type="submit">Submit</button>
-//                 </form>
 
-//                 </Col>
-//                 <Col>
-//                 {postArray.map((thePosts) => {
-//                     return (
-//                         <ul>      
-//                             <li>
-//                                 {thePosts.email}: {thePosts.post}
-//                                 <button onClick={handleRemove(thePosts.id)}>X</button>
-//                             </li>          
-//                         </ul>
-//                     )
-//                 })}
-//                 </Col>
-//             </Row>
-//         </Container>
-//         </>
-//     )
-// }
+    return (
+        <>
+        <div className="row">
+            <div className="col" styles="ml">
+                <form onSubmit={handleSubmit} 
+                // className="form"
+                >
+                    <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div className="col" styles="ml">
+                {postArray.map((thePosts) => {
+                    return (
+                        <ul>      
+                            <li>
+                                {thePosts.email}: {thePosts.post}
+                            </li>          
+                        </ul>
+                    )
+                })}
+            </div>
+        </div>
+
+        </>
+    )
+}
+
 
 // export default Forum

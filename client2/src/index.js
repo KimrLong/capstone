@@ -77,6 +77,7 @@ ReactDOM.render(
               <Route path="/purchase" component={(Purchase)}/>
               <Route path='/chat' component={requireAuth(Chat)}/>
               <Route path='/cart' component={requireAuth(Cart)}/>
+
               <Route path='/events' component={Events}/>
               <Route path='/Support' component={Support}/>
               <Route path='/signin' component={Signin}/>

@@ -3,6 +3,7 @@ import Signup from '../../components/auth/SignupForm';
 import FormSuccess from '../../components/auth/Success';
 import {Row, Col, Container, Button} from 'react-bootstrap';
 import '../../assets/Form.css'
+import  '../../assets/Home.css'
 
 const FormStyle =() =>{
     const [isSubmitted, setIsSubmitted] = useState(false)
@@ -12,9 +13,8 @@ const FormStyle =() =>{
     return(
         <>
         <Container fluid >
-        <Row>
-            <Col md={{offset:4, span:4}}>
-
+        <Row className="firstRowOnForm">
+            <Col>
                 {!isSubmitted ?
                 <Signup submitForm={submitForm} /> 
                 : <FormSuccess/>}

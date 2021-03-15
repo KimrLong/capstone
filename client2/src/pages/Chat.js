@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
+
 import {createPost, groupPosts} from '../actions/index';
 import ReactDom from 'react-dom';
 import SearchIcon from '@material-ui/icons/Search';
@@ -9,6 +10,8 @@ import AttachFileIcon from '@material-ui/icons/AttachFile';
 import DeleteForeverSharpIcon from '@material-ui/icons/DeleteForeverSharp';
 import './chat.css';
 import { Divider } from "@material-ui/core";
+
+import {Row, Col, Container, Button} from 'react-bootstrap';
 
 
 const Forum = () => {
@@ -57,6 +60,7 @@ const Forum = () => {
         }
         fetchPosts();
     }, [submit])
+}
 
 
     return (
@@ -129,6 +133,7 @@ const Forum = () => {
     )
 }
 
+
 export default Forum;
 
 
@@ -148,3 +153,7 @@ export default Forum;
 //         </ul>
 //     )
 // })}
+
+
+// export default Forum
+

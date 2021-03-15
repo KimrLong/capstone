@@ -11,8 +11,13 @@ import '../assets/Purchase.css'
 function Purchase() {
   return (<>
 
+
     <Container className="events">
       <Row className="events-container">
+
+    <Container>
+      <Row className="events-container rowStyle">
+
         <Col>
         <Payment></Payment>
         </Col>
@@ -22,7 +27,9 @@ function Purchase() {
             //   console.log("selected - " + seatId);
             // }}
           />
-          <div> </div>
+          <div>
+          </div>
+
           </Col>
       </Row>
     </Container>

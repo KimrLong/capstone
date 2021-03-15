@@ -4,6 +4,9 @@ import {useDispatch} from 'react-redux';
 import {signin, setEmailState, getProfile} from '../../actions/index';
 import {useHistory} from 'react-router-dom';
 import {Paper} from '../Styles';
+import '../../assets/singin.css'
+import {Row, Col, Container, Button} from 'react-bootstrap';
+
 const Signin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,6 +25,9 @@ const Signin = () => {
     }))
   }
   return( 
+    <Container>
+      <Row className="firstRowOnSign">
+        <Col>
     <Paper>
   <div className="mt-5">
     <div className="grid align__item">
@@ -49,6 +55,9 @@ const Signin = () => {
     </div>
   </div>
   </Paper>
+  </Col>
+  </Row>
+  </Container>
   );
 };
 export default Signin;

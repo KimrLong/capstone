@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import {createPost} from '../actions/index';
 import {groupPosts} from '../actions/index';
+import {Row, Col, Container, Button} from 'react-bootstrap';
 
 const Forum = () => {
 
@@ -49,6 +50,7 @@ const Forum = () => {
         }
         fetchPosts();
     }, [submit])
+}
 
 
     return (
@@ -79,4 +81,5 @@ const Forum = () => {
     )
 }
 
-export default Forum
+
+// export default Forum

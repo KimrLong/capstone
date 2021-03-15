@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import useFormHook from '../../useFormHook'
 import validate from '../../validateInfo'
 import '../../assets/Form.css'
+import {Paper, Container} from '../Styles'
+import Footer from '../Footer'
 
 
 const SignupForm = ({submitForm}) => {
@@ -10,7 +12,8 @@ const SignupForm = ({submitForm}) => {
         validate
         );
     return (
-            <div className="form-content-right">    
+            <div className="form-content-right">
+                <Paper> 
                 <form className="form" onSubmit={handleSubmit}>
                     <p>Get started today! Fill out the information below.</p>
                 <div className="form-inputs">
@@ -85,6 +88,7 @@ const SignupForm = ({submitForm}) => {
                     Already have an account?< a href="/signin"> Login Here</a>
                 </span>
                 </form>
+                </Paper> 
         </div>
     )
 }

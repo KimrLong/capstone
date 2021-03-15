@@ -76,7 +76,7 @@ export const createPost = (formData) => {
         try{
             let response = await axios.post('http://localhost:3001/chat', formData) //formdata will put on header
             //dispatch action to reducer 
-            dispatch({type: "ADD_POST", data: formData});
+            dispatch({type: "ADD_POST", data: response.data});
         }
         catch(e){
             console.log('error');

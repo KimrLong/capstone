@@ -16,7 +16,6 @@ import requireAuth from './requireAuth';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/Footer';
 import Account from './pages/Account'
-import Holder from './pages/Holder';
 import Events from './pages/Events'
 import Chat from './pages/postComponents/PostManagement'
 import Cart from './pages/Cart'
@@ -78,7 +77,7 @@ ReactDOM.render(
               <Route path='/chat' component={requireAuth(Chat)}/>
 
               <Route path='/cart' component={requireAuth(Cart)}/>
-              <Route path='/holder' component={Holder}/>
+
               <Route path='/Support' component={Support}/>
               <Route path='/signin' component={Signin}/>
               <Route path='/signout' component={Signout}/>

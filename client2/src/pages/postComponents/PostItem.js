@@ -1,12 +1,15 @@
 import React from "react";
+import UserPosts from './UserPosts';
+import {useDispatch, useSelector} from 'react-redux';
 
 const PostItem = (props) => {
+
+    const email = useSelector(state => state.auth.email);
+
     return <>
 
-        <li>
-            {props.post.email} - {props.post.post} 
-            <button onClick={() => props.onDelete(props.post.id)}> [REMOVE] </button>
-        </li>
+        <UserPosts email={email} props={props}/>
+
 
     </>;
 };

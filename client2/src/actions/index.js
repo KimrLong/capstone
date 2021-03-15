@@ -28,6 +28,19 @@ export const getProfile = (email) => {
     }
 }
 
+export const getOtherProfile = (formData) => {
+    return async dispatch=>{
+        try{
+            let response = await axios.post('http://localhost:3001/otheruser', formData) //formdata will put on header
+            dispatch({type: "GET_OTHER_PROFILE", data: response.data})
+        }
+        catch(e){
+            console.log('error');
+            console.log(e);
+        }
+    }
+}
+
 export const setProfileInfo = (formData) => {
     return async dispatch=>{
         try{

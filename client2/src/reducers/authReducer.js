@@ -9,8 +9,12 @@ const initialState = {
     about: "",
     username: "",
     uniqueId: "",
-    total: 0
+    total: 0,
 
+    otherEmail: "",
+    otherProfilePic: "",
+    otherAbout: "",
+    otherUsername: "",
 }
 
 const reducerTemplate = (state = initialState, action) => {
@@ -31,6 +35,13 @@ const reducerTemplate = (state = initialState, action) => {
                 ...state,
                 about: action.data.about,
                 profilePic: action.data.profile_pic,
+                // username: action.data.username,
+            }
+        case "GET_OTHER_PROFILE":
+            return {
+                ...state,
+                Otherabout: action.data.about,
+                OtherProfilePic: action.data.profile_pic,
             }
         case "AUTH_USER":
             return {

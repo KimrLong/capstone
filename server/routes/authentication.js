@@ -80,12 +80,30 @@ router.post("/account/updatepic", async (req, res) => {
   } catch (error) {
       //send back error, can't access database
       return res.status(423).send({error: `Can't access database1`});
-  }
-})
+    }
+  })
+  
+  router.get("/account/updatepic", async (req, res) => {
+    console.log('userprofileGET');
+    // console.log(req.body.email);
+  
+    try {
+      let records = await db.user.findAll(
+        {
+        where: { 
+          email: req.body.email,
+        } 
+      });
+      return res.json(records);
+  
+    } catch (error) {
+      return res.status(423).send({error: `Can't access database2`});
+    }
+  })
 
-router.post("/account", async (req, res) => {
-  console.log('account');
-  // console.log("reqbody", req.body.email);
+  router.post("/account", async (req, res) => {
+    console.log('account');
+    // console.log("reqbody", req.body.email);
 
   //models- store in database
   try {
@@ -102,23 +120,42 @@ router.post("/account", async (req, res) => {
   }
 })
 
-router.get("/account/updatepic", async (req, res) => {
-  console.log('userprofileGET');
-  // console.log(req.body.email);
+router.post("/otheruser", async (req, res) => {
+  console.log('otheruser');
+  // console.log("reqbody", req.body.email);
 
+  //models- store in database
   try {
-    let records = await db.user.findAll(
-      {
+    let record = await db.user.findAll( {
       where: { 
-        email: req.body.email,
-      } 
-    });
-    return res.json(records);
-
+        email: req.body.otherEmail,
+      }
+    })
+    // console.log(record);
+    return res.json(record);
   } catch (error) {
-    return res.status(423).send({error: `Can't access database2`});
+      //send back error, can't access database
+      return res.status(423).send({error: `Can't access database1`});
   }
 })
+
+  router.get("/account", async (req, res) => {
+    console.log('otheruserGET');
+    // console.log(req.body.email);
+  
+    try {
+      let records = await db.user.findAll(
+        {
+        where: { 
+          email: req.body.otherEmail,
+        } 
+      });
+      return res.json(records);
+  
+    } catch (error) {
+      return res.status(423).send({error: `Can't access database2`});
+    }
+  })
 
 router.post("/chat", async (req, res) => {
 

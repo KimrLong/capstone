@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import UserProfile from './components/auth/UserProfile';
+import Header from './components/layout/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.css';
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -13,6 +13,7 @@ import Navbar from './components/layout/Navbar';
 import BaseLayout from './components/layout/BaseLayout'
 import Footer from './components/Footer';
 import Account from './pages/Account'
+import OtherAccount from './pages/OtherAccount';
 import Events from './pages/Events'
 import Chat from './pages/postComponents/PostManagement'
 import Cart from './pages/Cart'
@@ -72,6 +73,7 @@ ReactDOM.render(
             <Switch>
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
+              <Route path="/otheraccount" component={OtherAccount}/>
               <Route path="/purchase" component={(Purchase)}/>
               <Route path='/chat' component={requireAuth(Chat)}/>
               <Route path='/cart' component={requireAuth(Cart)}/>

@@ -5,7 +5,7 @@ import {signin, setEmailState, getProfile} from '../../actions/index';
 import {useHistory} from 'react-router-dom';
 import {Paper} from '../Styles';
 import '../../assets/singin.css'
-import {Row, Col, Container, Button} from 'react-bootstrap';
+import {Row, Col, Container} from 'react-bootstrap';
 
 const Signin = () => {
   const [email, setEmail] = useState('');

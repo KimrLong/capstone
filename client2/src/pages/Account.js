@@ -4,9 +4,8 @@ import {setProfilePic, setProfileInfo} from '../actions/index';
 import {Row, Col, Container} from 'react-bootstrap';
 import  '../assets/Home.css'
 import '../assets/Account.css'
-import Posts from './postComponents/Posts';
 import UserSpecificPosts from './postComponents/UserSpecificPosts';
-import {groupPosts, createPost, deletePost} from '../actions/index';
+import {groupPosts, deletePost} from '../actions/index';
 
 const UserProfile = () => {
 

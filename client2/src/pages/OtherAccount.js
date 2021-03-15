@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
-import {setProfilePic, setProfileInfo} from '../actions/index';
 import {Row, Col, Container} from 'react-bootstrap';
 import  '../assets/Home.css'
 import UserSpecificPosts from './postComponents/UserSpecificPosts';
-import {groupPosts, deletePost, getOtherProfile} from '../actions/index';
+import {deletePost} from '../actions/index';
 
 const OtherUserProfile = () => {
 

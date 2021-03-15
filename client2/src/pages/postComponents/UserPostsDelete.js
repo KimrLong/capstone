@@ -1,6 +1,5 @@
 import React from 'react'
 // import {getOtherProfile} from '../../actions/index';
-import {useDispatch} from 'react-redux';
 
 const UserPostsDelete = props => {
     // const dispatch = useDispatch();

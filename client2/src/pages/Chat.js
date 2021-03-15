@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {createPost} from '../actions/index';
 import {groupPosts} from '../actions/index';
 import {Row, Col, Container, Button} from 'react-bootstrap';
+import '../assets/Chat.css'
 
 const Forum = () => {
 
@@ -61,7 +62,7 @@ const Forum = () => {
                 // className="form"
                 >
                     <input type="post" onChange={(e)=>setPost(e.target.value)} value={post} placeholder="Submit your post here..."/>
-                    <button type="submit">Submit</button>
+                    <button type="submit" className="btnType">Submit</button>
                 </form>
             </div>
             <div className="col" styles="ml">
@@ -79,7 +80,7 @@ const Forum = () => {
 
         </>
     )
-}
+
 
 
 // export default Forum

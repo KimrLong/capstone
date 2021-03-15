@@ -40,12 +40,12 @@
     margin-left: 120px;
 } */
 .btn2{
-    background: rgb(250, 195, 94) !important;
-    justify-content:flex-start;
-    align-items: baseline;
-    text-align: center;
-    vertical-align: top;
-
+    background-color: white;
+    margin:30px;
+    font-size:20px;
+    border:rgb(250, 195, 94);
+    color:rgb(250, 195, 94);
+    border: 1px solid rgb(250, 195, 94);
 }
 /* .changePosition{
     display: flex;

@@ -33,6 +33,7 @@ export const Paper = styled.div`
 `;
 
 
+
 export  const  Container  =  styled.div`
   justify-content: center;
   margin: 0  auto;`

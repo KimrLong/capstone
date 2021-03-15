@@ -73,9 +73,9 @@ ReactDOM.render(
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
               <Route path='/purchase' component={Purchase}/>
-              <Route path='/Chat' component={requireAuth(Chat)}/>
+              {/* <Route path='/Chat' component={requireAuth(Chat)}/> */}
               <Route path='/events' component={Events}/>
-              <Route path='/chat' component={requireAuth(Chat)}/>
+              {/* <Route path='/chat' component={requireAuth(Chat)}/> */}
               <Route path='/chattest' component={requireAuth(ChatTest)}/>
               <Route path='/cart' component={requireAuth(Cart)}/>
               <Route path='/events' component={Events}/>

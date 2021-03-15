@@ -53,9 +53,7 @@ const reducerTemplate = (state = initialState, action) => {
             return {
                 ...state,
                 uniqueId: action.data.id,
-
             }
-
         case "GROUP_POSTS":
             return {
                 ...state,

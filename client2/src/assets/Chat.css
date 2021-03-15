@@ -1,0 +1,21 @@
+.btnType{
+
+    background-color: white;
+    font-size:20px;
+    margin: 5px;
+    border:rgb(250, 195, 94);
+    color:rgb(250, 195, 94);
+    border: 1px solid rgb(250, 195, 94);
+}
+
+.btnType:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.greetingText{
+    display: flex;
+    color:rgb(17, 36, 119);
+    text-align:center;
+    align-items: center;
+    font-size: 35px;
+}

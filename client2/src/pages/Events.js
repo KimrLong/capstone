@@ -27,4 +27,6 @@ function Events() {
     </Container>
   );
 }
+
 export default Events;
+

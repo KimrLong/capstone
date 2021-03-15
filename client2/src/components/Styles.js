@@ -35,8 +35,6 @@ export const Paper = styled.div`
 
 export  const  Container  =  styled.div`
   justify-content: center;
-  max-width: 100vw;
-  max-height: 100vh;
   margin: 0  auto;`
   
 

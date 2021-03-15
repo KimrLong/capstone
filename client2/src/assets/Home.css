@@ -4,6 +4,8 @@
     background-color: rgb(17, 36, 119);
     opacity: 0.8;
 }
+
+
 .col2-text{
     display: flex;
     color:rgb(17, 36, 119);
@@ -32,13 +34,12 @@
     font-size: 45px;
     margin-top: 40px;
 }
-.btn{
+/* .btn{
     background: rgb(250, 195, 94) !important;
     margin-top: 200px;
     margin-left: 120px;
-}
+} */
 .btn2{
-    display: flex;
     background: rgb(250, 195, 94) !important;
     justify-content:flex-start;
     align-items: baseline;
@@ -46,10 +47,10 @@
     vertical-align: top;
 
 }
-.changePosition{
+/* .changePosition{
     display: flex;
     vertical-align: top;
-}
+} */
 
 
 .thirdRow{
@@ -66,6 +67,88 @@
     margin-top: 40px;
 }
 .fourthRow{
-    height:200px;
+    height:80px;
     background: white;
 }
+
+.bottomButton , .topButton{
+    background-color: white;
+    margin:30px;
+    font-size:20px;
+    border:rgb(250, 195, 94);
+    color:rgb(250, 195, 94);
+    border: 1px solid rgb(250, 195, 94);
+}
+
+.topButton{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 200px;
+    margin-left: 50px;
+}
+
+
+.bottomButton:hover, .topButton:hover, img{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+img{
+    box-shadow: 0 20px 20px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+@media (max-width: 576px) { 
+    .col2-text, .middleText{
+        font-size: 20px;
+        height:200px;
+        padding-left: 200px;
+    }
+    .middlePic{
+        margin-top: 275px;
+    }
+    .topButton{
+        display:absolute;
+        margin-left:75px;
+    }
+    img{
+        height:215px;
+    }
+    .lastText{
+        font-size: 20px;
+    }
+}
+
+/* @media (max-width: 1100px) { 
+    .col2-text, .middleText{
+        font-size: 30px;
+        height:200px;
+        padding-left: 200px;
+        padding-top: 50px;
+    }
+    .middlePic{
+        margin-top: 275px;
+    }
+    .topButton{
+        display:absolute;
+        margin-left:75px;
+    }
+    img{
+        height:215px;
+        margin-left: 20px;
+    }
+
+    .lastText{
+        font-size: 20px;
+        align-items: center;
+    }
+} */
+
+/* Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px)  */
+
+/* // Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) { ... } */
+
+/* // Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) { ... } */

@@ -7,6 +7,7 @@ import { connect, useSelector } from 'react-redux';
 import { makePayment } from '../../actions/PaymentAction';
 import {Row, Col} from 'react-bootstrap';
 import {Paper} from '../Styles';
+import '../../assets/Purchase.css'
 
 const initialValues = {
 			cardNo: '',
@@ -154,12 +155,12 @@ function Payment(props) {
 				</div>
 				
 				<button
-					className='Payment__btn--two'
+					className='Payment__btn--two eventButton'
 					type='submit'
 					onClick={() => props.makePayment(formik.values.cardNo,formik.values.name,formik.values.date,formik.values.code,formik.values.amount)}
 				>Submit</button>
 						<Link to='/'>
-			<button className='Payment__btn--one'>Back to Home</button>
+			<button className='Payment__btn--one eventButton'>Back to Home</button>
 		</Link>
 		
 			</form>

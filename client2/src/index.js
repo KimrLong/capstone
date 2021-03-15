@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
 import UserProfile from './components/auth/UserProfile';
-
 import Header from './components/layout/Header';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  './assets/styles.css';
 import {createStore, applyMiddleware, compose} from 'redux';
@@ -16,8 +13,16 @@ import requireAuth from './requireAuth';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/Footer';
 import Account from './pages/Account'
+<<<<<<< HEAD
+=======
+
+import Holder from './pages/Holder';
+>>>>>>> f66feeb0ddec351335bd544624fa3c0df0feea4c
 import Events from './pages/Events'
 import Chat from './pages/postComponents/PostManagement'
+
+import Purchase from './pages/Purchase'
+
 import Cart from './pages/Cart'
 import Support from './pages/Support'
 import SignupForm from './pages/SignupForm'
@@ -73,20 +78,26 @@ ReactDOM.render(
             <Switch>
               <Route exact path='/' component={App}/>
               <Route path="/account" component={requireAuth(Account)}/>
+              <Route path='/purchase' component={Purchase}/>
+              {/* <Route path='/Chat' component={requireAuth(Chat)}/> */}
               <Route path='/events' component={Events}/>
+
               <Route path='/chat' component={requireAuth(Chat)}/>
 
               <Route path='/cart' component={requireAuth(Cart)}/>
+<<<<<<< HEAD
 
+=======
+              <Route path='/events' component={Events}/>
+>>>>>>> f66feeb0ddec351335bd544624fa3c0df0feea4c
               <Route path='/Support' component={Support}/>
               <Route path='/signin' component={Signin}/>
               <Route path='/signout' component={Signout}/>
               <Route path='/form' component={SignupForm}/>
-
             </Switch>
         </Router>
         </Provider>
-        {/* <Footer/> */}
+        <Footer/>
   </React.StrictMode>
   </>,
   document.getElementById('root')

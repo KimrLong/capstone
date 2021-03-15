@@ -26,7 +26,7 @@ const PostManagement = () => {
 
     const handleAddPost = async (newPost) => {
         console.log(newPost);
-
+        
         dispatch(groupPosts(posts));
 
     }

@@ -6,6 +6,7 @@ import {groupPosts, createPost} from '../../actions/index';
 const AddProject = (props) => {
 
   const email = useSelector(state => state.auth.email);
+
   const [newPost, setNewPost] = useState("");
   const [posts, setPosts] = useState([]);  //[{id, category, title}, {}, {}]
   const dispatch = useDispatch();
@@ -15,15 +16,16 @@ const AddProject = (props) => {
         const url = `http://localhost:3001/chat/group`
         const response = await fetch(url)
         const data = await response.json()
-        setPosts(data);
+        // setPosts(data);
+        // console.log(data);
       }
       updatePosts();
     }, [])
     
+
   const handleSubmit = (e) => {
-    
     e.preventDefault();
-    // console.log(posts);
+
 
     //addProject passed from parent.  Expects an object as an argument
 

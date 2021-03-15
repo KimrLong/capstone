@@ -6,7 +6,7 @@ import {Container} from '../components/Styles';
 import {Row, Col} from 'react-bootstrap';
 // import {Paper} from '../Styles';
 import Payment from '../components/PaymentComponents/Payment';
-import '../assets/Events.css'
+import '../assets/Purchase.css'
 function Events() {
   return (<>
     <Container className="events">

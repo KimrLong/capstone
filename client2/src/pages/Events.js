@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import ReactDOM from "react-dom";
 import Mainstage from "../components/ChartComponents/Mainstage";
@@ -25,4 +27,6 @@ function Events() {
     </Container>
   );
 }
+
 export default Events;
+

@@ -98,15 +98,7 @@ const UserProfile = () => {
             <br/> 
 
             <div>
-            {/* {postArray.findAll(( { where: {email : email}}) => {
-                return (
-                    <ul>      
-                        <li>
-                            {email}: {viewPosts}
-                        </li>          
-                    </ul>
-                )
-            })} */}
+
             </div>
             <div>
                 {username}

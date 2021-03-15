@@ -1,8 +1,9 @@
 import React from 'react'
-
+// import {getOtherProfile} from '../../actions/index';
+import {useDispatch} from 'react-redux';
 
 const UserPostsDelete = props => {
-    
+    // const dispatch = useDispatch();
     if (props.email === props.props.post.email) {
         return (
             <>
@@ -18,7 +19,9 @@ const UserPostsDelete = props => {
         return (
             <>
         <li>
-            {props.props.post.email} - {props.props.post.post} 
+            <a href="/otheruser"> {props.props.post.email} </a>
+
+            - {props.props.post.post} 
         </li>
 
             </>

@@ -130,6 +130,9 @@ const Mainstage = props => {
       const ids = selectedSeatsIds.slice();
       ids.splice(ids.indexOf(seatId), 1);
       setSelectedSeatsIds(ids);
+      dispatch(updatePrice( -price))
+      console.log(price);
+      console.log(jsonData);  
       dispatch(seatPicker(ids))
     },
     [selectedSeatsIds]

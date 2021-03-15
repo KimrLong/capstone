@@ -50,6 +50,7 @@ const Navbar =()=> {
     )}
 
 export default Navbar
+
         /* <IconContext.Provider value={{color:'#fff'}}>
             <div className="navbar">
                 <Link to="#" className='menu-bars'> 
@@ -127,6 +128,5 @@ export default Navbar
         //     </IconContext.Provider>
         //     </Row>
         //     </Container>
-//         // </>   
-//     )
-// }
+//         // </>  
+   

@@ -41,7 +41,7 @@ const PostManagement = () => {
 
     return <>
         <div className="row mt-5">
-            <div className="col-6 offset-4 text-center">
+            <div className="col-6 offset-3 text-center">
                 <h3 className="greetingText">
                     Post Management</h3>
             </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import UserPosts from './UserPosts';
+import UserPosts from './UserPostsDelete';
 import {useDispatch, useSelector} from 'react-redux';
 
 const PostItem = (props) => {

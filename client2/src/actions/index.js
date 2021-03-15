@@ -61,7 +61,7 @@ export const groupPosts = (formData) => {
             let response = await axios.post('http://localhost:3001/chat/group', formData) //formdata will put on header
             dispatch({type: "GROUP_POSTS", data: response.data});
             //dispatch action to reducer 
-            console.log(response.data);
+            // console.log(response.data);
         }
         catch(e){
             console.log('error');

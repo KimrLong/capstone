@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const UserPosts = props => {
+const UserPostsDelete = props => {
     
     if (props.email === props.props.post.email) {
         return (
@@ -27,4 +27,4 @@ const UserPosts = props => {
 
 }
 
-export default UserPosts
+export default UserPostsDelete

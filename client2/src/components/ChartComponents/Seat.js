@@ -42,7 +42,7 @@ const Seat = props => {
           return;
         }
         if (props.isSelected) {
-          props.onDeselect(props.data.name);
+          props.onDeselect(props.data.name, props.data.price);
         } else {
           props.onSelect(props.data.name, props.data.price);
         }

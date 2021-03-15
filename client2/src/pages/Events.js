@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import ReactDOM from "react-dom";
 import Mainstage from "../components/ChartComponents/Mainstage";
@@ -6,26 +8,23 @@ import {Container} from '../components/Styles';
 import {Row, Col} from 'react-bootstrap';
 // import {Paper} from '../Styles';
 import Payment from '../components/PaymentComponents/Payment';
-import '../assets/Events.css'
+import Card from '../components/EventComponents/cards';
+// import  '../assets/Home.css'
+import Footer from '../components/Footer'
 function Events() {
-  return (<>
-    <Container className="events">
-      <Row className="events-container">
+  return (
+    <Container fluid>
+      <Row className="firstRow">
+        <Col></Col>
         <Col>
-        <Payment></Payment>
+          <h1>Culture Club Events</h1>
         </Col>
-        <Col>
-        <Mainstage
-            // onSelectSeat={seatId => {
-            //   console.log("selected - " + seatId);
-            // }}
-          />
-          <div> </div>
-          </Col>
+        <Col></Col>
+      </Row><br/>
+      <Row>
+        <Col><Card/></Col>
       </Row>
     </Container>
-    </>
   );
 }
 export default Events;
-//chart is displayed from THIS folder

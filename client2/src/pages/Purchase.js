@@ -16,9 +16,9 @@ function Purchase() {
         </Col>
         <Col>
         <Mainstage
-            // onSelectSeat={seatId => {
-            //   console.log("selected - " + seatId);
-            // }}
+            onSelectSeat={seatId => {
+              console.log("selected - " + seatId);
+            }}
           />
           </Col>
       </Row>

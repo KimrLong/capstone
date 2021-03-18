@@ -10,7 +10,6 @@ import {updatePrice, clearPrice} from '../../actions/priceAction';
 
 
 
-
 const useFetch = url => {
   const [data, setData] = useState(null);
   useEffect(() => {
